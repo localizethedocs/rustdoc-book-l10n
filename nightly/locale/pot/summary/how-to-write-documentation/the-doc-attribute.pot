@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:41Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/write-documentation/the-doc-attribute.md:1
+msgid "The `#[doc]` attribute"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:3
+msgid ""
+"The `#[doc]` attribute lets you control various aspects of how `rustdoc` "
+"does its job."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:6
+msgid ""
+"The most basic function of `#[doc]` is to handle the actual documentation "
+"text. That is, `///` is syntax sugar for `#[doc]` (as is `//!` for `#!"
+"[doc]`). This means that these two are the same:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:11
+msgid "/// This is a doc comment.\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:12
+msgid "\" This is a doc comment.\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:16
+msgid ""
+"(Note the leading space and the raw string literal in the attribute version.)"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:18
+msgid ""
+"In most cases, `///` is easier to use than `#[doc]`. One case where the "
+"latter is easier is when generating documentation in macros; the `collapse-"
+"docs` pass will combine multiple `#[doc]` attributes into a single doc "
+"comment, letting you generate code like this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:23
+msgid "\"This is\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:24
+msgid "\" a \""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:25
+msgid "\"doc comment\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:29
+msgid "Which can feel more flexible. Note that this would generate this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:32
+msgid "\"This is\\n a \\ndoc comment\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:36
+msgid ""
+"but given that docs are rendered via Markdown, it will remove these newlines."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:38
+msgid "Another use case is for including external files as documentation:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:41
+msgid "\"../../README.md\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:45
+msgid ""
+"The `doc` attribute has more options though! These don't involve the text of "
+"the output, but instead, various aspects of the presentation of the output. "
+"We've split them into two kinds below: attributes that are useful at the "
+"crate level, and ones that are useful at the item level."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:50
+msgid "At the crate level"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:52
+msgid "These options control how the docs look at a crate level."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:54
+msgid "`html_favicon_url`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:56
+msgid ""
+"This form of the `doc` attribute lets you control the favicon of your docs."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:59
+msgid "\"https://example.com/favicon.ico\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:62
+msgid ""
+"This will put `<link rel=\"icon\" href=\"{}\">` into your docs, where the "
+"string for the attribute goes into the `{}`."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:65
+msgid "If you don't use this attribute, a default favicon will be used."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:67
+msgid "`html_logo_url`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:69
+msgid ""
+"This form of the `doc` attribute lets you control the logo in the upper left "
+"hand side of the docs."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:73
+msgid "\"https://example.com/logo.jpg\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:76
+msgid ""
+"This will put `<a href='../index.html'><img src='{}' alt='logo' "
+"width='100'></a>` into your docs, where the string for the attribute goes "
+"into the `{}`."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:79
+msgid "If you don't use this attribute, there will be no logo."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:81
+msgid "`html_playground_url`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:83
+msgid ""
+"This form of the `doc` attribute lets you control where the \"run\" buttons "
+"on your documentation examples make requests to."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:87
+msgid "\"https://playground.example.com/\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:90
+msgid ""
+"Now, when you press \"run\", the button will make a request to this domain. "
+"The request URL will contain 3 query parameters:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:92
+msgid "`code` for the code in the documentation"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:93
+msgid ""
+"`version` for the Rust channel, e.g. nightly, which is decided by whether "
+"`code` contain unstable features"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:94
+msgid "`edition` for the Rust edition, e.g. 2024"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:96
+msgid "If you don't use this attribute, there will be no run buttons."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:98
+msgid "`issue_tracker_base_url`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:100
+msgid ""
+"This form of the `doc` attribute is mostly only useful for the standard "
+"library; When a feature is unstable, an issue number for tracking the "
+"feature must be given. `rustdoc` uses this number, plus the base URL given "
+"here, to link to the tracking issue."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:106
+msgid "\"https://github.com/rust-lang/rust/issues/\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:109
+msgid "`html_root_url`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:111
+msgid ""
+"The `#[doc(html_root_url = \"…\")]` attribute value indicates the URL for "
+"generating links to external crates. When rustdoc needs to generate a link "
+"to an item in an external crate, it will first check if the extern crate has "
+"been documented locally on-disk, and if so link directly to it. Failing "
+"that, it will use the URL given by the `--extern-html-root-url` command-line "
+"flag if available. If that is not available, then it will use the "
+"`html_root_url` value in the extern crate if it is available. If that is not "
+"available, then the extern items will not be linked."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:121
+msgid "\"https://docs.rs/serde/1.0\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:124
+msgid "`html_no_source`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:126
+msgid ""
+"By default, `rustdoc` will include the source code of your program, with "
+"links to it in the docs. But if you include this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:133
+#: src/write-documentation/the-doc-attribute.md:144
+msgid "it will not."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:135
+msgid "`test(no_crate_inject)`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:137
+msgid ""
+"By default, `rustdoc` will automatically add a line with `extern crate "
+"my_crate;` into each doctest. But if you include this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:146
+msgid "At the item level"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:148
+msgid ""
+"These forms of the `#[doc]` attribute are used on individual items, to "
+"control how they are documented."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:151
+msgid "`inline` and `no_inline`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:153
+msgid "<span id=\"docno_inlinedocinline\"></span>"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:155
+msgid ""
+"These attributes are used on `use` statements, and control where the "
+"documentation shows up. For example, consider this Rust code:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:160
+#: src/write-documentation/the-doc-attribute.md:188
+#: src/write-documentation/the-doc-attribute.md:205
+msgid "/// bar docs\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:163
+#: src/write-documentation/the-doc-attribute.md:191
+#: src/write-documentation/the-doc-attribute.md:208
+msgid "/// the docs for Bar\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:169
+msgid ""
+"The documentation will generate a \"Re-exports\" section, and say `pub use "
+"bar::Bar;`, where `Bar` is a link to its page."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:172
+msgid "If we change the `use` line like this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:181
+msgid ""
+"Instead, `Bar` will appear in a `Structs` section, just like `Bar` was "
+"defined at the top level, rather than `pub use`'d."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:184
+msgid "Let's change our original example, by making `bar` private:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:197
+msgid ""
+"Here, because `bar` is not public, `bar` wouldn't have its own page, so "
+"there's nowhere to link to. `rustdoc` will inline these definitions, and so "
+"we end up in the same case as the `#[doc(inline)]` above; `Bar` is in a "
+"`Structs` section, as if it were defined at the top level. If we add the "
+"`no_inline` form of the attribute:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:214
+msgid ""
+"Now we'll have a `Re-exports` line, and `Bar` will not link to anywhere."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:216
+msgid ""
+"One special case: In Rust 2018 and later, if you `pub use` one of your "
+"dependencies, `rustdoc` will not eagerly inline it as a module unless you "
+"add `#[doc(inline)]`."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:219
+msgid ""
+"If you want to know more about inlining rules, take a look at the [`re-"
+"exports` chapter](./re-exports.md)."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:222
+msgid "`hidden`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:224
+msgid "<span id=\"dochidden\"></span>"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:226
+msgid ""
+"Any item annotated with `#[doc(hidden)]` will not appear in the "
+"documentation, unless the [`--document-hidden-items`](../unstable-features."
+"md#document-hidden-items) flag is used."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:229
+msgid ""
+"You can find more information in the [`re-exports` chapter](./re-exports.md)."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:231
+msgid "`alias`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:233
+msgid "This attribute adds an alias in the search index."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:235
+msgid "Let's take an example:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:238
+msgid "\"TheAlias\""
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:242
+msgid ""
+"So now, if you enter \"TheAlias\" in the search, it'll display `SomeType`. "
+"Of course, if you enter `SomeType` it'll return `SomeType` as expected!"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:245
+msgid "FFI example"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:247
+msgid ""
+"This doc attribute is especially useful when writing bindings for a C "
+"library. For example, let's say we have a C function that looks like this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:254
+msgid ""
+"It takes a pointer to an `Obj` type and returns an integer. In Rust, it "
+"might be written like this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:269
+msgid ""
+"The function has been turned into a method to make it more convenient to "
+"use. However, if you want to look for the Rust equivalent of "
+"`lib_name_do_something`, you have no way to do so."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:273
+msgid ""
+"To get around this limitation, we just add `#[doc(alias = "
+"\"lib_name_do_something\")]` on the `do_something` method and then it's all "
+"good! Users can now look for `lib_name_do_something` in our crate directly "
+"and find `Obj::do_something`."
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:278
+msgid "`test(attr(...))`"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:280
+msgid ""
+"This form of the `doc` attribute allows you to add arbitrary attributes to "
+"all your doctests. For example, if you want your doctests to fail if they "
+"have dead code, you could add this:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:287
+msgid "// but allow `dead_code` for this module\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:291
+msgid ""
+"`test(attr(..))` attributes are appended to the parent module's, they do not "
+"replace the current list of attributes. In the previous example, both "
+"attributes would be present:"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:295
+msgid "// For every doctest in `my_mod`\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:297
+msgid "// from the crate-root\n"
+msgstr ""
+
+#: src/write-documentation/the-doc-attribute.md:298
+msgid "// from `my_mod`\n"
+msgstr ""

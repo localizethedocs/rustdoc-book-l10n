@@ -1,0 +1,47 @@
+{
+  "po" : 
+  {
+    "en_US" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_CN" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_TW" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    }
+  },
+  "pot" : 
+  {
+    "branch" : "main",
+    "commit" : 
+    {
+      "date" : "2026-03-27 01:25:29 +0000",
+      "hash" : "ac40f5e105ddc8144904679cb63c8879708a9a26",
+      "title" : "Auto merge of #154004 - GrigorenkoPV:alignment/as_nonzero_usize, r=scottmcm"
+    }
+  },
+  "type" : "branch",
+  "version" : "nightly"
+}
