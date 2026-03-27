@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/write-documentation/the-doc-attribute.md:1
@@ -222,7 +222,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:124
 msgid "`html_no_source`"
-msgstr ""
+msgstr "`html_no_source`"
 
 #: src/write-documentation/the-doc-attribute.md:126
 msgid ""
@@ -237,7 +237,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:135
 msgid "`test(no_crate_inject)`"
-msgstr ""
+msgstr "`test(no_crate_inject)`"
 
 #: src/write-documentation/the-doc-attribute.md:137
 msgid ""
@@ -261,7 +261,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:153
 msgid "<span id=\"docno_inlinedocinline\"></span>"
-msgstr ""
+msgstr "<span id=\"docno_inlinedocinline\"></span>"
 
 #: src/write-documentation/the-doc-attribute.md:155
 msgid ""
@@ -273,13 +273,13 @@ msgstr ""
 #: src/write-documentation/the-doc-attribute.md:188
 #: src/write-documentation/the-doc-attribute.md:205
 msgid "/// bar docs\n"
-msgstr ""
+msgstr "/// bar docs\n"
 
 #: src/write-documentation/the-doc-attribute.md:163
 #: src/write-documentation/the-doc-attribute.md:191
 #: src/write-documentation/the-doc-attribute.md:208
 msgid "/// the docs for Bar\n"
-msgstr ""
+msgstr "/// the docs for Bar\n"
 
 #: src/write-documentation/the-doc-attribute.md:169
 msgid ""
@@ -372,7 +372,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:245
 msgid "FFI example"
-msgstr ""
+msgstr "FFI 範例"
 
 #: src/write-documentation/the-doc-attribute.md:247
 msgid ""
@@ -403,7 +403,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:278
 msgid "`test(attr(...))`"
-msgstr ""
+msgstr "`test(attr(...))`"
 
 #: src/write-documentation/the-doc-attribute.md:280
 msgid ""

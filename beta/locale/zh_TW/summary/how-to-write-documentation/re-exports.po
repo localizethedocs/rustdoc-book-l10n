@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/write-documentation/re-exports.md:1
 msgid "Re-exports"
-msgstr ""
+msgstr "重新匯出"
 
 #: src/write-documentation/re-exports.md:3
 msgid ""
@@ -207,15 +207,15 @@ msgstr ""
 
 #: src/write-documentation/re-exports.md:181
 msgid "`#[doc(alias=\"\")]`"
-msgstr ""
+msgstr "`#[doc(alias=\"\")]`"
 
 #: src/write-documentation/re-exports.md:182
 msgid "`#[doc(inline)]`"
-msgstr ""
+msgstr "`#[doc(inline)]`"
 
 #: src/write-documentation/re-exports.md:183
 msgid "`#[doc(no_inline)]`"
-msgstr ""
+msgstr "`#[doc(no_inline)]`"
 
 #: src/write-documentation/re-exports.md:184
 msgid ""

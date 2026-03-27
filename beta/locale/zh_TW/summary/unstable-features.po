@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/unstable-features.md:1
 msgid "Unstable features"
-msgstr ""
+msgstr "不穩定的功能"
 
 #: src/unstable-features.md:3
 msgid ""
@@ -191,7 +191,7 @@ msgstr ""
 
 #: src/unstable-features.md:115
 msgid "Document keywords"
-msgstr ""
+msgstr "記載關鍵字"
 
 #: src/unstable-features.md:117 src/unstable-features.md:134
 msgid "This is for internal use in the std library."
@@ -300,7 +300,7 @@ msgstr ""
 
 #: src/unstable-features.md:193
 msgid "Unstable command-line arguments"
-msgstr ""
+msgstr "不穩定的命令行引數"
 
 #: src/unstable-features.md:195
 msgid ""
@@ -393,7 +393,7 @@ msgstr ""
 
 #: src/unstable-features.md:242
 msgid "rustdoc flags"
-msgstr ""
+msgstr "rustdoc 旗標"
 
 #: src/unstable-features.md:242
 msgid "items that will be documented"
@@ -871,7 +871,7 @@ msgstr ""
 #: src/unstable-features.md:541
 msgid ""
 "Tracking issue: [\\#134529](https://github.com/rust-lang/rust/issues/134529)"
-msgstr ""
+msgstr "追蹤議題：[\\#134529](https://github.com/rust-lang/rust/issues/134529)"
 
 #: src/unstable-features.md:543
 msgid ""
@@ -918,23 +918,23 @@ msgstr ""
 
 #: src/unstable-features.md:571
 msgid "\"line\""
-msgstr ""
+msgstr "\"line\""
 
 #: src/unstable-features.md:572
 msgid "\"doctest_attributes\""
-msgstr ""
+msgstr "\"doctest_attributes\""
 
 #: src/unstable-features.md:573
 msgid "\"original\""
-msgstr ""
+msgstr "\"original\""
 
 #: src/unstable-features.md:573
 msgid "\"\""
-msgstr ""
+msgstr "\"\""
 
 #: src/unstable-features.md:574
 msgid "\"should_panic\""
-msgstr ""
+msgstr "\"should_panic\""
 
 #: src/unstable-features.md:575
 msgid "\"no_run\""
