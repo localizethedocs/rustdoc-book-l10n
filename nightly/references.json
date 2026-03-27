@@ -13,22 +13,22 @@
     },
     "zh_CN" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-03-27 01:25:29 +0000",
+        "hash" : "ac40f5e105ddc8144904679cb63c8879708a9a26",
+        "title" : "Auto merge of #154004 - GrigorenkoPV:alignment/as_nonzero_usize, r=scottmcm"
       }
     },
     "zh_TW" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-03-27 01:25:29 +0000",
+        "hash" : "ac40f5e105ddc8144904679cb63c8879708a9a26",
+        "title" : "Auto merge of #154004 - GrigorenkoPV:alignment/as_nonzero_usize, r=scottmcm"
       }
     }
   },

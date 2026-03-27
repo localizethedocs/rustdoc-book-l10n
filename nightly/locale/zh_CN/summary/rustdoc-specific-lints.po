@@ -1,0 +1,559 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:41Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/lints.md:1
+msgid "Lints"
+msgstr ""
+
+#: src/lints.md:3
+msgid ""
+"`rustdoc` provides lints to help you writing and testing your documentation. "
+"You can use them like any other lints by doing this:"
+msgstr ""
+
+#: src/lints.md:7
+msgid "// allows the lint, no diagnostics will be reported\n"
+msgstr ""
+
+#: src/lints.md:8
+msgid "// warn if there are broken intra-doc links\n"
+msgstr ""
+
+#: src/lints.md:9
+msgid "// error if there are broken intra-doc links\n"
+msgstr ""
+
+#: src/lints.md:12
+msgid ""
+"Note that, except for `missing_docs`, these lints are only available when "
+"running `rustdoc`, not `rustc`."
+msgstr ""
+
+#: src/lints.md:14
+msgid "Here is the list of the lints provided by `rustdoc`:"
+msgstr ""
+
+#: src/lints.md:16
+msgid "`broken_intra_doc_links`"
+msgstr ""
+
+#: src/lints.md:18
+msgid ""
+"This lint **warns by default**. This lint detects when an [intra-doc link]"
+"(write-documentation/linking-to-items-by-name.md) fails to be resolved. For "
+"example:"
+msgstr ""
+
+#: src/lints.md:23
+msgid "/// I want to link to [`Nonexistent`] but it doesn't exist!\n"
+msgstr ""
+
+#: src/lints.md:27
+msgid "You'll get a warning saying:"
+msgstr ""
+
+#: src/lints.md:29
+msgid ""
+"```text\n"
+"warning: unresolved link to `Nonexistent`\n"
+" --> test.rs:1:24\n"
+"  |\n"
+"1 | /// I want to link to [`Nonexistent`] but it doesn't exist!\n"
+"  |                        ^^^^^^^^^^^^^ no item named `Nonexistent` in "
+"`test`\n"
+"```"
+msgstr ""
+
+#: src/lints.md:37
+msgid ""
+"It will also warn when there is an ambiguity and suggest how to disambiguate:"
+msgstr ""
+
+#: src/lints.md:40
+msgid "/// [`Foo`]\n"
+msgstr ""
+
+#: src/lints.md:48
+msgid ""
+"```text\n"
+"warning: `Foo` is both an enum and a function\n"
+" --> test.rs:1:6\n"
+"  |\n"
+"1 | /// [`Foo`]\n"
+"  |      ^^^^^ ambiguous link\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::broken_intra_doc_links)]` on by default\n"
+"help: to link to the enum, prefix with the item type\n"
+"  |\n"
+"1 | /// [`enum@Foo`]\n"
+"  |      ^^^^^^^^^^\n"
+"help: to link to the function, add parentheses\n"
+"  |\n"
+"1 | /// [`Foo()`]\n"
+"  |      ^^^^^^^\n"
+"\n"
+"```"
+msgstr ""
+
+#: src/lints.md:67
+msgid "`private_intra_doc_links`"
+msgstr ""
+
+#: src/lints.md:69
+msgid ""
+"This lint **warns by default**. This lint detects when [intra-doc links]"
+"(write-documentation/linking-to-items-by-name.md) from public to private "
+"items. For example:"
+msgstr ""
+
+#: src/lints.md:73 src/lints.md:232 src/lints.md:351 src/lints.md:423
+msgid "// note: unnecessary - warns by default.\n"
+msgstr ""
+
+#: src/lints.md:74
+msgid "/// [private]\n"
+msgstr ""
+
+#: src/lints.md:80
+msgid ""
+"This gives a warning that the link will be broken when it appears in your "
+"documentation:"
+msgstr ""
+
+#: src/lints.md:82
+msgid ""
+"```text\n"
+"warning: public documentation for `public` links to private item `private`\n"
+" --> priv.rs:1:6\n"
+"  |\n"
+"1 | /// [private]\n"
+"  |      ^^^^^^^ this item is private\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::private_intra_doc_links)]` on by default\n"
+"  = note: this link will resolve properly if you pass `--document-private-"
+"items`\n"
+"```"
+msgstr ""
+
+#: src/lints.md:93
+msgid ""
+"Note that this has different behavior depending on whether you pass `--"
+"document-private-items` or not! If you document private items, then it will "
+"still generate a link, despite the warning:"
+msgstr ""
+
+#: src/lints.md:96
+msgid ""
+"```text\n"
+"warning: public documentation for `public` links to private item `private`\n"
+" --> priv.rs:1:6\n"
+"  |\n"
+"1 | /// [private]\n"
+"  |      ^^^^^^^ this item is private\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::private_intra_doc_links)]` on by default\n"
+"  = note: this link resolves only because you passed `--document-private-"
+"items`, but will break without\n"
+"```"
+msgstr ""
+
+#: src/lints.md:109
+msgid "`missing_docs`"
+msgstr ""
+
+#: src/lints.md:111
+msgid ""
+"This lint is **allowed by default**. It detects items missing documentation. "
+"For example:"
+msgstr ""
+
+#: src/lints.md:121
+msgid "The `undocumented` function will then have the following warning:"
+msgstr ""
+
+#: src/lints.md:131
+msgid ""
+"Note that unlike other rustdoc lints, this lint is also available from "
+"`rustc` directly."
+msgstr ""
+
+#: src/lints.md:133
+msgid "`missing_crate_level_docs`"
+msgstr ""
+
+#: src/lints.md:135
+msgid ""
+"This lint is **allowed by default**. It detects if there is no documentation "
+"at the crate root. For example:"
+msgstr ""
+
+#: src/lints.md:142
+msgid "This will generate the following warning:"
+msgstr ""
+
+#: src/lints.md:144
+msgid ""
+"```text\n"
+"warning: no documentation found for this crate's top-level module\n"
+"  |\n"
+"  = help: The following guide may be of use:\n"
+"          https://doc.rust-lang.org/nightly/rustdoc/how-to-write-"
+"documentation.html\n"
+"```"
+msgstr ""
+
+#: src/lints.md:151
+msgid ""
+"This is currently \"allow\" by default, but it is intended to make this a "
+"warning in the future. This is intended as a means to introduce new users on "
+"_how_ to document their crate by pointing them to some instructions on how "
+"to get started, without providing overwhelming warnings like `missing_docs` "
+"might."
+msgstr ""
+
+#: src/lints.md:157
+msgid "`missing_doc_code_examples`"
+msgstr ""
+
+#: src/lints.md:159
+msgid ""
+"This lint is **allowed by default** and is **nightly-only**. It detects when "
+"a documentation block is missing a code example. For example:"
+msgstr ""
+
+#: src/lints.md:164
+msgid "/// There is no code example!\n"
+msgstr ""
+
+#: src/lints.md:170
+msgid "The `no_code_example` function will then have the following warning:"
+msgstr ""
+
+#: src/lints.md:172
+msgid ""
+"```text\n"
+"warning: Missing code example in this documentation\n"
+"  --> your-crate/lib.rs:3:1\n"
+"   |\n"
+"LL | /// There is no code example!\n"
+"   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+"```"
+msgstr ""
+
+#: src/lints.md:180
+msgid ""
+"To fix the lint, you need to add a code example into the documentation block:"
+msgstr ""
+
+#: src/lints.md:183
+msgid ""
+"/// There is no code example!\n"
+"///\n"
+"/// ```\n"
+"/// println!(\"calling no_code_example...\");\n"
+"/// no_code_example();\n"
+"/// println!(\"we called no_code_example!\");\n"
+"/// ```\n"
+msgstr ""
+
+#: src/lints.md:193
+msgid "`private_doc_tests`"
+msgstr ""
+
+#: src/lints.md:195
+msgid ""
+"This lint is **allowed by default**. It detects documentation tests when "
+"they are on a private item. For example:"
+msgstr ""
+
+#: src/lints.md:202
+msgid ""
+"/// private doc test\n"
+"    ///\n"
+"    /// ```\n"
+"    /// assert!(false);\n"
+"    /// ```\n"
+msgstr ""
+
+#: src/lints.md:212 src/lints.md:242 src/lints.md:275 src/lints.md:320
+#: src/lints.md:358 src/lints.md:390 src/lints.md:432
+msgid "Which will give:"
+msgstr ""
+
+#: src/lints.md:214
+msgid ""
+"````text\n"
+"warning: Documentation test in private item\n"
+"  --> your-crate/lib.rs:4:1\n"
+"   |\n"
+" 4 | /     /// private doc test\n"
+" 5 | |     ///\n"
+" 6 | |     /// ```\n"
+" 7 | |     /// assert!(false);\n"
+" 8 | |     /// ```\n"
+"   | |___________^\n"
+"````"
+msgstr ""
+
+#: src/lints.md:226
+msgid "`invalid_codeblock_attributes`"
+msgstr ""
+
+#: src/lints.md:228
+msgid ""
+"This lint **warns by default**. It detects code block attributes in "
+"documentation examples that have potentially mis-typed values. For example:"
+msgstr ""
+
+#: src/lints.md:233
+msgid ""
+"/// Example.\n"
+"///\n"
+"/// ```should-panic\n"
+"/// assert_eq!(1, 2);\n"
+"/// ```\n"
+msgstr ""
+
+#: src/lints.md:244
+msgid ""
+"````text\n"
+"warning: unknown attribute `should-panic`. Did you mean `should_panic`?\n"
+" --> src/lib.rs:1:1\n"
+"  |\n"
+"1 | / /// Example.\n"
+"2 | | ///\n"
+"3 | | /// ```should-panic\n"
+"4 | | /// assert_eq!(1, 2);\n"
+"5 | | /// ```\n"
+"  | |_______^\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::invalid_codeblock_attributes)]` on by default\n"
+"  = help: the code block will either not be tested if not marked as a rust "
+"one or won't fail if it doesn't panic when running\n"
+"````"
+msgstr ""
+
+#: src/lints.md:259
+msgid ""
+"In the example above, the correct form is `should_panic`. This helps detect "
+"typo mistakes for some common attributes."
+msgstr ""
+
+#: src/lints.md:262
+msgid "`invalid_html_tags`"
+msgstr ""
+
+#: src/lints.md:264
+msgid ""
+"This lint **warns by default**. It detects unclosed or invalid HTML tags. "
+"For example:"
+msgstr ""
+
+#: src/lints.md:269
+msgid ""
+"/// <h1>\n"
+"/// </script>\n"
+msgstr ""
+
+#: src/lints.md:277
+msgid ""
+"```text\n"
+"warning: unopened HTML tag `script`\n"
+" --> foo.rs:1:1\n"
+"  |\n"
+"1 | / /// <h1>\n"
+"2 | | /// </script>\n"
+"  | |_____________^\n"
+"  |\n"
+"  note: the lint level is defined here\n"
+" --> foo.rs:1:9\n"
+"  |\n"
+"1 | #![warn(rustdoc::invalid_html_tags)]\n"
+"  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+"\n"
+"warning: unclosed HTML tag `h1`\n"
+" --> foo.rs:1:1\n"
+"  |\n"
+"1 | / /// <h1>\n"
+"2 | | /// </script>\n"
+"  | |_____________^\n"
+"\n"
+"warning: 2 warnings emitted\n"
+"```"
+msgstr ""
+
+#: src/lints.md:301
+msgid "`invalid_rust_codeblocks`"
+msgstr ""
+
+#: src/lints.md:303
+msgid ""
+"This lint **warns by default**. It detects Rust code blocks in documentation "
+"examples that are invalid (e.g. empty, not parsable as Rust). For example:"
+msgstr ""
+
+#: src/lints.md:307
+msgid ""
+"/// Empty code blocks (with and without the `rust` marker):\n"
+"///\n"
+"/// ```rust\n"
+"/// ```\n"
+"///\n"
+"/// Invalid syntax in code blocks:\n"
+"///\n"
+"/// ```rust\n"
+"/// '<\n"
+"/// ```\n"
+msgstr ""
+
+#: src/lints.md:322
+msgid ""
+"````text\n"
+"warning: Rust code block is empty\n"
+" --> lint.rs:3:5\n"
+"  |\n"
+"3 |   /// ```rust\n"
+"  |  _____^\n"
+"4 | | /// ```\n"
+"  | |_______^\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::invalid_rust_codeblocks)]` on by default\n"
+"\n"
+"warning: could not parse code block as Rust code\n"
+"  --> lint.rs:8:5\n"
+"   |\n"
+"8  |   /// ```rust\n"
+"   |  _____^\n"
+"9  | | /// '<\n"
+"10 | | /// ```\n"
+"   | |_______^\n"
+"   |\n"
+"   = note: error from rustc: unterminated character literal\n"
+"````"
+msgstr ""
+
+#: src/lints.md:345
+msgid "`bare_urls`"
+msgstr ""
+
+#: src/lints.md:347
+msgid ""
+"This lint is **warn-by-default**. It detects URLs which are not links. For "
+"example:"
+msgstr ""
+
+#: src/lints.md:352
+msgid ""
+"/// http://example.org\n"
+"/// [http://example.net]\n"
+msgstr ""
+
+#: src/lints.md:360
+msgid ""
+"```text\n"
+"warning: this URL is not a hyperlink\n"
+" --> links.rs:1:5\n"
+"  |\n"
+"1 | /// http://example.org\n"
+"  |     ^^^^^^^^^^^^^^^^^^ help: use an automatic link instead: `<http://"
+"example.org>`\n"
+"  |\n"
+"  = note: `#[warn(rustdoc::bare_urls)]` on by default\n"
+"\n"
+"warning: this URL is not a hyperlink\n"
+" --> links.rs:3:6\n"
+"  |\n"
+"3 | /// [http://example.net]\n"
+"  |      ^^^^^^^^^^^^^^^^^^ help: use an automatic link instead: `<http://"
+"example.net>`\n"
+"\n"
+"warning: 2 warnings emitted\n"
+"```"
+msgstr ""
+
+#: src/lints.md:378
+msgid "`unescaped_backticks`"
+msgstr ""
+
+#: src/lints.md:380
+msgid ""
+"This lint is **allowed by default**. It detects backticks (\\`) that are not "
+"escaped. This usually means broken inline code. For example:"
+msgstr ""
+
+#: src/lints.md:385
+msgid "/// `add(a, b) is the same as `add(b, a)`.\n"
+msgstr ""
+
+#: src/lints.md:392
+msgid ""
+"```text\n"
+"warning: unescaped backtick\n"
+" --> src/lib.rs:3:41\n"
+"  |\n"
+"3 | /// `add(a, b) is the same as `add(b, a)`.\n"
+"  |                                         ^\n"
+"  |\n"
+"note: the lint level is defined here\n"
+" --> src/lib.rs:1:9\n"
+"  |\n"
+"1 | #![warn(rustdoc::unescaped_backticks)]\n"
+"  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+"help: a previous inline code might be longer than expected\n"
+"  |\n"
+"3 | /// `add(a, b)` is the same as `add(b, a)`.\n"
+"  |               +\n"
+"help: if you meant to use a literal backtick, escape it\n"
+"  |\n"
+"3 | /// `add(a, b) is the same as `add(b, a)\\`.\n"
+"  |                                         +\n"
+"\n"
+"warning: 1 warning emitted\n"
+"```"
+msgstr ""
+
+#: src/lints.md:416
+msgid "`redundant_explicit_links`"
+msgstr ""
+
+#: src/lints.md:418
+msgid ""
+"This lint is **warn-by-default**. It detects explicit links that are the "
+"same as computed automatic links. This usually means the explicit links are "
+"removable. For example:"
+msgstr ""
+
+#: src/lints.md:424
+msgid ""
+"/// add takes 2 [`usize`](usize) and performs addition\n"
+"/// on them, then returns result.\n"
+msgstr ""
+
+#: src/lints.md:434
+msgid ""
+"```text\n"
+"error: redundant explicit rustdoc link\n"
+"  --> src/lib.rs:3:27\n"
+"   |\n"
+"3  | /// add takes 2 [`usize`](usize) and performs addition\n"
+"   |                           ^^^^^\n"
+"   |\n"
+"   = note: Explicit link does not affect the original link\n"
+"note: the lint level is defined here\n"
+"  --> src/lib.rs:1:9\n"
+"   |\n"
+"1  | #![deny(rustdoc::redundant_explicit_links)]\n"
+"   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+"   = help: Remove explicit link instead\n"
+"```"
+msgstr ""
