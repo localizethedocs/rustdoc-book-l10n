@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/write-documentation/documentation-tests.md:1
 msgid "Documentation tests"
-msgstr ""
+msgstr "文件測試"
 
 #: src/write-documentation/documentation-tests.md:3
 msgid ""
@@ -186,15 +186,15 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:119
 msgid "First, we set `x` to five:"
-msgstr ""
+msgstr "首先，我們將 `x` 設定為 5："
 
 #: src/write-documentation/documentation-tests.md:127
 msgid "Next, we set `y` to six:"
-msgstr ""
+msgstr "接著，我們將 `y` 設定為 6："
 
 #: src/write-documentation/documentation-tests.md:135
 msgid "Finally, we print the sum of `x` and `y`:"
-msgstr ""
+msgstr "最後，我們印出 `x` 與 `y` 的總和："
 
 #: src/write-documentation/documentation-tests.md:143
 msgid ""
@@ -235,6 +235,10 @@ msgid ""
 "/// ## bar # baz\";\n"
 "```"
 msgstr ""
+"```text\n"
+"/// let s = \"foo\n"
+"/// ## bar # baz\";\n"
+"```"
 
 #: src/write-documentation/documentation-tests.md:194
 msgid ""
@@ -322,6 +326,14 @@ msgid ""
 "/// # }\n"
 "/// ```\n"
 msgstr ""
+"/// ```\n"
+"/// use std::io;\n"
+"/// # fn main() -> io::Result<()> {\n"
+"/// let mut input = String::new();\n"
+"/// io::stdin().read_line(&mut input)?;\n"
+"/// # Ok(())\n"
+"/// # }\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:260
 msgid ""
@@ -338,6 +350,12 @@ msgid ""
 "/// # Ok::<(), io::Error>(())\n"
 "/// ```\n"
 msgstr ""
+"/// ```\n"
+"/// use std::io;\n"
+"/// let mut input = String::new();\n"
+"/// io::stdin().read_line(&mut input)?;\n"
+"/// # Ok::<(), io::Error>(())\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:273
 msgid ""
@@ -350,7 +368,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:278
 msgid "Showing warnings in doctests"
-msgstr ""
+msgstr "在文件測試中顯示警告"
 
 #: src/write-documentation/documentation-tests.md:280
 msgid ""
@@ -365,7 +383,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:288
 msgid "Documenting macros"
-msgstr ""
+msgstr "記載巨集"
 
 #: src/write-documentation/documentation-tests.md:290
 msgid "Here’s an example of documenting a macro:"
@@ -424,6 +442,9 @@ msgid ""
 "/// fn foo() {\n"
 "/// ```\n"
 msgstr ""
+"/// ```ignore\n"
+"/// fn foo() {\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:339
 msgid ""
@@ -437,6 +458,9 @@ msgid ""
 "/// assert!(false);\n"
 "/// ```\n"
 msgstr ""
+"/// ```should_panic\n"
+"/// assert!(false);\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:349
 msgid ""
@@ -455,6 +479,11 @@ msgid ""
 "/// }\n"
 "/// ```\n"
 msgstr ""
+"/// ```no_run\n"
+"/// loop {\n"
+"///     println!(\"Hello, world\");\n"
+"/// }\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:364
 msgid ""
@@ -471,6 +500,10 @@ msgid ""
 "/// x += 2; // shouldn't compile!\n"
 "/// ```\n"
 msgstr ""
+"/// ```compile_fail\n"
+"/// let x = 5;\n"
+"/// x += 2; // shouldn't compile!\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:377
 msgid ""
@@ -491,6 +524,15 @@ msgid ""
 "/// };\n"
 "/// ```\n"
 msgstr ""
+"/// Only runs on the 2018 edition.\n"
+"///\n"
+"/// ```edition2018\n"
+"/// let result: Result<i32, ParseIntError> = try {\n"
+"///     \"1\".parse::<i32>()?\n"
+"///         + \"2\".parse::<i32>()?\n"
+"///         + \"3\".parse::<i32>()?\n"
+"/// };\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:393
 msgid ""
@@ -511,7 +553,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:408
 msgid "Rust core library:"
-msgstr ""
+msgstr "Rust 核心程式庫："
 
 #: src/write-documentation/documentation-tests.md:416
 msgid ""
@@ -530,6 +572,10 @@ msgid ""
 "//! assert_eq!(location.line(), 4);\n"
 "//! ```\n"
 msgstr ""
+"//! ```\n"
+"//! let location = std::panic::Location::caller();\n"
+"//! assert_eq!(location.line(), 4);\n"
+"//! ```\n"
 
 #: src/write-documentation/documentation-tests.md:428
 msgid ""
@@ -551,6 +597,10 @@ msgid ""
 "//! assert_eq!(location.line(), 4);\n"
 "//! ```\n"
 msgstr ""
+"//! ```standalone_crate\n"
+"//! let location = std::panic::Location::caller();\n"
+"//! assert_eq!(location.line(), 4);\n"
+"//! ```\n"
 
 #: src/write-documentation/documentation-tests.md:441
 msgid ""
@@ -560,7 +610,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:444
 msgid "Ignoring targets"
-msgstr ""
+msgstr "忽略目標"
 
 #: src/write-documentation/documentation-tests.md:446
 msgid ""
@@ -575,6 +625,9 @@ msgid ""
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
+"/// ```ignore-x86_64\n"
+"/// assert!(2 == 2);\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:457
 msgid ""
@@ -592,6 +645,9 @@ msgid ""
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
+"/// ```ignore-x86_64,ignore-windows\n"
+"/// assert!(2 == 2);\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:468
 msgid ""
@@ -605,6 +661,9 @@ msgid ""
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
+"/// ```ignore,ignore-x86_64\n"
+"/// assert!(2 == 2);\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:478
 msgid ""
@@ -622,6 +681,9 @@ msgid ""
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
+"/// ```custom,{class=language-c}\n"
+"/// int main(void) { return 0; }\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:490
 msgid ""
@@ -650,6 +712,9 @@ msgid ""
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
+"/// ```custom,{.language-c}\n"
+"/// int main(void) { return 0; }\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:507
 msgid ""
@@ -668,10 +733,13 @@ msgid ""
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
+"/// ```\"not rust\" {.\"hello everyone\"}\n"
+"/// int main(void) { return 0; }\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:519
 msgid "Syntax reference"
-msgstr ""
+msgstr "語法參考"
 
 #: src/write-documentation/documentation-tests.md:521
 msgid ""
@@ -740,6 +808,9 @@ msgid ""
 "/// let x = my_crate::MyStruct(-5);\n"
 "/// ```\n"
 msgstr ""
+"/// ```compile_fail\n"
+"/// let x = my_crate::MyStruct(-5);\n"
+"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:569
 msgid ""
@@ -760,7 +831,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:579
 msgid "\"../README.md\""
-msgstr ""
+msgstr "\"../README.md\""
 
 #: src/write-documentation/documentation-tests.md:584
 msgid ""
