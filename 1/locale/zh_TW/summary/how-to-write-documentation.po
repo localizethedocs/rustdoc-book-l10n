@@ -1,0 +1,424 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:48:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/how-to-write-documentation.md:1
+msgid "How to write documentation"
+msgstr ""
+
+#: src/how-to-write-documentation.md:3
+msgid ""
+"Good documentation is not natural.  There are opposing goals that make "
+"writing good documentation difficult.  It requires expertise in the subject "
+"but also writing to a novice perspective.  Documentation therefore often "
+"glazes over implementation detail, or leaves readers with unanswered "
+"questions."
+msgstr ""
+
+#: src/how-to-write-documentation.md:8
+msgid ""
+"There are a few tenets to Rust documentation that can help guide anyone "
+"through the process of documenting libraries so that everyone has an ample "
+"opportunity to use the code."
+msgstr ""
+
+#: src/how-to-write-documentation.md:12
+msgid ""
+"This chapter covers not only how to write documentation but specifically how "
+"to write **good** documentation.  It is important to be as clear as you can, "
+"and as complete as possible.  As a rule of thumb: the more documentation you "
+"write for your crate the better.  If an item is public then it should be "
+"documented."
+msgstr ""
+
+#: src/how-to-write-documentation.md:18
+msgid "Getting Started"
+msgstr ""
+
+#: src/how-to-write-documentation.md:20
+msgid ""
+"Documenting a crate should begin with front-page documentation.  As an "
+"example, the [`hashbrown`](https://docs.rs/hashbrown/0.8.2/hashbrown/) crate "
+"level documentation summarizes the role of the crate, provides links to "
+"explain technical details, and explains why you would want to use the crate."
+msgstr ""
+
+#: src/how-to-write-documentation.md:25
+msgid ""
+"After introducing the crate, it is important that the front-page gives an "
+"example of how to use the crate in a real world setting.  Stick to the "
+"library's role in the example, but do so without shortcuts to benefit users "
+"who may copy and paste the example to get started."
+msgstr ""
+
+#: src/how-to-write-documentation.md:30
+msgid ""
+"[`futures`](https://docs.rs/futures/0.3.5/futures/) uses inline comments to "
+"explain line by line the complexities of using a [`Future`](https://doc.rust-"
+"lang.org/std/future/trait.Future.html), because a person's first exposure to "
+"rust's [`Future`](https://doc.rust-lang.org/std/future/trait.Future.html) "
+"may be this example."
+msgstr ""
+
+#: src/how-to-write-documentation.md:34
+msgid ""
+"The [`backtrace`](https://docs.rs/backtrace/0.3.50/backtrace/) documentation "
+"walks through the whole process, explaining changes made to the `Cargo.toml` "
+"file, passing command line arguments to the compiler, and shows a quick "
+"example of backtrace in the wild."
+msgstr ""
+
+#: src/how-to-write-documentation.md:38
+msgid ""
+"Finally, the front-page can eventually become a comprehensive reference how "
+"to use a crate, like [`regex`](https://docs.rs/regex/1.3.9/regex/).  In this "
+"front page, all requirements are outlined, the edge cases shown, and "
+"practical examples provided.  The front page goes on to show how to use "
+"regular expressions then concludes with crate features."
+msgstr ""
+
+#: src/how-to-write-documentation.md:44
+msgid ""
+"Don't worry about comparing your crate, which is just beginning, to other "
+"more developed crates.  To get the documentation to something more polished, "
+"start incrementally and put in an introduction, example, and features.  Rome "
+"was not built in a day!"
+msgstr ""
+
+#: src/how-to-write-documentation.md:49
+msgid ""
+"The first lines within the `lib.rs` will compose the front-page, and they "
+"use a different convention than the rest of the rustdocs.  Lines should "
+"start with `//!` which indicate module-level or crate-level documentation. "
+"Here's a quick example of the difference:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:55
+msgid ""
+"//! Fast and easy queue abstraction.\n"
+"//!\n"
+"//! Provides an abstraction over a queue.  When the abstraction is used\n"
+"//! there are these advantages:\n"
+"//! - Fast\n"
+"//! - [`Easy`]\n"
+"//!\n"
+"//! [`Easy`]: http://thatwaseasy.example.com\n"
+msgstr ""
+
+#: src/how-to-write-documentation.md:63
+msgid "/// This module makes it easy.\n"
+msgstr ""
+
+#: src/how-to-write-documentation.md:67
+msgid "/// Use the abstraction function to do this specific thing.\n"
+msgstr ""
+
+#: src/how-to-write-documentation.md:73
+msgid ""
+"Ideally, this first line of documentation is a sentence without highly "
+"technical details, but with a good description of where this crate fits "
+"within the rust ecosystem.  Users should know whether this crate meets their "
+"use case after reading this line."
+msgstr ""
+
+#: src/how-to-write-documentation.md:78
+msgid "Documenting components"
+msgstr ""
+
+#: src/how-to-write-documentation.md:80
+msgid ""
+"Whether it is modules, structs, functions, or macros: the public API of all "
+"code should have documentation. Rarely does anyone complain about too much "
+"documentation!"
+msgstr ""
+
+#: src/how-to-write-documentation.md:84
+msgid ""
+"It is recommended that each item's documentation follows this basic "
+"structure:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:96
+msgid ""
+"This basic structure should be straightforward to follow when writing your "
+"documentation; while you might think that a code example is trivial, the "
+"examples are really important because they can help users understand what an "
+"item is, how it is used, and for what purpose it exists."
+msgstr ""
+
+#: src/how-to-write-documentation.md:101
+msgid ""
+"Let's see an example coming from the [standard library](https://doc.rust-"
+"lang.org/stable/std/index.html) by taking a look at the [`std::env::args()`]"
+"(https://doc.rust-lang.org/stable/std/env/fn.args.html) function:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:136
+msgid ""
+"Everything before the first empty line will be reused to describe the "
+"component in searches and module overviews.  For example, the function `std::"
+"env::args()` above will be shown on the [`std::env`](https://doc.rust-lang."
+"org/stable/std/env/index.html#functions) module documentation. It is good "
+"practice to keep the summary to one line: concise writing is a goal of good "
+"documentation."
+msgstr ""
+
+#: src/how-to-write-documentation.md:142
+msgid ""
+"Because the type system does a good job of defining what types a function "
+"passes and returns, there is no benefit of explicitly writing it into the "
+"documentation, especially since `rustdoc` adds hyper links to all types in "
+"the function signature."
+msgstr ""
+
+#: src/how-to-write-documentation.md:146
+msgid ""
+"In the example above, a 'Panics' section explains when the code might "
+"abruptly exit, which can help the reader prevent reaching a panic.  A panic "
+"section is recommended every time edge cases in your code can be reached if "
+"known."
+msgstr ""
+
+#: src/how-to-write-documentation.md:150
+msgid ""
+"As you can see, it follows the structure detailed above: it starts with a "
+"short sentence explaining what the functions does, then it provides more "
+"information and finally provides a code example."
+msgstr ""
+
+#: src/how-to-write-documentation.md:154
+msgid "Markdown"
+msgstr ""
+
+#: src/how-to-write-documentation.md:156
+msgid ""
+"`rustdoc` uses the [CommonMark Markdown specification](https://commonmark."
+"org/). You might be interested in taking a look at their website to see "
+"what's possible:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:159
+msgid "[CommonMark quick reference](https://commonmark.org/help/)"
+msgstr ""
+
+#: src/how-to-write-documentation.md:160
+msgid "[current spec](https://spec.commonmark.org/current/)"
+msgstr ""
+
+#: src/how-to-write-documentation.md:162
+msgid ""
+"In addition to the standard CommonMark syntax, `rustdoc` supports several "
+"extensions:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:165
+msgid "Strikethrough"
+msgstr ""
+
+#: src/how-to-write-documentation.md:167
+msgid ""
+"Text may be rendered with a horizontal line through the center by wrapping "
+"the text with one or two tilde characters on each side:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:174 src/how-to-write-documentation.md:195
+msgid "This example will render as:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:176
+msgid ""
+"An example of ~~strikethrough text~~. You can also use ~~single tildes~~."
+msgstr ""
+
+#: src/how-to-write-documentation.md:178
+msgid ""
+"This follows the [GitHub Strikethrough extension](https://github.github.com/"
+"gfm/#strikethrough-extension-)."
+msgstr ""
+
+#: src/how-to-write-documentation.md:180
+msgid "Footnotes"
+msgstr ""
+
+#: src/how-to-write-documentation.md:182
+msgid ""
+"A footnote generates a small numbered link in the text which when clicked "
+"takes the reader to the footnote text at the bottom of the item. The "
+"footnote label is written similarly to a link reference with a caret at the "
+"front. The footnote text is written like a link reference definition, with "
+"the text following the label. Example:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:197
+msgid "This is an example of a footnote[^note]."
+msgstr ""
+
+#: src/how-to-write-documentation.md:199
+msgid ""
+"This text is the contents of the footnote, which will be rendered towards "
+"the bottom."
+msgstr ""
+
+#: src/how-to-write-documentation.md:202
+msgid ""
+"The footnotes are automatically numbered based on the order the footnotes "
+"are written."
+msgstr ""
+
+#: src/how-to-write-documentation.md:205
+msgid "Tables"
+msgstr ""
+
+#: src/how-to-write-documentation.md:207
+msgid ""
+"Tables can be written using pipes and dashes to draw the rows and columns of "
+"the table. These will be translated to HTML table matching the shape. "
+"Example:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:216
+msgid "This example will render similarly to this:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:218
+msgid "Header1"
+msgstr ""
+
+#: src/how-to-write-documentation.md:218
+msgid "Header2"
+msgstr ""
+
+#: src/how-to-write-documentation.md:220
+msgid "abc"
+msgstr ""
+
+#: src/how-to-write-documentation.md:220
+msgid "def"
+msgstr ""
+
+#: src/how-to-write-documentation.md:222
+msgid ""
+"See the specification for the [GitHub Tables extension](https://github."
+"github.com/gfm/#tables-extension-) for more details on the exact syntax "
+"supported."
+msgstr ""
+
+#: src/how-to-write-documentation.md:225
+msgid "Task lists"
+msgstr ""
+
+#: src/how-to-write-documentation.md:227
+msgid ""
+"Task lists can be used as a checklist of items that have been completed. "
+"Example:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:235
+msgid "This will render as:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:237
+msgid "Complete task"
+msgstr ""
+
+#: src/how-to-write-documentation.md:238
+msgid "Incomplete task"
+msgstr ""
+
+#: src/how-to-write-documentation.md:240
+msgid ""
+"See the specification for the [task list extension](https://github.github."
+"com/gfm/#task-list-items-extension-) for more details."
+msgstr ""
+
+#: src/how-to-write-documentation.md:242
+msgid "Smart punctuation"
+msgstr ""
+
+#: src/how-to-write-documentation.md:244
+msgid ""
+"Some ASCII punctuation sequences will be automatically turned into fancy "
+"Unicode characters:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:247
+msgid "ASCII sequence"
+msgstr ""
+
+#: src/how-to-write-documentation.md:247
+msgid "Unicode"
+msgstr ""
+
+#: src/how-to-write-documentation.md:249
+msgid "`--`"
+msgstr ""
+
+#: src/how-to-write-documentation.md:249
+msgid "–"
+msgstr ""
+
+#: src/how-to-write-documentation.md:250
+msgid "`---`"
+msgstr ""
+
+#: src/how-to-write-documentation.md:250
+msgid "—"
+msgstr ""
+
+#: src/how-to-write-documentation.md:251
+msgid "`...`"
+msgstr ""
+
+#: src/how-to-write-documentation.md:251
+msgid "…"
+msgstr ""
+
+#: src/how-to-write-documentation.md:252
+msgid "`\"`"
+msgstr ""
+
+#: src/how-to-write-documentation.md:252
+msgid "“ or ”, depending on context"
+msgstr ""
+
+#: src/how-to-write-documentation.md:253
+msgid "`'`"
+msgstr ""
+
+#: src/how-to-write-documentation.md:253
+msgid "‘ or ’, depending on context"
+msgstr ""
+
+#: src/how-to-write-documentation.md:255
+msgid "So, no need to manually enter those Unicode characters!"
+msgstr ""
+
+#: src/how-to-write-documentation.md:257
+msgid "Adding a warning block"
+msgstr ""
+
+#: src/how-to-write-documentation.md:259
+msgid ""
+"If you want to make a warning or similar note stand out in the "
+"documentation, you can wrap it like this:"
+msgstr ""
+
+#: src/how-to-write-documentation.md:265 src/how-to-write-documentation.md:277
+msgid "\"warning\""
+msgstr ""
+
+#: src/how-to-write-documentation.md:270
+msgid ""
+"Please note that if you want to put markdown in the HTML tag and for it to "
+"be interpreted as such, you need to have an empty line between the HTML tags "
+"and your markdown content. For example if you want to use a link:"
+msgstr ""
