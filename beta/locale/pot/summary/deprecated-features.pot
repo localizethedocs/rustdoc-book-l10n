@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:53Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/deprecated-features.md:1
+msgid "Deprecated features"
+msgstr ""
+
+#: src/deprecated-features.md:3
+msgid "Passes"
+msgstr ""
+
+#: src/deprecated-features.md:5
+msgid ""
+"Rustdoc has a concept called \"passes\". These are transformations that "
+"`rustdoc` runs on your documentation before producing its final output."
+msgstr ""
+
+#: src/deprecated-features.md:8
+msgid ""
+"Customizing passes is **deprecated**. The available passes are not "
+"considered stable and may change in any release."
+msgstr ""
+
+#: src/deprecated-features.md:11
+msgid ""
+"In the past the most common use case for customizing passes was to omit the "
+"`strip-private` pass. You can do this more easily, and without risk of the "
+"pass being changed, by passing [`--document-private-items`](command-line-"
+"arguments.md#--document-private-items-show-items-that-are-not-public)."
+msgstr ""
