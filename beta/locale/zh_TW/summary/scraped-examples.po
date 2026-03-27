@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:53Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/scraped-examples.md:1
+msgid "Scraped examples"
+msgstr ""
+
+#: src/scraped-examples.md:3
+msgid ""
+"Rustdoc has an unstable feature where it can automatically scrape examples "
+"of items being documented from the `examples/` directory of a Cargo "
+"workspace. These examples will be included within the generated "
+"documentation for that item. For example, if your library contains a public "
+"function:"
+msgstr ""
+
+#: src/scraped-examples.md:6
+msgid "// a_crate/src/lib.rs\n"
+msgstr ""
+
+#: src/scraped-examples.md:10
+msgid "And you have an example calling this function:"
+msgstr ""
+
+#: src/scraped-examples.md:13
+msgid "// a_crate/examples/ex.rs\n"
+msgstr ""
+
+#: src/scraped-examples.md:19
+msgid ""
+"Then this code snippet will be included in the documentation for `a_func`. "
+"This documentation is inserted by Rustdoc and cannot be manually edited by "
+"the crate author."
+msgstr ""
+
+#: src/scraped-examples.md:22
+msgid "How to use this feature"
+msgstr ""
+
+#: src/scraped-examples.md:24
+msgid ""
+"This feature is unstable, so you can enable it by calling Rustdoc with the "
+"unstable `rustdoc-scrape-examples` flag:"
+msgstr ""
+
+#: src/scraped-examples.md:30
+msgid ""
+"To enable this feature on [docs.rs](https://docs.rs), add this to your Cargo."
+"toml:"
+msgstr ""
+
+#: src/scraped-examples.md:32
+msgid ""
+"```toml\n"
+"[package.metadata.docs.rs]\n"
+"cargo-args = [\"-Zunstable-options\", \"-Zrustdoc-scrape-examples\"]\n"
+"```"
+msgstr ""
+
+#: src/scraped-examples.md:38
+msgid "How it works"
+msgstr ""
+
+#: src/scraped-examples.md:40
+msgid ""
+"When you run `cargo doc`, Rustdoc will analyze all the crates that match "
+"Cargo's `--examples` filter for instances of items being documented. Then "
+"Rustdoc will include the source code of these instances in the generated "
+"documentation."
+msgstr ""
+
+#: src/scraped-examples.md:42
+msgid ""
+"Rustdoc has a few techniques to ensure these examples don't overwhelm "
+"documentation readers, and that it doesn't blow up the page size:"
+msgstr ""
+
+#: src/scraped-examples.md:44
+msgid ""
+"For a given item, a maximum of 5 examples are included in the page. The "
+"remaining examples are just links to source code."
+msgstr ""
+
+#: src/scraped-examples.md:45
+msgid ""
+"Only one example is shown by default, and the remaining examples are hidden "
+"behind a toggle."
+msgstr ""
+
+#: src/scraped-examples.md:46
+msgid ""
+"For a given file that contains examples, only the item containing the "
+"examples will be included in the generated documentation."
+msgstr ""
+
+#: src/scraped-examples.md:48
+msgid ""
+"For a given item, Rustdoc sorts its examples based on the size of the "
+"example — smaller ones are shown first."
+msgstr ""
+
+#: src/scraped-examples.md:51
+msgid "FAQ"
+msgstr ""
+
+#: src/scraped-examples.md:53
+msgid "My example is not showing up in the documentation"
+msgstr ""
+
+#: src/scraped-examples.md:55
+msgid ""
+"This feature uses Cargo's convention for finding examples. You should ensure "
+"that `cargo check --examples` includes your example file."
+msgstr ""

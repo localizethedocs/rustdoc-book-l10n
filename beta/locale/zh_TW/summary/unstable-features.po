@@ -1,0 +1,1677 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:53Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/unstable-features.md:1
+msgid "Unstable features"
+msgstr ""
+
+#: src/unstable-features.md:3
+msgid ""
+"Rustdoc is under active development, and like the Rust compiler, some "
+"features are only available on nightly releases. Some of these features are "
+"new and need some more testing before they're able to be released to the "
+"world at large, and some of them are tied to features in the Rust compiler "
+"that are unstable. Several features here require a matching `#!"
+"[feature(...)]` attribute to enable, and thus are more fully documented in "
+"the [Unstable Book](../unstable-book/index.html). Those sections will link "
+"over there as necessary."
+msgstr ""
+
+#: src/unstable-features.md:11
+msgid "Nightly-gated functionality"
+msgstr ""
+
+#: src/unstable-features.md:13
+msgid ""
+"These features just require a nightly build to operate. Unlike the other "
+"features on this page, these don't need to be \"turned on\" with a command-"
+"line flag or a `#![feature(...)]` attribute in your crate. This can give "
+"them some subtle fallback modes when used on a stable release, so be careful!"
+msgstr ""
+
+#: src/unstable-features.md:18
+msgid "Error numbers for `compile-fail` doctests"
+msgstr ""
+
+#: src/unstable-features.md:20
+msgid ""
+"As detailed in [the chapter on documentation tests](write-documentation/"
+"documentation-tests.html#attributes), you can add a `compile_fail` attribute "
+"to a doctest to state that the test should fail to compile. However, on "
+"nightly, you can optionally add an error number to state that a doctest "
+"should emit a specific error number:"
+msgstr ""
+
+#: src/unstable-features.md:33
+msgid ""
+"This is used by the error index to ensure that the samples that correspond "
+"to a given error number properly emit that error code. However, these error "
+"codes aren't guaranteed to be the only thing that a piece of code emits from "
+"version to version, so this is unlikely to be stabilized in the future."
+msgstr ""
+
+#: src/unstable-features.md:38
+msgid ""
+"Attempting to use these error numbers on stable will result in the code "
+"sample being interpreted as plain text."
+msgstr ""
+
+#: src/unstable-features.md:41
+msgid "`missing_doc_code_examples` lint"
+msgstr ""
+
+#: src/unstable-features.md:43
+msgid ""
+"This lint will emit a warning if an item doesn't have a code example in its "
+"documentation. It can be enabled using:"
+msgstr ""
+
+#: src/unstable-features.md:50
+msgid ""
+"It is not emitted for items that cannot be instantiated/called such as "
+"fields, variants, modules, associated trait/impl items, impl blocks, statics "
+"and constants. It is also not emitted for foreign items, aliases, extern "
+"crates and imports."
+msgstr ""
+
+#: src/unstable-features.md:54
+msgid "Extensions to the `#[doc]` attribute"
+msgstr ""
+
+#: src/unstable-features.md:56
+msgid ""
+"These features operate by extending the `#[doc]` attribute, and thus can be "
+"caught by the compiler and enabled with a `#![feature(...)]` attribute in "
+"your crate."
+msgstr ""
+
+#: src/unstable-features.md:59
+msgid "Adding your trait to the \"Notable traits\" dialog"
+msgstr ""
+
+#: src/unstable-features.md:61
+msgid ""
+"Tracking issue: [\\#45040](https://github.com/rust-lang/rust/issues/45040)"
+msgstr ""
+
+#: src/unstable-features.md:63
+msgid ""
+"Rustdoc keeps a list of a few traits that are believed to be \"fundamental\" "
+"to types that implement them. These traits are intended to be the primary "
+"interface for their implementers, and are often most of the API available to "
+"be documented on their types. For this reason, Rustdoc will track when a "
+"given type implements one of these traits and call special attention to it "
+"when a function returns one of these types. This is the \"Notable traits\" "
+"dialog, accessible as a circled `i` button next to the function, which, when "
+"clicked, shows the dialog."
+msgstr ""
+
+#: src/unstable-features.md:71
+msgid ""
+"In the standard library, some of the traits that are part of this list are "
+"`Iterator`, `Future`, `io::Read`, and `io::Write`. However, rather than "
+"being implemented as a hard-coded list, these traits have a special marker "
+"attribute on them: `#[doc(notable_trait)]`. This means that you can apply "
+"this attribute to your own trait to include it in the \"Notable traits\" "
+"dialog in documentation."
+msgstr ""
+
+#: src/unstable-features.md:77
+msgid ""
+"The `#[doc(notable_trait)]` attribute currently requires the `#!"
+"[feature(doc_notable_trait)]` feature gate. For more information, see [its "
+"chapter in the Unstable Book](../unstable-book/language-features/doc-notable-"
+"trait.html) and [its tracking issue](https://github.com/rust-lang/rust/"
+"issues/45040)."
+msgstr ""
+
+#: src/unstable-features.md:84
+msgid "Exclude certain dependencies from documentation"
+msgstr ""
+
+#: src/unstable-features.md:86 src/unstable-features.md:252
+msgid ""
+"Tracking issue: [\\#44027](https://github.com/rust-lang/rust/issues/44027)"
+msgstr ""
+
+#: src/unstable-features.md:88
+msgid ""
+"The standard library uses several dependencies which, in turn, use several "
+"types and traits from the standard library. In addition, there are several "
+"compiler-internal crates that are not considered to be part of the official "
+"standard library, and thus would be a distraction to include in "
+"documentation. It's not enough to exclude their crate documentation, since "
+"information about trait implementations appears on the pages for both the "
+"type and the trait, which can be in different crates!"
+msgstr ""
+
+#: src/unstable-features.md:95
+msgid ""
+"To prevent internal types from being included in documentation, the standard "
+"library adds an attribute to their `extern crate` declarations: "
+"`#[doc(masked)]`. This causes Rustdoc to \"mask out\" types from these "
+"crates when building lists of trait implementations."
+msgstr ""
+
+#: src/unstable-features.md:99
+msgid ""
+"The `#[doc(masked)]` attribute is intended to be used internally, and "
+"requires the `#![feature(doc_masked)]` feature gate.  For more information, "
+"see [its chapter in the Unstable Book](../unstable-book/language-features/"
+"doc-masked.html) and [its tracking issue](https://github.com/rust-lang/rust/"
+"issues/44027)."
+msgstr ""
+
+#: src/unstable-features.md:106
+msgid "Document primitives"
+msgstr ""
+
+#: src/unstable-features.md:108
+msgid "This is for Rust compiler internal use only."
+msgstr ""
+
+#: src/unstable-features.md:110
+msgid ""
+"Since primitive types are defined in the compiler, there's no place to "
+"attach documentation attributes. The `#[rustc_doc_primitive = \"...\"]` "
+"attribute is used by the standard library to provide a way to generate "
+"documentation for primitive types, and requires `#![feature(rustc_attrs)]` "
+"to enable."
+msgstr ""
+
+#: src/unstable-features.md:115
+msgid "Document keywords"
+msgstr ""
+
+#: src/unstable-features.md:117 src/unstable-features.md:134
+msgid "This is for internal use in the std library."
+msgstr ""
+
+#: src/unstable-features.md:119
+msgid ""
+"Rust keywords are documented in the standard library (look for `match` for "
+"example)."
+msgstr ""
+
+#: src/unstable-features.md:121
+msgid "To do so, the `#[doc(keyword = \"...\")]` attribute is used. Example:"
+msgstr ""
+
+#: src/unstable-features.md:126
+msgid "/// Some documentation about the keyword.\n"
+msgstr ""
+
+#: src/unstable-features.md:128
+msgid "\"break\""
+msgstr ""
+
+#: src/unstable-features.md:132
+msgid "Document builtin attributes"
+msgstr ""
+
+#: src/unstable-features.md:136
+msgid ""
+"Rust builtin attributes are documented in the standard library (look for "
+"`repr` for example)."
+msgstr ""
+
+#: src/unstable-features.md:138
+msgid "To do so, the `#[doc(attribute = \"...\")]` attribute is used. Example:"
+msgstr ""
+
+#: src/unstable-features.md:143
+msgid "/// Some documentation about the attribute.\n"
+msgstr ""
+
+#: src/unstable-features.md:145
+msgid "\"repr\""
+msgstr ""
+
+#: src/unstable-features.md:149
+msgid "Use the Rust logo as the crate logo"
+msgstr ""
+
+#: src/unstable-features.md:151
+msgid "This is for official Rust project use only."
+msgstr ""
+
+#: src/unstable-features.md:153
+msgid ""
+"Internal Rustdoc pages like settings.html and scrape-examples-help.html show "
+"the Rust logo. This logo is tracked as a static resource. The attribute `#!"
+"[doc(rust_logo)]` makes this same built-in resource act as the main logo."
+msgstr ""
+
+#: src/unstable-features.md:160
+msgid "//! This crate has the Rust(tm) branding on it.\n"
+msgstr ""
+
+#: src/unstable-features.md:164
+msgid "Effects of other nightly features"
+msgstr ""
+
+#: src/unstable-features.md:166
+msgid ""
+"These nightly-only features are not primarily related to Rustdoc, but have "
+"convenient effects on the documentation produced."
+msgstr ""
+
+#: src/unstable-features.md:169
+msgid "`fundamental` types"
+msgstr ""
+
+#: src/unstable-features.md:171
+msgid ""
+"Annotating a type with `#[fundamental]` primarily influences coherence rules "
+"about generic types, i.e., they alter whether other crates can provide "
+"implementations for that type. The unstable book [links to further "
+"information](https://doc.rust-lang.org/unstable-book/language-features/"
+"fundamental.html)."
+msgstr ""
+
+#: src/unstable-features.md:177
+msgid ""
+"For documentation, this has an additional side effect: If a method is "
+"implemented on `F<T>` (or `F<&T>`), where `F` is a fundamental type, then "
+"the method is not only documented at the page about `F`, but also on the "
+"page about `T`. In a sense, it makes the type transparent to Rustdoc. This "
+"is especially convenient for types that work as annotated pointers, such as "
+"`Pin<&mut T>`, as it ensures that methods only implemented through those "
+"annotated pointers can still be found with the type they act on."
+msgstr ""
+
+#: src/unstable-features.md:188
+msgid ""
+"If the `fundamental` feature's effect on coherence is not intended, such a "
+"type can be marked as fundamental only for purposes of documentation by "
+"introducing a custom feature and limiting the use of `fundamental` to when "
+"documentation is built."
+msgstr ""
+
+#: src/unstable-features.md:193
+msgid "Unstable command-line arguments"
+msgstr ""
+
+#: src/unstable-features.md:195
+msgid ""
+"These features are enabled by passing a command-line flag to Rustdoc, but "
+"the flags in question are themselves marked as unstable. To use any of these "
+"options, pass `-Z unstable-options` as well as the flag in question to "
+"Rustdoc on the command-line. To do this from Cargo, you can either use the "
+"`RUSTDOCFLAGS` environment variable or the `cargo rustdoc` command."
+msgstr ""
+
+#: src/unstable-features.md:200
+msgid "`--merge`, `--parts-out-dir`, and `--include-parts-dir`"
+msgstr ""
+
+#: src/unstable-features.md:202
+msgid ""
+"These options control how rustdoc handles files that combine data from "
+"multiple crates."
+msgstr ""
+
+#: src/unstable-features.md:204
+msgid ""
+"By default, they act like `--merge=shared` is set, and `--parts-out-dir` and "
+"`--include-parts-dir` are turned off. The `--merge=shared` mode causes "
+"rustdoc to load the existing data in the out-dir, combine the new crate data "
+"into it, and write the result. This is very easy to use in scripts that "
+"manually invoke rustdoc, but it's also slow, because it performs O(crates) "
+"work on every crate, meaning it performs O(crates<sup>2</sup>) work."
+msgstr ""
+
+#: src/unstable-features.md:210
+msgid ""
+"```console\n"
+"$ rustdoc crate1.rs --out-dir=doc\n"
+"$ cat doc/search.index/crateNames/*\n"
+"rd_(\"fcrate1\")\n"
+"$ rustdoc crate2.rs --out-dir=doc\n"
+"$ cat doc/search.index/crateNames/*\n"
+"rd_(\"fcrate1fcrate2\")\n"
+"```"
+msgstr ""
+
+#: src/unstable-features.md:219
+msgid ""
+"To delay shared-data merging until the end of a build, so that you only have "
+"to perform O(crates) work, use `--merge=none` on every crate except the last "
+"one, which will use `--merge=finalize`."
+msgstr ""
+
+#: src/unstable-features.md:222
+msgid ""
+"```console\n"
+"$ rustdoc +nightly crate1.rs --merge=none --parts-out-dir=crate1.d -"
+"Zunstable-options\n"
+"$ cat doc/search.index/crateNames/*\n"
+"cat: 'doc/search.index/crateNames/*': No such file or directory\n"
+"$ rustdoc +nightly crate2.rs --merge=finalize --include-parts-dir=crate1.d -"
+"Zunstable-options\n"
+"$ cat doc/search.index/crateNames/*\n"
+"rd_(\"fcrate1fcrate2\")\n"
+"```"
+msgstr ""
+
+#: src/unstable-features.md:231
+msgid "`--document-hidden-items`: Show items that are `#[doc(hidden)]`"
+msgstr ""
+
+#: src/unstable-features.md:232
+msgid "<span id=\"document-hidden-items\"></span>"
+msgstr ""
+
+#: src/unstable-features.md:234
+msgid ""
+"By default, `rustdoc` does not document items that are annotated with "
+"[`#[doc(hidden)]`](write-documentation/the-doc-attribute.html#hidden)."
+msgstr ""
+
+#: src/unstable-features.md:237
+msgid ""
+"`--document-hidden-items` causes all items to be documented as if they did "
+"not have `#[doc(hidden)]`, except that hidden items will be shown with a 👻 "
+"icon."
+msgstr ""
+
+#: src/unstable-features.md:239
+msgid ""
+"Here is a table that fully describes which items are documented with each "
+"combination of `--document-hidden-items` and `--document-private-items`:"
+msgstr ""
+
+#: src/unstable-features.md:242
+msgid "rustdoc flags"
+msgstr ""
+
+#: src/unstable-features.md:242
+msgid "items that will be documented"
+msgstr ""
+
+#: src/unstable-features.md:244
+msgid "neither flag"
+msgstr ""
+
+#: src/unstable-features.md:244
+msgid "only public items that are not hidden"
+msgstr ""
+
+#: src/unstable-features.md:245
+msgid "only `--document-hidden-items`"
+msgstr ""
+
+#: src/unstable-features.md:245
+msgid "all public items"
+msgstr ""
+
+#: src/unstable-features.md:246
+msgid "only `--document-private-items`"
+msgstr ""
+
+#: src/unstable-features.md:246
+msgid "all items that are not hidden"
+msgstr ""
+
+#: src/unstable-features.md:247
+msgid "both flags"
+msgstr ""
+
+#: src/unstable-features.md:247
+msgid "all items"
+msgstr ""
+
+#: src/unstable-features.md:250
+msgid ""
+"`--markdown-before-content`: include rendered Markdown before the content"
+msgstr ""
+
+#: src/unstable-features.md:254 src/unstable-features.md:268
+#: src/unstable-features.md:282 src/unstable-features.md:305
+#: src/unstable-features.md:320 src/unstable-features.md:338
+#: src/unstable-features.md:351 src/unstable-features.md:372
+#: src/unstable-features.md:416 src/unstable-features.md:433
+#: src/unstable-features.md:447 src/unstable-features.md:660
+#: src/unstable-features.md:673
+msgid "Using this flag looks like this:"
+msgstr ""
+
+#: src/unstable-features.md:261
+msgid ""
+"Just like `--html-before-content`, this allows you to insert extra content "
+"inside the `<body>` tag but before the other content `rustdoc` would "
+"normally produce in the rendered documentation. However, instead of directly "
+"inserting the file verbatim, `rustdoc` will pass the files through a "
+"Markdown renderer before inserting the result into the file."
+msgstr ""
+
+#: src/unstable-features.md:266
+msgid "`--markdown-after-content`: include rendered Markdown after the content"
+msgstr ""
+
+#: src/unstable-features.md:275
+msgid ""
+"Just like `--html-after-content`, this allows you to insert extra content "
+"before the `</body>` tag but after the other content `rustdoc` would "
+"normally produce in the rendered documentation. However, instead of directly "
+"inserting the file verbatim, `rustdoc` will pass the files through a "
+"Markdown renderer before inserting the result into the file."
+msgstr ""
+
+#: src/unstable-features.md:280
+msgid "`--playground-url`: control the location of the playground"
+msgstr ""
+
+#: src/unstable-features.md:288
+msgid ""
+"When rendering a crate's docs, this flag gives the base URL of the Rust "
+"Playground, to use for generating `Run` buttons. Unlike `--markdown-"
+"playground-url`, this argument works for standalone Markdown files _and_ "
+"Rust crates. This works the same way as adding `#![doc(html_playground_url = "
+"\"url\")]` to your crate root, as mentioned in [the chapter about the "
+"`#[doc]` attribute](write-documentation/the-doc-attribute."
+"html#html_playground_url). Please be aware that the official Rust Playground "
+"at https://play.rust-lang.org does not have every crate available, so if "
+"your examples require your crate, make sure the playground you provide has "
+"your crate available."
+msgstr ""
+
+#: src/unstable-features.md:298
+msgid ""
+"If both `--playground-url` and `--markdown-playground-url` are present when "
+"rendering a standalone Markdown file, the URL given to `--markdown-"
+"playground-url` will take precedence. If both `--playground-url` and `#!"
+"[doc(html_playground_url = \"url\")]` are present when rendering crate docs, "
+"the attribute will take precedence."
+msgstr ""
+
+#: src/unstable-features.md:303
+msgid ""
+"`--sort-modules-by-appearance`: control how items on module pages are sorted"
+msgstr ""
+
+#: src/unstable-features.md:311
+msgid ""
+"Ordinarily, when `rustdoc` prints items in module pages, it will sort them "
+"alphabetically (taking some consideration for their stability, and names "
+"that end in a number). Giving this flag to `rustdoc` will disable this "
+"sorting and instead make it print the items in the order they appear in the "
+"source."
+msgstr ""
+
+#: src/unstable-features.md:316
+msgid ""
+"`--show-type-layout`: add a section to each type's docs describing its "
+"memory layout"
+msgstr ""
+
+#: src/unstable-features.md:318
+msgid ""
+"Tracking issue: [\\#113248](https://github.com/rust-lang/rust/issues/113248)"
+msgstr ""
+
+#: src/unstable-features.md:326
+msgid ""
+"When this flag is passed, rustdoc will add a \"Layout\" section at the "
+"bottom of each type's docs page that includes a summary of the type's memory "
+"layout as computed by rustc. For example, rustdoc will show the size in "
+"bytes that a value of that type will take in memory."
+msgstr ""
+
+#: src/unstable-features.md:331
+msgid ""
+"Note that most layout information is **completely unstable** and may even "
+"differ between compilations."
+msgstr ""
+
+#: src/unstable-features.md:334
+msgid "`--resource-suffix`: modifying the name of CSS/JavaScript in crate docs"
+msgstr ""
+
+#: src/unstable-features.md:336
+msgid ""
+"Tracking issue: [\\#54765](https://github.com/rust-lang/rust/issues/54765)"
+msgstr ""
+
+#: src/unstable-features.md:344
+msgid ""
+"When rendering docs, `rustdoc` creates several CSS and JavaScript files as "
+"part of the output. Since all these files are linked from every page, "
+"changing where they are can be cumbersome if you need to specially cache "
+"them. This flag will rename all these files in the output to include the "
+"suffix in the filename. For example, `light.css` would become `light-suf."
+"css` with the above command."
+msgstr ""
+
+#: src/unstable-features.md:349
+msgid "`--extern-html-root-url`: control how rustdoc links to non-local crates"
+msgstr ""
+
+#: src/unstable-features.md:357
+msgid ""
+"Ordinarily, when rustdoc wants to link to a type from a different crate, it "
+"looks in two places: docs that already exist in the output directory, or the "
+"`#![doc(doc_html_root)]` set in the other crate. However, if you want to "
+"link to docs that exist in neither of those places, you can use these flags "
+"to control that behavior. When the `--extern-html-root-url` flag is given "
+"with a name matching one of your dependencies, rustdoc use that URL for "
+"those docs. Keep in mind that if those docs exist in the output directory, "
+"those local docs will still override this flag."
+msgstr ""
+
+#: src/unstable-features.md:364
+msgid ""
+"The names in this flag are first matched against the names given in the `--"
+"extern name=` flags, which allows selecting between multiple crates with the "
+"same name (e.g. multiple versions of the same crate). For transitive "
+"dependencies that haven't been loaded via an `--extern` flag, matching falls "
+"backs to using crate names only, without ability to distinguish between "
+"multiple crates with the same name."
+msgstr ""
+
+#: src/unstable-features.md:370
+msgid "`-Z force-unstable-if-unmarked`"
+msgstr ""
+
+#: src/unstable-features.md:378
+msgid ""
+"This is an internal flag intended for the standard library and compiler that "
+"applies an `#[unstable]` attribute to any dependent crate that doesn't have "
+"another stability attribute. This allows `rustdoc` to be able to generate "
+"documentation for the compiler crates and the standard library, as an "
+"equivalent command-line argument is provided to `rustc` when building those "
+"crates."
+msgstr ""
+
+#: src/unstable-features.md:383
+msgid "`--index-page`: provide a top-level landing page for docs"
+msgstr ""
+
+#: src/unstable-features.md:385
+msgid ""
+"This feature allows you to generate an index-page with a given markdown "
+"file. A good example of it is the [rust documentation index](https://doc."
+"rust-lang.org/nightly/index.html)."
+msgstr ""
+
+#: src/unstable-features.md:388
+msgid ""
+"With this, you'll have a page which you can customize as much as you want at "
+"the top of your crates."
+msgstr ""
+
+#: src/unstable-features.md:390
+msgid "Using `index-page` option enables `enable-index-page` option as well."
+msgstr ""
+
+#: src/unstable-features.md:392
+msgid "`--enable-index-page`: generate a default index page for docs"
+msgstr ""
+
+#: src/unstable-features.md:394
+msgid ""
+"This feature allows the generation of a default index-page which lists the "
+"generated crates."
+msgstr ""
+
+#: src/unstable-features.md:396
+msgid "`--no-capture`: disable output capture for test"
+msgstr ""
+
+#: src/unstable-features.md:398
+msgid ""
+"When this flag is used with `--test`, the output (stdout and stderr) of your "
+"tests won't be captured by rustdoc. Instead, the output will be directed to "
+"your terminal, as if you had run the test executable manually. This is "
+"especially useful for debugging your tests!"
+msgstr ""
+
+#: src/unstable-features.md:403
+msgid "`--check`: only checks the documentation"
+msgstr ""
+
+#: src/unstable-features.md:405
+msgid ""
+"When this flag is supplied, rustdoc will type check and lint your code, but "
+"will not generate any documentation or run your doctests."
+msgstr ""
+
+#: src/unstable-features.md:408
+msgid "Using this flag looks like:"
+msgstr ""
+
+#: src/unstable-features.md:414
+msgid ""
+"`--static-root-path`: control how static files are loaded in HTML output"
+msgstr ""
+
+#: src/unstable-features.md:419
+msgid "'/cache/'"
+msgstr ""
+
+#: src/unstable-features.md:422
+msgid ""
+"This flag controls how rustdoc links to its static files on HTML pages. If "
+"you're hosting a lot of crates' docs generated by the same version of "
+"rustdoc, you can use this flag to cache rustdoc's CSS, JavaScript, and font "
+"files in a single location, rather than duplicating it once per \"doc "
+"root\" (grouping of crate docs generated into the same output directory, "
+"like with `cargo doc`). Per-crate files like the search index will still "
+"load from the documentation root, but anything that gets renamed with `--"
+"resource-suffix` will load from the given path."
+msgstr ""
+
+#: src/unstable-features.md:429
+msgid "`--persist-doctests`: persist doctest executables after running"
+msgstr ""
+
+#: src/unstable-features.md:431
+msgid ""
+"Tracking issue: [\\#56925](https://github.com/rust-lang/rust/issues/56925)"
+msgstr ""
+
+#: src/unstable-features.md:439
+msgid ""
+"This flag allows you to keep doctest executables around after they're "
+"compiled or run. Usually, rustdoc will immediately discard a compiled "
+"doctest after it's been tested, but with this option, you can keep those "
+"binaries around for farther testing."
+msgstr ""
+
+#: src/unstable-features.md:443
+msgid "`--show-coverage`: calculate the percentage of items with documentation"
+msgstr ""
+
+#: src/unstable-features.md:445
+msgid ""
+"Tracking issue: [\\#58154](https://github.com/rust-lang/rust/issues/58154)"
+msgstr ""
+
+#: src/unstable-features.md:453
+msgid "It generates something like this:"
+msgstr ""
+
+#: src/unstable-features.md:465
+msgid ""
+"If you want to determine how many items in your crate are documented, pass "
+"this flag to rustdoc. When it receives this flag, it will count the public "
+"items in your crate that have documentation, and print out the counts and a "
+"percentage instead of generating docs."
+msgstr ""
+
+#: src/unstable-features.md:469
+msgid "Some methodology notes about what rustdoc counts in this metric:"
+msgstr ""
+
+#: src/unstable-features.md:471
+msgid ""
+"Rustdoc will only count items from your crate (i.e. items re-exported from "
+"other crates don't count)."
+msgstr ""
+
+#: src/unstable-features.md:473
+msgid ""
+"Docs written directly onto inherent impl blocks are not counted, even though "
+"their doc comments are displayed, because the common pattern in Rust code is "
+"to write all inherent methods into the same impl block."
+msgstr ""
+
+#: src/unstable-features.md:476
+msgid ""
+"Items in a trait implementation are not counted, as those impls will inherit "
+"any docs from the trait itself."
+msgstr ""
+
+#: src/unstable-features.md:478
+msgid ""
+"By default, only public items are counted. To count private items as well, "
+"pass `--document-private-items` at the same time."
+msgstr ""
+
+#: src/unstable-features.md:481
+msgid ""
+"Public items that are not documented can be seen with the built-in "
+"`missing_docs` lint. Private items that are not documented can be seen with "
+"Clippy's `missing_docs_in_private_items` lint."
+msgstr ""
+
+#: src/unstable-features.md:484
+msgid "Calculating code examples follows these rules:"
+msgstr ""
+
+#: src/unstable-features.md:486
+msgid "These items aren't accounted by default:"
+msgstr ""
+
+#: src/unstable-features.md:487
+msgid "struct/union field"
+msgstr ""
+
+#: src/unstable-features.md:488
+msgid "enum variant"
+msgstr ""
+
+#: src/unstable-features.md:489
+msgid "constant"
+msgstr ""
+
+#: src/unstable-features.md:490
+msgid "static"
+msgstr ""
+
+#: src/unstable-features.md:491
+msgid "typedef"
+msgstr ""
+
+#: src/unstable-features.md:492
+msgid ""
+"If one of the previously listed items has a code example, then it'll be "
+"counted."
+msgstr ""
+
+#: src/unstable-features.md:494
+msgid "JSON output"
+msgstr ""
+
+#: src/unstable-features.md:496
+msgid ""
+"When using `--output-format json` with this option, it will display the "
+"coverage information in JSON format. For example, here is the JSON for a "
+"file with one documented item and one undocumented item:"
+msgstr ""
+
+#: src/unstable-features.md:501
+msgid "/// This item has documentation\n"
+msgstr ""
+
+#: src/unstable-features.md:508
+msgid "\"no_std.rs\""
+msgstr ""
+
+#: src/unstable-features.md:508
+msgid "\"total\""
+msgstr ""
+
+#: src/unstable-features.md:508
+msgid "\"with_docs\""
+msgstr ""
+
+#: src/unstable-features.md:508
+msgid "\"total_examples\""
+msgstr ""
+
+#: src/unstable-features.md:508
+msgid "\"with_examples\""
+msgstr ""
+
+#: src/unstable-features.md:511
+msgid ""
+"Note that the third item is the crate root, which in this case is "
+"undocumented."
+msgstr ""
+
+#: src/unstable-features.md:513
+msgid ""
+"If you want the JSON output to be displayed on `stdout` instead of having a "
+"file generated, you can use `-o -`."
+msgstr ""
+
+#: src/unstable-features.md:516
+msgid "`-w`/`--output-format`: output format"
+msgstr ""
+
+#: src/unstable-features.md:518
+msgid "json"
+msgstr ""
+
+#: src/unstable-features.md:520
+msgid ""
+"Tracking Issue: [\\#76578](https://github.com/rust-lang/rust/issues/76578)"
+msgstr ""
+
+#: src/unstable-features.md:522
+msgid ""
+"`--output-format json` emits documentation in the experimental [JSON format]"
+"(https://doc.rust-lang.org/nightly/nightly-rustc/rustdoc_json_types/)."
+msgstr ""
+
+#: src/unstable-features.md:525
+msgid ""
+"JSON Output for toolchain crates (`std`, `alloc`, `core`, `test`, and "
+"`proc_macro`) is available via the `rust-docs-json` rustup component."
+msgstr ""
+
+#: src/unstable-features.md:532
+msgid ""
+"Then the json files will be present in the `share/doc/rust/json/` directory "
+"of the rustup toolchain directory."
+msgstr ""
+
+#: src/unstable-features.md:535
+msgid ""
+"It can also be used with `--show-coverage`. Take a look at its "
+"[documentation](#--show-coverage-calculate-the-percentage-of-items-with-"
+"documentation) for more information."
+msgstr ""
+
+#: src/unstable-features.md:539
+msgid "doctest"
+msgstr ""
+
+#: src/unstable-features.md:541
+msgid ""
+"Tracking issue: [\\#134529](https://github.com/rust-lang/rust/issues/134529)"
+msgstr ""
+
+#: src/unstable-features.md:543
+msgid ""
+"`--output-format doctest` emits JSON on stdout which gives you information "
+"about doctests in the provided crate."
+msgstr ""
+
+#: src/unstable-features.md:546
+msgid "You can use this option like this:"
+msgstr ""
+
+#: src/unstable-features.md:552
+msgid "For this rust code:"
+msgstr ""
+
+#: src/unstable-features.md:555
+msgid ""
+"/// ```\n"
+"/// #![allow(dead_code)]\n"
+"/// let x = 12;\n"
+"/// Ok(())\n"
+"/// ```\n"
+msgstr ""
+
+#: src/unstable-features.md:563
+msgid "The generated output (formatted) will look like this:"
+msgstr ""
+
+#: src/unstable-features.md:567
+msgid "\"format_version\""
+msgstr ""
+
+#: src/unstable-features.md:568
+msgid "\"doctests\""
+msgstr ""
+
+#: src/unstable-features.md:570
+msgid "\"file\""
+msgstr ""
+
+#: src/unstable-features.md:570
+msgid "\"src/lib.rs\""
+msgstr ""
+
+#: src/unstable-features.md:571
+msgid "\"line\""
+msgstr ""
+
+#: src/unstable-features.md:572
+msgid "\"doctest_attributes\""
+msgstr ""
+
+#: src/unstable-features.md:573
+msgid "\"original\""
+msgstr ""
+
+#: src/unstable-features.md:573
+msgid "\"\""
+msgstr ""
+
+#: src/unstable-features.md:574
+msgid "\"should_panic\""
+msgstr ""
+
+#: src/unstable-features.md:575
+msgid "\"no_run\""
+msgstr ""
+
+#: src/unstable-features.md:576
+msgid "\"ignore\""
+msgstr ""
+
+#: src/unstable-features.md:576
+msgid "\"None\""
+msgstr ""
+
+#: src/unstable-features.md:577
+msgid "\"rust\""
+msgstr ""
+
+#: src/unstable-features.md:578
+msgid "\"test_harness\""
+msgstr ""
+
+#: src/unstable-features.md:579
+msgid "\"compile_fail\""
+msgstr ""
+
+#: src/unstable-features.md:580
+msgid "\"standalone_crate\""
+msgstr ""
+
+#: src/unstable-features.md:581
+msgid "\"error_codes\""
+msgstr ""
+
+#: src/unstable-features.md:582
+msgid "\"edition\""
+msgstr ""
+
+#: src/unstable-features.md:583
+msgid "\"added_css_classes\""
+msgstr ""
+
+#: src/unstable-features.md:584
+msgid "\"unknown\""
+msgstr ""
+
+#: src/unstable-features.md:586
+msgid "\"original_code\""
+msgstr ""
+
+#: src/unstable-features.md:586
+msgid "\"#![allow(dead_code)]\\nlet x = 12;\\nOk(())\""
+msgstr ""
+
+#: src/unstable-features.md:587
+msgid "\"doctest_code\""
+msgstr ""
+
+#: src/unstable-features.md:588
+msgid "\"crate_level\""
+msgstr ""
+
+#: src/unstable-features.md:588
+msgid "\"#![allow(unused)]\\n#![allow(dead_code)]\\n\\n\""
+msgstr ""
+
+#: src/unstable-features.md:589
+msgid "\"code\""
+msgstr ""
+
+#: src/unstable-features.md:589
+msgid "\"let x = 12;\\nOk(())\""
+msgstr ""
+
+#: src/unstable-features.md:590
+msgid "\"wrapper\""
+msgstr ""
+
+#: src/unstable-features.md:591
+msgid "\"before\""
+msgstr ""
+
+#: src/unstable-features.md:591
+msgid ""
+"\"fn main() { fn _inner() -> core::result::Result<(), impl core::fmt::Debug> "
+"{\\n\""
+msgstr ""
+
+#: src/unstable-features.md:592
+msgid "\"after\""
+msgstr ""
+
+#: src/unstable-features.md:592
+msgid "\"\\n} _inner().unwrap() }\""
+msgstr ""
+
+#: src/unstable-features.md:593
+msgid "\"returns_result\""
+msgstr ""
+
+#: src/unstable-features.md:596
+msgid "\"name\""
+msgstr ""
+
+#: src/unstable-features.md:596
+msgid "\"src/lib.rs - (line 1)\""
+msgstr ""
+
+#: src/unstable-features.md:602
+msgid ""
+"`format_version` gives you the current version of the generated JSON. If we "
+"change the output in any way, the number will increase."
+msgstr ""
+
+#: src/unstable-features.md:603
+msgid "`doctests` contains the list of doctests present in the crate."
+msgstr ""
+
+#: src/unstable-features.md:604
+msgid "`file` is the file path where the doctest is located."
+msgstr ""
+
+#: src/unstable-features.md:605
+msgid ""
+"`line` is the line where the doctest starts (so where the \\`\\`\\` is "
+"located in the current code)."
+msgstr ""
+
+#: src/unstable-features.md:606
+msgid ""
+"`doctest_attributes` contains computed information about the attributes used "
+"on the doctests. For more information about doctest attributes, take a look "
+"[here](write-documentation/documentation-tests.html#attributes)."
+msgstr ""
+
+#: src/unstable-features.md:607
+msgid ""
+"`original_code` is the code as written in the source code before rustdoc "
+"modifies it."
+msgstr ""
+
+#: src/unstable-features.md:608
+msgid ""
+"`doctest_code` is the code modified by rustdoc that will be run. If there is "
+"a fatal syntax error, this field will not be present."
+msgstr ""
+
+#: src/unstable-features.md:609
+msgid ""
+"`crate_level` is the crate level code (like attributes or `extern crate`) "
+"that will be added at the top-level of the generated doctest."
+msgstr ""
+
+#: src/unstable-features.md:610
+msgid ""
+"`code` is \"naked\" doctest without anything from `crate_level` and "
+"`wrapper` content."
+msgstr ""
+
+#: src/unstable-features.md:611
+msgid ""
+"`wrapper` contains extra code that will be added before and after `code`."
+msgstr ""
+
+#: src/unstable-features.md:612
+msgid ""
+"`returns_result` is a boolean. If `true`, it means that the doctest returns "
+"a `Result` type."
+msgstr ""
+
+#: src/unstable-features.md:613
+msgid "`name` is the name generated by rustdoc which represents this doctest."
+msgstr ""
+
+#: src/unstable-features.md:615
+msgid "html"
+msgstr ""
+
+#: src/unstable-features.md:617
+msgid ""
+"`--output-format html` has no effect, as the default output is HTML. This is "
+"accepted on stable, even though the other options for this flag aren't."
+msgstr ""
+
+#: src/unstable-features.md:620
+msgid "`--with-examples`: include examples of uses of items as documentation"
+msgstr ""
+
+#: src/unstable-features.md:622
+msgid ""
+"Tracking issue: [\\#88791](https://github.com/rust-lang/rust/issues/88791)"
+msgstr ""
+
+#: src/unstable-features.md:624
+msgid ""
+"This option, combined with `--scrape-examples-target-crate` and `--scrape-"
+"examples-output-path`, is used to implement the functionality in [RFC "
+"\\#3123](https://github.com/rust-lang/rfcs/pull/3123). Uses of an item "
+"(currently functions / call-sites) are found in a crate and its reverse-"
+"dependencies, and then the uses are included as documentation for that item. "
+"This feature is intended to be used via `cargo doc --scrape-examples`, but "
+"the rustdoc-only workflow looks like:"
+msgstr ""
+
+#: src/unstable-features.md:640
+msgid ""
+"First, the library must be checked to generate an `rmeta`. Then a reverse-"
+"dependency like `examples/ex.rs` is given to rustdoc with the target crate "
+"being documented (`foobar`) and a path to output the calls (`output.calls`). "
+"Then, the generated calls file can be passed via `--with-examples` to the "
+"subsequent documentation of `foobar`."
+msgstr ""
+
+#: src/unstable-features.md:646
+msgid ""
+"To scrape examples from test code, e.g. functions marked `#[test]`, then add "
+"the `--scrape-tests` flag."
+msgstr ""
+
+#: src/unstable-features.md:649
+msgid "`--generate-link-to-definition`: Generate links on types in source code"
+msgstr ""
+
+#: src/unstable-features.md:651
+msgid ""
+"Tracking issue: [\\#89095](https://github.com/rust-lang/rust/issues/89095)"
+msgstr ""
+
+#: src/unstable-features.md:653
+msgid ""
+"This flag enables the generation of links in the source code pages which "
+"allow the reader to jump to a type definition."
+msgstr ""
+
+#: src/unstable-features.md:656
+msgid "`--test-builder`: `rustc`\\-like program to build tests"
+msgstr ""
+
+#: src/unstable-features.md:658 src/unstable-features.md:671
+msgid ""
+"Tracking issue: [\\#102981](https://github.com/rust-lang/rust/issues/102981)"
+msgstr ""
+
+#: src/unstable-features.md:666
+msgid ""
+"Rustdoc will use the provided program to compile tests instead of the "
+"default `rustc` program from the sysroot."
+msgstr ""
+
+#: src/unstable-features.md:669
+msgid "`--test-builder-wrapper`: wrap calls to the test builder"
+msgstr ""
+
+#: src/unstable-features.md:684
+msgid ""
+"Similar to cargo `build.rustc-wrapper` option, this flag takes a `rustc` "
+"wrapper program. The first argument to the program will be the test builder "
+"program."
+msgstr ""
+
+#: src/unstable-features.md:687
+msgid "This flag can be passed multiple times to nest wrappers."
+msgstr ""
+
+#: src/unstable-features.md:689
+msgid "Passing arguments to rustc when compiling doctests"
+msgstr ""
+
+#: src/unstable-features.md:691
+msgid ""
+"You can use the `--doctest-build-arg` flag if you want to add options when "
+"compiling the doctest. For example if you have:"
+msgstr ""
+
+#: src/unstable-features.md:695
+msgid ""
+"/// ```\n"
+"/// #![deny(warnings)]\n"
+"/// #![feature(async_await)]\n"
+"///\n"
+"/// let x = 12;\n"
+"/// ```\n"
+msgstr ""
+
+#: src/unstable-features.md:704
+msgid "And you run `rustdoc --test` on it, you will get:"
+msgstr ""
+
+#: src/unstable-features.md:736
+msgid ""
+"But if you can limit the lint level to warning by using `--doctest-build-"
+"arg=--cap-lints=warn`:"
+msgstr ""
+
+#: src/unstable-features.md:747
+msgid ""
+"In order to pass multiple arguments to the underlying compiler, pass `--"
+"doctest-build-arg ARG` for each argument `ARG`."
+msgstr ""
+
+#: src/unstable-features.md:750
+msgid ""
+"`--generate-macro-expansion`: Generate macros expansion toggles in source "
+"code"
+msgstr ""
+
+#: src/unstable-features.md:752
+msgid ""
+"This flag enables the generation of toggles to expand macros in the HTML "
+"source code pages."
+msgstr ""
+
+#: src/unstable-features.md:754
+msgid "`--remap-path-prefix`: Remap source code paths in output"
+msgstr ""
+
+#: src/unstable-features.md:756
+msgid "This flag is the equivalent flag from `rustc` `--remap-path-prefix`."
+msgstr ""
+
+#: src/unstable-features.md:758
+msgid ""
+"it permits remapping source path prefixes in all output, including compiler "
+"diagnostics, debug information, macro expansions, etc. It takes a value of "
+"the form `FROM=TO` where a path prefix equal to `FROM` is rewritten to the "
+"value `TO`."
+msgstr ""
+
+#: src/unstable-features.md:762
+msgid "`documentation` scope"
+msgstr ""
+
+#: src/unstable-features.md:764
+msgid ""
+"`rustdoc` (and by extension `rustc`) have a special `documentation` "
+"remapping scope, it permits remapping source paths that ends up in the "
+"generated documentation."
+msgstr ""
+
+#: src/unstable-features.md:767
+msgid ""
+"Currently the scope can only be specified from `rustc`, due to the lack of "
+"an equivalent `--remap-path-scope` flag in `rustc`."
+msgstr ""
+
+#: src/unstable-features.md:770
+msgid "`#[doc(cfg)]` and `#[doc(auto_cfg)]`"
+msgstr ""
+
+#: src/unstable-features.md:772
+msgid ""
+"This feature aims at providing rustdoc users the possibility to add visual "
+"markers to the rendered documentation to know under which conditions an item "
+"is available (currently possible through the following unstable feature: "
+"`doc_cfg`)."
+msgstr ""
+
+#: src/unstable-features.md:774
+msgid ""
+"It does not aim to allow having a same item with different `cfg`s to appear "
+"more than once in the generated documentation."
+msgstr ""
+
+#: src/unstable-features.md:776
+msgid ""
+"It does not aim to document items which are _inactive_ under the current "
+"configuration (i.e., “`cfg`ed out”)."
+msgstr ""
+
+#: src/unstable-features.md:778
+msgid "This features adds the following attributes:"
+msgstr ""
+
+#: src/unstable-features.md:780
+msgid "`#[doc(auto_cfg)]`/`#[doc(auto_cfg = true)]`/`#[doc(auto_cfg = false)]`"
+msgstr ""
+
+#: src/unstable-features.md:781 src/unstable-features.md:786
+msgid "`#[doc(cfg(...))]`"
+msgstr ""
+
+#: src/unstable-features.md:782
+msgid "`#![doc(auto_cfg(hide(...)))]` / `#[doc(auto_cfg(show(...)))]`"
+msgstr ""
+
+#: src/unstable-features.md:784
+msgid ""
+"All of these attributes can be added to a module or to the crate root, and "
+"they will be inherited by the child items unless another attribute overrides "
+"it. This is why \"opposite\" attributes like `auto_cfg(hide(...))` and "
+"`auto_cfg(show(...))` are provided: they allow a child item to override its "
+"parent."
+msgstr ""
+
+#: src/unstable-features.md:788
+msgid ""
+"This attribute provides a standardized format to override `#[cfg()]` "
+"attributes to document conditionally available items. Example:"
+msgstr ""
+
+#: src/unstable-features.md:791
+msgid "// the \"real\" cfg condition\n"
+msgstr ""
+
+#: src/unstable-features.md:792 src/unstable-features.md:794
+#: src/unstable-features.md:807 src/unstable-features.md:824
+#: src/unstable-features.md:838 src/unstable-features.md:919
+#: src/unstable-features.md:967
+msgid "\"futures-io\""
+msgstr ""
+
+#: src/unstable-features.md:792
+msgid "// the `doc(cfg())` so it's displayed to the readers\n"
+msgstr ""
+
+#: src/unstable-features.md:798
+msgid "It will display in the documentation for this module:"
+msgstr ""
+
+#: src/unstable-features.md:800
+msgid ""
+"```text\n"
+"This is supported on feature=\"futures-io\" only.\n"
+"```"
+msgstr ""
+
+#: src/unstable-features.md:804
+msgid ""
+"You can use it to display information in generated documentation, whether or "
+"not there is a `#[cfg()]` attribute:"
+msgstr ""
+
+#: src/unstable-features.md:811
+msgid "It will be displayed exactly the same as the previous code."
+msgstr ""
+
+#: src/unstable-features.md:813
+msgid ""
+"This attribute has the same syntax as conditional compilation, but it only "
+"causes documentation to be added. This means `#[doc(cfg(not(windows)))]` "
+"will not cause your docs to be hidden on non-windows targets, even though "
+"`#[cfg(not(windows))]` does do that."
+msgstr ""
+
+#: src/unstable-features.md:815
+msgid ""
+"If `doc(auto_cfg)` is enabled on the item, `doc(cfg)` will override it "
+"anyway so in the two previous examples, even if the `doc(auto_cfg)` feature "
+"was enabled, it would still display the same thing."
+msgstr ""
+
+#: src/unstable-features.md:817
+msgid "This attribute works on modules and on items."
+msgstr ""
+
+#: src/unstable-features.md:819
+msgid "`#[doc(auto_cfg(hide(...)))]`"
+msgstr ""
+
+#: src/unstable-features.md:821
+msgid ""
+"This attribute is used to prevent some `cfg` to be generated in the visual "
+"markers. It only applies to `#[doc(auto_cfg = true)]`, not to "
+"`#[doc(cfg(...))]`. So in the previous example:"
+msgstr ""
+
+#: src/unstable-features.md:828
+msgid ""
+"It currently displays both `unix` and `feature = \"futures-io\"` into the "
+"documentation, which is not great. To prevent the `unix` cfg to ever be "
+"displayed, you can use this attribute at the crate root level:"
+msgstr ""
+
+#: src/unstable-features.md:834
+msgid ""
+"Or directly on a given item/module as it covers any of the item's "
+"descendants:"
+msgstr ""
+
+#: src/unstable-features.md:840 src/unstable-features.md:921
+msgid ""
+"// `futures` and all its descendants won't display \"unix\" in their cfgs.\n"
+msgstr ""
+
+#: src/unstable-features.md:844
+msgid "Then, the `unix` cfg will never be displayed into the documentation."
+msgstr ""
+
+#: src/unstable-features.md:846
+msgid ""
+"Rustdoc currently hides `doc` and `doctest` attributes by default and "
+"reserves the right to change the list of \"hidden by default\" attributes."
+msgstr ""
+
+#: src/unstable-features.md:848 src/unstable-features.md:929
+msgid ""
+"The attribute accepts only a list of identifiers or key/value items. So you "
+"can write:"
+msgstr ""
+
+#: src/unstable-features.md:851 src/unstable-features.md:932
+msgid "\"something\""
+msgstr ""
+
+#: src/unstable-features.md:855 src/unstable-features.md:936
+msgid "But you cannot write:"
+msgstr ""
+
+#: src/unstable-features.md:861
+msgid ""
+"So if we use `doc(auto_cfg(hide(unix)))`, it means it will hide all mentions "
+"of `unix`:"
+msgstr ""
+
+#: src/unstable-features.md:864 src/unstable-features.md:865
+msgid "// nothing displayed\n"
+msgstr ""
+
+#: src/unstable-features.md:866
+msgid "// only `windows` displayed\n"
+msgstr ""
+
+#: src/unstable-features.md:869
+msgid "However, it only impacts the `unix` cfg, not the feature:"
+msgstr ""
+
+#: src/unstable-features.md:872
+msgid "\"unix\""
+msgstr ""
+
+#: src/unstable-features.md:872
+msgid "// `feature = \"unix\"` is displayed\n"
+msgstr ""
+
+#: src/unstable-features.md:875
+msgid ""
+"If `cfg_auto(show(...))` and `cfg_auto(hide(...))` are used to show/hide a "
+"same `cfg` on a same item, it'll emit an error. Example:"
+msgstr ""
+
+#: src/unstable-features.md:879 src/unstable-features.md:946
+msgid "// Error!\n"
+msgstr ""
+
+#: src/unstable-features.md:883 src/unstable-features.md:950
+msgid ""
+"Using this attribute will re-enable `auto_cfg` if it was disabled at this "
+"location:"
+msgstr ""
+
+#: src/unstable-features.md:886 src/unstable-features.md:893
+#: src/unstable-features.md:953
+msgid "// Disabling `auto_cfg`\n"
+msgstr ""
+
+#: src/unstable-features.md:890
+msgid "And using `doc(auto_cfg)` will re-enable it:"
+msgstr ""
+
+#: src/unstable-features.md:895 src/unstable-features.md:954
+msgid "// `auto_cfg` is re-enabled.\n"
+msgstr ""
+
+#: src/unstable-features.md:900
+msgid ""
+"However, using `doc(auto_cfg = ...)` and `doc(auto_cfg(...))` on the same "
+"item will emit an error:"
+msgstr ""
+
+#: src/unstable-features.md:904
+msgid "// error\n"
+msgstr ""
+
+#: src/unstable-features.md:908
+msgid ""
+"The reason behind this is that `doc(auto_cfg = ...)` enables or disables the "
+"feature, whereas `doc(auto_cfg(...))` enables it unconditionally, making the "
+"first attribute to appear useless as it will be overidden by the next "
+"`doc(auto_cfg)` attribute."
+msgstr ""
+
+#: src/unstable-features.md:910
+msgid "`#[doc(auto_cfg(show(...)))]`"
+msgstr ""
+
+#: src/unstable-features.md:912
+msgid ""
+"This attribute does the opposite of `#[doc(auto_cfg(hide(...)))]`: if you "
+"used `#[doc(auto_cfg(hide(...)))]` and want to revert its effect on an item "
+"and its descendants, you can use `#[doc(auto_cfg(show(...)))]`. It only "
+"applies to `#[doc(auto_cfg = true)]`, not to `#[doc(cfg(...))]`."
+msgstr ""
+
+#: src/unstable-features.md:915
+msgid "For example:"
+msgstr ""
+
+#: src/unstable-features.md:924
+msgid ""
+"// `child` and all its descendants will display \"unix\" in their cfgs.\n"
+msgstr ""
+
+#: src/unstable-features.md:942
+msgid ""
+"If `auto_cfg(show(...))` and `auto_cfg(hide(...))` are used to show/hide a "
+"same `cfg` on a same item, it'll emit an error. Example:"
+msgstr ""
+
+#: src/unstable-features.md:958
+msgid "`#[doc(auto_cfg)`/`#[doc(auto_cfg = true)]`/`#[doc(auto_cfg = false)]`"
+msgstr ""
+
+#: src/unstable-features.md:960
+msgid ""
+"By default, `#[doc(auto_cfg)]` is enabled at the crate-level. When it's "
+"enabled, Rustdoc will automatically display `cfg(...)` compatibility "
+"information as-if the same `#[doc(cfg(...))]` had been specified."
+msgstr ""
+
+#: src/unstable-features.md:962
+msgid ""
+"This attribute impacts the item on which it is used and its descendants."
+msgstr ""
+
+#: src/unstable-features.md:964
+msgid "So if we take back the previous example:"
+msgstr ""
+
+#: src/unstable-features.md:971
+msgid ""
+"There's no need to \"duplicate\" the `cfg` into a `doc(cfg())` to make "
+"Rustdoc display it."
+msgstr ""
+
+#: src/unstable-features.md:973
+msgid ""
+"In some situations, the detailed conditional compilation rules used to "
+"implement the feature might not serve as good documentation (for example, "
+"the list of supported platforms might be very long, and it might be better "
+"to document them in one place). To turn it off, add the `#[doc(auto_cfg = "
+"false)]` attribute on the item."
+msgstr ""
+
+#: src/unstable-features.md:975
+msgid ""
+"If no argument is specified (ie `#[doc(auto_cfg)]`), it's the same as "
+"writing `#[doc(auto_cfg = true)]`."
+msgstr ""
+
+#: src/unstable-features.md:977
+msgid "Inheritance"
+msgstr ""
+
+#: src/unstable-features.md:979
+msgid ""
+"Rustdoc merges `cfg` attributes from parent modules to its children. For "
+"example, in this case, the module `non_unix` will describe the entire "
+"compatibility matrix for the module, and not just its directly attached "
+"information:"
+msgstr ""
+
+#: src/unstable-features.md:986
+msgid "// ...\n"
+msgstr ""
+
+#: src/unstable-features.md:991
+msgid "This code will display:"
+msgstr ""
+
+#: src/unstable-features.md:997
+msgid "Re-exports and inlining"
+msgstr ""
+
+#: src/unstable-features.md:999
+msgid ""
+"`cfg` attributes of a re-export are never merged with the re-exported "
+"item(s) attributes except if the re-export has the `#[doc(inline)]` "
+"attribute. In this case, the `cfg` of the re-exported item will be merged "
+"with the re-export's."
+msgstr ""
+
+#: src/unstable-features.md:1001
+msgid ""
+"When talking about \"attributes merge\", we mean that if the re-export has "
+"`#[cfg(unix)]` and the re-exported item has `#[cfg(feature = \"foo\")]`, you "
+"will only see `cfg(unix)` on the re-export and only `cfg(feature = \"foo\")` "
+"on the re-exported item, unless the re-export has `#[doc(inline)]`, then you "
+"will only see the re-exported item with both `cfg(unix)` and `cfg(feature = "
+"\"foo\")`."
+msgstr ""
+
+#: src/unstable-features.md:1003
+msgid "Example:"
+msgstr ""
+
+#: src/unstable-features.md:1010
+msgid "// code\n"
+msgstr ""
+
+#: src/unstable-features.md:1014
+msgid "\"freebsd\""
+msgstr ""
+
+#: src/unstable-features.md:1016
+msgid "\"macos\""
+msgstr ""
+
+#: src/unstable-features.md:1021
+msgid ""
+"In this example, `non_unix_desktop` will only display `cfg(target_os = "
+"\"freeebsd\")` and not display any `cfg` from `desktop::non_unix`."
+msgstr ""
+
+#: src/unstable-features.md:1023
+msgid ""
+"On the contrary, `inlined_non_unix_desktop` will have cfgs from both the re-"
+"export and the re-exported item."
+msgstr ""
+
+#: src/unstable-features.md:1025
+msgid ""
+"So that also means that if a crate re-exports a foreign item, unless it has "
+"`#[doc(inline)]`, the `cfg` and `doc(cfg)` attributes will not be visible:"
+msgstr ""
+
+#: src/unstable-features.md:1028
+msgid "// dep:\n"
+msgstr ""
+
+#: src/unstable-features.md:1029
+msgid "\"a\""
+msgstr ""
+
+#: src/unstable-features.md:1031
+msgid "// crate using dep:\n"
+msgstr ""
+
+#: src/unstable-features.md:1033
+msgid ""
+"// There will be no mention of `feature = \"a\"` in the documentation.\n"
+msgstr ""
