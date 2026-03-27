@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:40Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/advanced-features.md:1
+msgid "Advanced features"
+msgstr ""
+
+#: src/advanced-features.md:3
+msgid ""
+"The features listed on this page fall outside the rest of the main "
+"categories."
+msgstr ""
+
+#: src/advanced-features.md:5
+msgid ""
+"`#[cfg(doc)]`: Documenting platform-specific or feature-specific information"
+msgstr ""
+
+#: src/advanced-features.md:7
+msgid ""
+"For conditional compilation, Rustdoc treats your crate the same way the "
+"compiler does. Only things from the host target are available (or from the "
+"given `--target` if present), and everything else is \"filtered out\" from "
+"the crate. This can cause problems if your crate is providing different "
+"things on different targets and you want your documentation to reflect all "
+"the available items you provide."
+msgstr ""
+
+#: src/advanced-features.md:13
+msgid ""
+"If you want to make sure an item is seen by Rustdoc regardless of what "
+"platform it's targeting, you can apply `#[cfg(doc)]` to it. Rustdoc sets "
+"this whenever it's building documentation, so anything that uses that flag "
+"will make it into documentation it generates. To apply this to an item with "
+"other `#[cfg]` filters on it, you can write something like "
+"`#[cfg(any(windows, doc))]`. This will preserve the item either when built "
+"normally on Windows, or when being documented anywhere."
+msgstr ""
+
+#: src/advanced-features.md:20
+msgid "Please note that this `cfg` is not passed to doctests."
+msgstr ""
+
+#: src/advanced-features.md:22
+msgid "Example:"
+msgstr ""
+
+#: src/advanced-features.md:25
+msgid "/// Token struct that can only be used on Windows.\n"
+msgstr ""
+
+#: src/advanced-features.md:27
+msgid "/// Token struct that can only be used on Unix.\n"
+msgstr ""
+
+#: src/advanced-features.md:33
+msgid ""
+"Here, the respective tokens can only be used by dependent crates on their "
+"respective platforms, but they will both appear in documentation."
+msgstr ""
+
+#: src/advanced-features.md:36
+msgid "Interactions between platform-specific docs"
+msgstr ""
+
+#: src/advanced-features.md:38
+msgid ""
+"Rustdoc does not have a magic way to compile documentation 'as-if' you'd run "
+"it once for each platform (such a magic wand has been called the ['holy "
+"grail of rustdoc'](https://github.com/rust-lang/rust/issues/1998)). Instead, "
+"it sees _all_ of your code at once, the same way the Rust compiler would if "
+"you passed it `--cfg doc`. The main difference is that rustdoc doesn't run "
+"all the compiler passes, meaning that some invalid code won't emit an error."
+msgstr ""
+
+#: src/advanced-features.md:46
+msgid "Add aliases for an item in documentation search"
+msgstr ""
+
+#: src/advanced-features.md:48
+msgid ""
+"This feature allows you to add alias(es) to an item when using the `rustdoc` "
+"search through the `doc(alias)` attribute. Example:"
+msgstr ""
+
+#: src/advanced-features.md:52 src/advanced-features.md:66
+msgid "\"x\""
+msgstr ""
+
+#: src/advanced-features.md:53 src/advanced-features.md:66
+msgid "\"big\""
+msgstr ""
+
+#: src/advanced-features.md:57
+msgid ""
+"Then, when looking for it through the `rustdoc` search, if you enter \"x\" "
+"or \"big\", search will show the `BigX` struct first."
+msgstr ""
+
+#: src/advanced-features.md:60
+msgid ""
+"There are some limitations on the doc alias names though: they cannot "
+"contain quotes (`'`, `\"`) or most whitespace. ASCII space is allowed if it "
+"does not start or end the alias."
+msgstr ""
+
+#: src/advanced-features.md:63
+msgid "You can add multiple aliases at the same time by using a list:"
+msgstr ""
+
+#: src/advanced-features.md:70
+msgid "Custom search engines"
+msgstr ""
+
+#: src/advanced-features.md:72
+msgid ""
+"If you find yourself often referencing online Rust docs you might enjoy "
+"using a custom search engine. This allows you to use the navigation bar "
+"directly to search a `rustdoc` website. Most browsers support this feature "
+"by letting you define a URL template containing `%s` which will be "
+"substituted for the search term. As an example, for the standard library you "
+"could use this template:"
+msgstr ""
+
+#: src/advanced-features.md:78
+msgid ""
+"```text\n"
+"https://doc.rust-lang.org/stable/std/?search=%s\n"
+"```"
+msgstr ""
+
+#: src/advanced-features.md:82
+msgid ""
+"Note that this will take you to a results page listing all matches. If you "
+"want to navigate to the first result right away (which is often the best "
+"match) use the following instead:"
+msgstr ""
+
+#: src/advanced-features.md:85
+msgid ""
+"```text\n"
+"https://doc.rust-lang.org/stable/std/?search=%s&go_to_first=true\n"
+"```"
+msgstr ""
+
+#: src/advanced-features.md:89
+msgid ""
+"This URL adds the `go_to_first=true` query parameter which can be appended "
+"to any `rustdoc` search URL to automatically go to the first result."
+msgstr ""
+
+#: src/advanced-features.md:92
+msgid "`#[repr(...)]`: Documenting the representation of a type"
+msgstr ""
+
+#: src/advanced-features.md:94
+msgid ""
+"Generally, rustdoc only displays the representation of a given type if none "
+"of its variants are `#[doc(hidden)]` and if all of its fields are public and "
+"not `#[doc(hidden)]` since it's likely not meant to be considered part of "
+"the public ABI otherwise."
+msgstr ""
+
+#: src/advanced-features.md:98
+msgid ""
+"Note that there's no way to overwrite that heuristic and force rustdoc to "
+"show the representation regardless."
+msgstr ""
+
+#: src/advanced-features.md:101
+msgid "`#[repr(transparent)]`"
+msgstr ""
+
+#: src/advanced-features.md:103
+msgid ""
+"You can read more about `#[repr(transparent)]` itself in the [Rust Reference]"
+"(https://doc.rust-lang.org/reference/type-layout.html#the-transparent-"
+"representation) and in the [Rustonomicon](https://doc.rust-lang.org/nomicon/"
+"other-reprs.html#reprtransparent)."
+msgstr ""
+
+#: src/advanced-features.md:106
+msgid ""
+"Since this representation is only considered part of the public ABI if the "
+"single field with non-trivial size or alignment is public and if the "
+"documentation does not state otherwise, rustdoc helpfully displays the "
+"attribute if and only if the non-1-ZST field is public and not "
+"`#[doc(hidden)]` or – in case all fields are 1-ZST fields — at least one "
+"field is public and not `#[doc(hidden)]`. The term _1-ZST_ refers to types "
+"that are one-aligned and zero-sized."
+msgstr ""
+
+#: src/advanced-features.md:112
+msgid ""
+"It would seem that one can manually hide the attribute with "
+"`#[cfg_attr(not(doc), repr(transparent))]` if one wishes to declare the "
+"representation as private even if the non-1-ZST field is public. However, "
+"due to [current limitations](https://github.com/rust-lang/rust/"
+"issues/114952), this method is not always guaranteed to work. Therefore, if "
+"you would like to do so, you should always write that down in prose "
+"independently of whether you use `cfg_attr` or not."
+msgstr ""
