@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/what-is-rustdoc.md:1
@@ -22,6 +22,9 @@ msgid ""
 "Rustdoc takes as an argument either a crate root or a Markdown file, and "
 "produces HTML, CSS, and JavaScript."
 msgstr ""
+"標準的 Rust 散佈版會附帶一個名為 `rustdoc` 的工具。它的工作是為 Rust 專案生成"
+"文件。從根本上來說，Rustdoc 接受一個軟體箱根目錄或 Markdown 檔案作為引數，並"
+"生成 HTML、CSS 和 JavaScript。"
 
 #: src/what-is-rustdoc.md:8
 msgid "Basic usage"
@@ -29,13 +32,15 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:10
 msgid "Let's give it a try! Create a new project with Cargo:"
-msgstr ""
+msgstr "讓我們來試試看！使用 Cargo 建立一個新專案："
 
 #: src/what-is-rustdoc.md:17
 msgid ""
 "In `src/lib.rs`, Cargo has generated some sample code. Delete it and replace "
 "it with this:"
 msgstr ""
+"在 `src/lib.rs` 中，Cargo 已經生成了一些範例程式碼。請將其刪除並替換為以下內"
+"容："
 
 #: src/what-is-rustdoc.md:21 src/what-is-rustdoc.md:61
 msgid "/// foo is a function\n"
@@ -60,6 +65,8 @@ msgid ""
 "You can also use `cargo doc` to generate documentation for the whole "
 "project. See [Using rustdoc with Cargo](#using-rustdoc-with-cargo)."
 msgstr ""
+"您也可以使用 `cargo doc` 來為整個專案生成文件。請參見[搭配 Cargo 使用 "
+"rustdoc](#using-rustdoc-with-cargo)。"
 
 #: src/what-is-rustdoc.md:40
 msgid "Configuring rustdoc"
@@ -70,6 +77,8 @@ msgid ""
 "There are two problems with this: first, why does it think that our crate is "
 "named \"lib\"? Second, why does it not have any contents?"
 msgstr ""
+"這裡有兩個問題：首先，為什麼它認為我們的軟體箱名稱是「lib」？其次，為什麼沒有"
+"任何內容？"
 
 #: src/what-is-rustdoc.md:46
 msgid ""
@@ -105,7 +114,7 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:76
 msgid "Using rustdoc with Cargo"
-msgstr ""
+msgstr "搭配 Cargo 使用 rustdoc"
 
 #: src/what-is-rustdoc.md:78
 msgid ""
@@ -152,7 +161,7 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:108
 msgid "Outer and inner documentation"
-msgstr ""
+msgstr "外部與內部文件"
 
 #: src/what-is-rustdoc.md:110
 msgid ""
@@ -183,7 +192,7 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:131
 msgid "Using standalone Markdown files"
-msgstr ""
+msgstr "使用獨立的 Markdown 檔案"
 
 #: src/what-is-rustdoc.md:133
 msgid ""
@@ -209,16 +218,33 @@ msgid ""
 "```\n"
 "````"
 msgstr ""
+"````text\n"
+"# Docs\n"
+"\n"
+"This is a project to test out `rustdoc`.\n"
+"\n"
+"[Here is a link!](https://www.rust-lang.org)\n"
+"\n"
+"## Example\n"
+"\n"
+"```rust\n"
+"fn foo() -> i32 {\n"
+"    1 + 1\n"
+"}\n"
+"```\n"
+"````"
 
 #: src/what-is-rustdoc.md:152
 msgid "And call `rustdoc` on it:"
-msgstr ""
+msgstr "並對其執行 `rustdoc`："
 
 #: src/what-is-rustdoc.md:158
 msgid ""
 "You will find an HTML file in `docs/doc/README.html` generated from its "
 "Markdown contents."
 msgstr ""
+"你將會在 `docs/doc/README.html` 中找到一個由其 Markdown 內容生成的 HTML 檔"
+"案。"
 
 #: src/what-is-rustdoc.md:161
 msgid ""
