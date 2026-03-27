@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/what-is-rustdoc.md:1
+msgid "What is rustdoc?"
+msgstr ""
+
+#: src/what-is-rustdoc.md:3
+msgid ""
+"The standard Rust distribution ships with a tool called `rustdoc`. Its job "
+"is to generate documentation for Rust projects. On a fundamental level, "
+"Rustdoc takes as an argument either a crate root or a Markdown file, and "
+"produces HTML, CSS, and JavaScript."
+msgstr ""
+
+#: src/what-is-rustdoc.md:8
+msgid "Basic usage"
+msgstr ""
+
+#: src/what-is-rustdoc.md:10
+msgid "Let's give it a try! Create a new project with Cargo:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:17
+msgid ""
+"In `src/lib.rs`, Cargo has generated some sample code. Delete it and replace "
+"it with this:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:21 src/what-is-rustdoc.md:61
+msgid "/// foo is a function\n"
+msgstr ""
+
+#: src/what-is-rustdoc.md:25
+msgid ""
+"Let's run `rustdoc` on our code. To do so, we can call it with the path to "
+"our crate root like this:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:32
+msgid ""
+"This will create a new directory, `doc`, with a website inside! In our case, "
+"the main page is located in `doc/lib/index.html`. If you open that up in a "
+"web browser, you will see a page with a search bar, and \"Crate lib\" at the "
+"top, with no contents."
+msgstr ""
+
+#: src/what-is-rustdoc.md:37
+msgid ""
+"You can also use `cargo doc` to generate documentation for the whole "
+"project. See [Using rustdoc with Cargo](#using-rustdoc-with-cargo)."
+msgstr ""
+
+#: src/what-is-rustdoc.md:40
+msgid "Configuring rustdoc"
+msgstr ""
+
+#: src/what-is-rustdoc.md:42
+msgid ""
+"There are two problems with this: first, why does it think that our crate is "
+"named \"lib\"? Second, why does it not have any contents?"
+msgstr ""
+
+#: src/what-is-rustdoc.md:46
+msgid ""
+"The first problem is due to `rustdoc` trying to be helpful; like `rustc`, it "
+"assumes that our crate's name is the name of the file for the crate root. To "
+"fix this, we can pass in a command-line flag:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:54
+msgid ""
+"Now, `doc/docs/index.html` will be generated, and the page says \"Crate docs."
+"\""
+msgstr ""
+
+#: src/what-is-rustdoc.md:56
+msgid ""
+"For the second issue, it is because our function `foo` is not public; "
+"`rustdoc` defaults to generating documentation for only public functions. If "
+"we change our code..."
+msgstr ""
+
+#: src/what-is-rustdoc.md:65
+msgid "... and then re-run `rustdoc`:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:71
+msgid ""
+"We now have some generated documentation. Open up `doc/docs/index.html` and "
+"check it out! It should show a link to the `foo` function's page, which is "
+"located at `doc/docs/fn.foo.html`. On that page, you'll see the \"foo is a "
+"function\" we put inside the documentation comment in our crate."
+msgstr ""
+
+#: src/what-is-rustdoc.md:76
+msgid "Using rustdoc with Cargo"
+msgstr ""
+
+#: src/what-is-rustdoc.md:78
+msgid ""
+"Cargo also has integration with `rustdoc` to make it easier to generate "
+"docs. Instead of the `rustdoc` command, we could have done this:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:85
+msgid ""
+"If you want `cargo` to automatically open the generated documentation, you "
+"can use:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:91
+msgid "Internally, `cargo doc` calls out to `rustdoc` like this:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:95
+msgid "<path>/docs/target/debug/deps"
+msgstr ""
+
+#: src/what-is-rustdoc.md:98
+msgid "You can see this with `cargo doc --verbose`."
+msgstr ""
+
+#: src/what-is-rustdoc.md:100
+msgid ""
+"It generates the correct `--crate-name` for us, as well as pointing to `src/"
+"lib.rs`. But what about those other arguments?"
+msgstr ""
+
+#: src/what-is-rustdoc.md:102
+msgid ""
+"`-o` controls the _o_utput of our docs. Instead of a top-level `doc` "
+"directory, notice that Cargo puts generated documentation under `target`. "
+"That is the idiomatic place for generated files in Cargo projects."
+msgstr ""
+
+#: src/what-is-rustdoc.md:105
+msgid ""
+"`-L` flag helps rustdoc find the dependencies your code relies on. If our "
+"project used dependencies, we would get documentation for them as well!"
+msgstr ""
+
+#: src/what-is-rustdoc.md:108
+msgid "Outer and inner documentation"
+msgstr ""
+
+#: src/what-is-rustdoc.md:110
+msgid ""
+"The `///` syntax is used to document the item present after it. That's why "
+"it is called an outer documentation. There is another syntax: `//!`, which "
+"is used to document the item it is present inside. It is called an inner "
+"documentation. It is often used when documenting the entire crate, because "
+"nothing comes before it: it is the root of the crate. So in order to "
+"document an entire crate, you need to use `//!` syntax. For example:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:120
+msgid "//! This is my first rust crate\n"
+msgstr ""
+
+#: src/what-is-rustdoc.md:123
+msgid ""
+"When used in the crate root, it documents the item it is inside, which is "
+"the crate itself."
+msgstr ""
+
+#: src/what-is-rustdoc.md:126
+msgid ""
+"For more information about the `//!` syntax, see [the Book](https://doc.rust-"
+"lang.org/book/ch14-02-publishing-to-crates-io.html#commenting-contained-"
+"items)."
+msgstr ""
+
+#: src/what-is-rustdoc.md:131
+msgid "Using standalone Markdown files"
+msgstr ""
+
+#: src/what-is-rustdoc.md:133
+msgid ""
+"`rustdoc` can also generate HTML from standalone Markdown files. Let' s give "
+"it a try: create a `README.md` file with these contents:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:136
+msgid ""
+"````text\n"
+"# Docs\n"
+"\n"
+"This is a project to test out `rustdoc`.\n"
+"\n"
+"[Here is a link!](https://www.rust-lang.org)\n"
+"\n"
+"## Example\n"
+"\n"
+"```rust\n"
+"fn foo() -> i32 {\n"
+"    1 + 1\n"
+"}\n"
+"```\n"
+"````"
+msgstr ""
+
+#: src/what-is-rustdoc.md:152
+msgid "And call `rustdoc` on it:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:158
+msgid ""
+"You will find an HTML file in `docs/doc/README.html` generated from its "
+"Markdown contents."
+msgstr ""
+
+#: src/what-is-rustdoc.md:161
+msgid ""
+"Cargo currently does not understand standalone Markdown files, unfortunately."
+msgstr ""
+
+#: src/what-is-rustdoc.md:163
+msgid "Summary"
+msgstr ""
+
+#: src/what-is-rustdoc.md:165
+msgid ""
+"This covers the simplest use-cases of `rustdoc`. The rest of this book will "
+"explain all of the options that `rustdoc` has, and how to use them."
+msgstr ""
