@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-03-27T07:47:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/write-documentation/re-exports.md:1
+msgid "Re-exports"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:3
+msgid ""
+"Let's start by explaining what are re-exports. To do so, we will use an "
+"example where we are writing a library (named `lib`) with some types "
+"dispatched in sub-modules:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:15
+msgid "Users can import them like this:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:22
+msgid ""
+"But what if you want the types to be available directly at the crate root or "
+"if we don't want the modules to be visible for users? That's where re-"
+"exports come in:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:26
+msgid "// `sub_module1` and `sub_module2` are not visible outside.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:32
+msgid "// We re-export both types:\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:38
+msgid "And now users will be able to do:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:44
+msgid ""
+"And since both `sub_module1` and `sub_module2` are private, users won't be "
+"able to import them."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:46
+msgid ""
+"Now what's interesting is that the generated documentation for this crate "
+"will show both `Foo` and `AnotherFoo` directly at the crate root, meaning "
+"they have been inlined. There are a few rules to know whether or not a re-"
+"exported item will be inlined."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:50
+msgid "Inlining rules"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:52
+msgid "If a public item comes from a private module, it will be inlined:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:59
+msgid "// `Public` will inlined here since `private_module` is private.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:61
+msgid "// `Public` will not be inlined here since `public_mod` is public.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:66
+msgid ""
+"Likewise, if an item inherits `#[doc(hidden)]` from any of its ancestors, it "
+"will be inlined:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:72
+msgid ""
+"// `Public` be inlined since its parent (`public_mod`) has "
+"`#[doc(hidden)]`.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:77
+msgid ""
+"If an item has `#[doc(hidden)]`, it won't be inlined (nor visible in the "
+"generated documentation):"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:80
+#: src/write-documentation/re-exports.md:92
+msgid "// This struct won't be visible.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:83
+msgid "// This re-export won't be visible.\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:88
+msgid ""
+"However, if you still want the re-export itself to be visible, you can add "
+"the `#[doc(inline)]` attribute on it:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:100
+msgid ""
+"In this case, you will have `pub use self::Hidden as InlinedHidden;` in the "
+"generated documentation but no link to the `Hidden` item."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:103
+msgid ""
+"So back to `#[doc(hidden)]`: if you have multiple re-exports and some of "
+"them have `#[doc(hidden)]`, then these ones (and only these) won't appear in "
+"the documentation:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:108
+#: src/write-documentation/re-exports.md:160
+#: src/write-documentation/re-exports.md:193
+#: src/write-documentation/re-exports.md:207
+msgid "/// First\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:111
+#: src/write-documentation/re-exports.md:163
+msgid "/// Second\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:114
+#: src/write-documentation/re-exports.md:167
+msgid "/// Third\n"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:119
+msgid ""
+"In this case, `InPrivate` will be inlined as `Visible`. However, its "
+"documentation will be `First Third` and not `First Second Third` because the "
+"re-export with `Second` as documentation has `#[doc(hidden)]`, therefore, "
+"all its attributes are ignored."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:123
+msgid "Inlining with `#[doc(inline)]`"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:125
+msgid ""
+"You can use the `#[doc(inline)]` attribute if you want to force an item to "
+"be inlined:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:135
+msgid ""
+"With this code, even though `public_mod::Public` is public and present in "
+"the documentation, the `Public` type will be present both at the crate root "
+"and in the `public_mod` module."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:138
+msgid "Preventing inlining with `#[doc(no_inline)]`"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:140
+msgid ""
+"On the opposite of the `#[doc(inline)]` attribute, if you want to prevent an "
+"item from being inlined, you can use `#[doc(no_inline)]`:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:151
+msgid ""
+"In the generated documentation, you will see a re-export at the crate root "
+"and not the type directly."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:154
+msgid "Attributes"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:156
+msgid ""
+"When an item is inlined, its doc comments and most of its attributes will be "
+"inlined along with it:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:174
+msgid ""
+"In this case, `Visible` will have as documentation `First Second Third` and "
+"will also have as `cfg`: `#[cfg(a, b, c)]`."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:177
+msgid ""
+"[Intra-doc links](./linking-to-items-by-name.md) are resolved relative to "
+"where the doc comment is defined."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:180
+msgid "There are a few attributes which are not inlined though:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:181
+msgid "`#[doc(alias=\"\")]`"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:182
+msgid "`#[doc(inline)]`"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:183
+msgid "`#[doc(no_inline)]`"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:184
+msgid ""
+"`#[doc(hidden)]` (because the re-export itself and its attributes are "
+"ignored)."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:186
+msgid ""
+"All other attributes are inherited when inlined, so that the documentation "
+"matches the behavior if the inlined item was directly defined at the spot "
+"where it's shown."
+msgstr ""
+
+#: src/write-documentation/re-exports.md:189
+msgid "These rules also apply if the item is inlined with a glob re-export:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:202
+msgid ""
+"Otherwise, the attributes displayed will be from the re-exported item and "
+"the attributes on the re-export itself will be ignored:"
+msgstr ""
+
+#: src/write-documentation/re-exports.md:216
+msgid "In the above case, `cfg(c)` will not be displayed in the docs."
+msgstr ""
