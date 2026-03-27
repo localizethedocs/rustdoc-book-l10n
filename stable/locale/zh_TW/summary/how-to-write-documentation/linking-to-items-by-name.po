@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:1
@@ -25,15 +25,15 @@ msgstr ""
 msgid ""
 "For example, in the following code all of the links will link to the rustdoc "
 "page for `Bar`:"
-msgstr ""
+msgstr "例如，在以下程式碼中，所有連結都會指向 `Bar` 的 rustdoc 頁面："
 
 #: src/write-documentation/linking-to-items-by-name.md:9
 msgid "/// This struct is not [Bar]\n"
-msgstr ""
+msgstr "/// This struct is not [Bar]\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:11
 msgid "/// This struct is also not [bar](Bar)\n"
-msgstr ""
+msgstr "/// This struct is also not [bar](Bar)\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:14
 msgid ""
@@ -41,14 +41,17 @@ msgid ""
 "///\n"
 "/// [b]: Bar\n"
 msgstr ""
+"/// This struct is also not [bar][b]\n"
+"///\n"
+"/// [b]: Bar\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:19
 msgid "/// This struct is also not [`Bar`]\n"
-msgstr ""
+msgstr "/// This struct is also not [`Bar`]\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:22
 msgid "/// This struct *is* [`Bar`]!\n"
-msgstr ""
+msgstr "/// This struct *is* [`Bar`]!\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:27
 msgid ""
@@ -64,7 +67,7 @@ msgstr ""
 
 #: src/write-documentation/linking-to-items-by-name.md:33
 msgid "Valid links"
-msgstr ""
+msgstr "有效連結"
 
 #: src/write-documentation/linking-to-items-by-name.md:35
 msgid ""
@@ -116,11 +119,11 @@ msgstr ""
 
 #: src/write-documentation/linking-to-items-by-name.md:81
 msgid "/// See also: [`Foo`](struct@Foo)\n"
-msgstr ""
+msgstr "/// See also: [`Foo`](struct@Foo)\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:83
 msgid "/// This is different from [`Foo`](fn@Foo)\n"
-msgstr ""
+msgstr "/// This is different from [`Foo`](fn@Foo)\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:90
 msgid ""
@@ -140,11 +143,11 @@ msgstr ""
 
 #: src/write-documentation/linking-to-items-by-name.md:100
 msgid "/// This is different from [`foo!()`].\n"
-msgstr ""
+msgstr "/// This is different from [`foo!()`].\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:102
 msgid "/// This is different from [`foo()`]\n"
-msgstr ""
+msgstr "/// This is different from [`foo()`]\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:109
 msgid ""
@@ -170,7 +173,7 @@ msgstr ""
 
 #: src/write-documentation/linking-to-items-by-name.md:124
 msgid "/// Link to [f()]\n"
-msgstr ""
+msgstr "/// Link to [f()]\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:128
 msgid "// the link to `f` will still resolve correctly\n"
@@ -186,7 +189,7 @@ msgstr ""
 
 #: src/write-documentation/linking-to-items-by-name.md:137
 msgid "/// See also [foo()]\n"
-msgstr ""
+msgstr "/// See also [foo()]\n"
 
 #: src/write-documentation/linking-to-items-by-name.md:143
 msgid ""
