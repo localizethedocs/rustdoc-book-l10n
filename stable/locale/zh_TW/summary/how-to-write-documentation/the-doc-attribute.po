@@ -198,11 +198,11 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:106
 msgid "\"https://github.com/rust-lang/rust/issues/\""
-msgstr ""
+msgstr "\"https://github.com/rust-lang/rust/issues/\""
 
 #: src/write-documentation/the-doc-attribute.md:109
 msgid "`html_root_url`"
-msgstr ""
+msgstr "`html_root_url`"
 
 #: src/write-documentation/the-doc-attribute.md:111
 msgid ""

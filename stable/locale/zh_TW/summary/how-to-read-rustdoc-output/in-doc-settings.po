@@ -86,7 +86,7 @@ msgstr ""
 
 #: src/read-documentation/in-doc-settings.md:41
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: src/read-documentation/in-doc-settings.md:43
 msgid "![Collapsed trait implementations](../images/collapsed-trait-impls.png)"

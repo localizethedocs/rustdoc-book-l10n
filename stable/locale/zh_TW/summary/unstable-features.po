@@ -1594,7 +1594,7 @@ msgstr ""
 
 #: src/unstable-features.md:987
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: src/unstable-features.md:994
 msgid "// code\n"

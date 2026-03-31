@@ -130,7 +130,7 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:91
 msgid "Internally, `cargo doc` calls out to `rustdoc` like this:"
-msgstr ""
+msgstr "在內部，`cargo doc` 會像這樣呼叫 `rustdoc`："
 
 #: src/what-is-rustdoc.md:95
 msgid "<path>/docs/target/debug/deps"
@@ -145,6 +145,8 @@ msgid ""
 "It generates the correct `--crate-name` for us, as well as pointing to `src/"
 "lib.rs`. But what about those other arguments?"
 msgstr ""
+"它會為我們生成正確的 `--crate-name`，同時指向 `src/lib.rs`。但是那些其他引數"
+"呢？"
 
 #: src/what-is-rustdoc.md:102
 msgid ""
