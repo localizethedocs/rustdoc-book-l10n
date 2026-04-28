@@ -725,7 +725,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:510
 msgid "You can also use double quotes:"
-msgstr ""
+msgstr "您也可以使用雙引號："
 
 #: src/write-documentation/documentation-tests.md:513
 msgid ""

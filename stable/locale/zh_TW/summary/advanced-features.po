@@ -138,6 +138,9 @@ msgid ""
 "https://doc.rust-lang.org/stable/std/?search=%s\n"
 "```"
 msgstr ""
+"```text\n"
+"https://doc.rust-lang.org/stable/std/?search=%s\n"
+"```"
 
 #: src/advanced-features.md:82
 msgid ""
@@ -179,7 +182,7 @@ msgstr ""
 
 #: src/advanced-features.md:101
 msgid "`#[repr(transparent)]`"
-msgstr ""
+msgstr "`#[repr(transparent)]`"
 
 #: src/advanced-features.md:103
 msgid ""

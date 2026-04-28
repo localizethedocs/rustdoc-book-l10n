@@ -129,6 +129,13 @@ msgid ""
 "/// ```\n"
 "````"
 msgstr ""
+"````text\n"
+"/// Example\n"
+"/// ```rust\n"
+"/// let fourtytwo = \"42\".parse::<u32>()?;\n"
+"/// println!(\"{} + 10 = {}\", fourtytwo, fourtytwo+10);\n"
+"/// ```\n"
+"````"
 
 #: src/write-documentation/what-to-include.md:69
 msgid ""

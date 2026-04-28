@@ -45,7 +45,7 @@ msgstr ""
 
 #: src/SUMMARY.md:10
 msgid "The `#[doc]` attribute"
-msgstr ""
+msgstr "`#[doc]` 特性"
 
 #: src/SUMMARY.md:11
 msgid "Re-exports"
