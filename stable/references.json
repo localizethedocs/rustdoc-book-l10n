@@ -37,9 +37,9 @@
     "branch" : "stable",
     "commit" : 
     {
-      "date" : "2026-03-25 01:22:28 +0000",
-      "hash" : "e408947bfd200af42db322daf0fadfe7e26d3bd1",
-      "title" : "Auto merge of #154343 - arlosi:update-stable-cargo, r=Mark-Simulacrum"
+      "date" : "2026-04-14 19:55:32 +0000",
+      "hash" : "59807616e1fa2540724bfbac14d7976d7e4a3860",
+      "title" : "Auto merge of #155283 - jieyouxu:revert-gnullvm-link-shared-stable, r=Mark-Simulacrum"
     }
   },
   "type" : "branch",
