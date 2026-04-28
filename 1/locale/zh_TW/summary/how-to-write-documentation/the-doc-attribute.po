@@ -13,13 +13,13 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:1
 msgid "The `#[doc]` attribute"
-msgstr ""
+msgstr "`#[doc]` 特性"
 
 #: src/write-documentation/the-doc-attribute.md:3
 msgid ""
 "The `#[doc]` attribute lets you control various aspects of how `rustdoc` "
 "does its job."
-msgstr ""
+msgstr "`#[doc]` 特性讓你能夠控制 `rustdoc` 執行工作時的各個面向。"
 
 #: src/write-documentation/the-doc-attribute.md:6
 msgid ""
@@ -334,7 +334,7 @@ msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:224
 msgid "<span id=\"dochidden\"></span>"
-msgstr ""
+msgstr "<span id=\"dochidden\"></span>"
 
 #: src/write-documentation/the-doc-attribute.md:226
 msgid ""

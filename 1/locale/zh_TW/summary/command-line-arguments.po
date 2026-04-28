@@ -74,7 +74,7 @@ msgstr ""
 
 #: src/command-line-arguments.md:60
 msgid "`-o`/`--out-dir`: output directory path"
-msgstr ""
+msgstr "`-o`/`--out-dir`：輸出目錄路徑"
 
 #: src/command-line-arguments.md:69
 msgid ""
@@ -82,6 +82,8 @@ msgid ""
 "current working directory. With this flag, it will place all output into the "
 "directory you specify."
 msgstr ""
+"默認情況下，`rustdoc` 的輸出會出現在當前工作目錄中名為 `doc` 的目錄。使用此旗"
+"標後，它會將所有輸出放置在您指定的目錄中。"
 
 #: src/command-line-arguments.md:74
 msgid "`--crate-name`: controlling the name of the crate"
@@ -96,7 +98,7 @@ msgstr ""
 
 #: src/command-line-arguments.md:86
 msgid "`--document-private-items`: Show items that are not public"
-msgstr ""
+msgstr "`--document-private-items`：顯示非公開的項目"
 
 #: src/command-line-arguments.md:94
 msgid "By default, `rustdoc` only documents items that are publicly reachable."
