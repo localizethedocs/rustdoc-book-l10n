@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-03-27T07:47:40Z\n"
+"POT-Creation-Date: 2026-04-28T10:50:19Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1247,10 +1247,43 @@ msgid ""
 msgstr ""
 
 #: src/unstable-features.md:754
-msgid "`#[doc(cfg)]` and `#[doc(auto_cfg)]`"
+msgid "`--remap-path-prefix`: Remap source code paths in output"
 msgstr ""
 
 #: src/unstable-features.md:756
+msgid "This flag is the equivalent flag from `rustc` `--remap-path-prefix`."
+msgstr ""
+
+#: src/unstable-features.md:758
+msgid ""
+"it permits remapping source path prefixes in all output, including compiler "
+"diagnostics, debug information, macro expansions, etc. It takes a value of "
+"the form `FROM=TO` where a path prefix equal to `FROM` is rewritten to the "
+"value `TO`."
+msgstr ""
+
+#: src/unstable-features.md:762
+msgid "`documentation` scope"
+msgstr ""
+
+#: src/unstable-features.md:764
+msgid ""
+"`rustdoc` (and by extension `rustc`) have a special `documentation` "
+"remapping scope, it permits remapping source paths that ends up in the "
+"generated documentation."
+msgstr ""
+
+#: src/unstable-features.md:767
+msgid ""
+"Currently the scope can only be specified from `rustc`, due to the lack of "
+"an equivalent `--remap-path-scope` flag in `rustc`."
+msgstr ""
+
+#: src/unstable-features.md:770
+msgid "`#[doc(cfg)]` and `#[doc(auto_cfg)]`"
+msgstr ""
+
+#: src/unstable-features.md:772
 msgid ""
 "This feature aims at providing rustdoc users the possibility to add visual "
 "markers to the rendered documentation to know under which conditions an item "
@@ -1258,35 +1291,35 @@ msgid ""
 "`doc_cfg`)."
 msgstr ""
 
-#: src/unstable-features.md:758
+#: src/unstable-features.md:774
 msgid ""
 "It does not aim to allow having a same item with different `cfg`s to appear "
 "more than once in the generated documentation."
 msgstr ""
 
-#: src/unstable-features.md:760
+#: src/unstable-features.md:776
 msgid ""
 "It does not aim to document items which are _inactive_ under the current "
 "configuration (i.e., “`cfg`ed out”)."
 msgstr ""
 
-#: src/unstable-features.md:762
+#: src/unstable-features.md:778
 msgid "This features adds the following attributes:"
 msgstr ""
 
-#: src/unstable-features.md:764
+#: src/unstable-features.md:780
 msgid "`#[doc(auto_cfg)]`/`#[doc(auto_cfg = true)]`/`#[doc(auto_cfg = false)]`"
 msgstr ""
 
-#: src/unstable-features.md:765 src/unstable-features.md:770
+#: src/unstable-features.md:781 src/unstable-features.md:786
 msgid "`#[doc(cfg(...))]`"
 msgstr ""
 
-#: src/unstable-features.md:766
+#: src/unstable-features.md:782
 msgid "`#![doc(auto_cfg(hide(...)))]` / `#[doc(auto_cfg(show(...)))]`"
 msgstr ""
 
-#: src/unstable-features.md:768
+#: src/unstable-features.md:784
 msgid ""
 "All of these attributes can be added to a module or to the crate root, and "
 "they will be inherited by the child items unless another attribute overrides "
@@ -1295,49 +1328,49 @@ msgid ""
 "parent."
 msgstr ""
 
-#: src/unstable-features.md:772
+#: src/unstable-features.md:788
 msgid ""
 "This attribute provides a standardized format to override `#[cfg()]` "
 "attributes to document conditionally available items. Example:"
 msgstr ""
 
-#: src/unstable-features.md:775
+#: src/unstable-features.md:791
 msgid "// the \"real\" cfg condition\n"
 msgstr ""
 
-#: src/unstable-features.md:776 src/unstable-features.md:778
-#: src/unstable-features.md:791 src/unstable-features.md:808
-#: src/unstable-features.md:822 src/unstable-features.md:903
-#: src/unstable-features.md:951
+#: src/unstable-features.md:792 src/unstable-features.md:794
+#: src/unstable-features.md:807 src/unstable-features.md:824
+#: src/unstable-features.md:838 src/unstable-features.md:919
+#: src/unstable-features.md:967
 msgid "\"futures-io\""
 msgstr ""
 
-#: src/unstable-features.md:776
+#: src/unstable-features.md:792
 msgid "// the `doc(cfg())` so it's displayed to the readers\n"
 msgstr ""
 
-#: src/unstable-features.md:782
+#: src/unstable-features.md:798
 msgid "It will display in the documentation for this module:"
 msgstr ""
 
-#: src/unstable-features.md:784
+#: src/unstable-features.md:800
 msgid ""
 "```text\n"
 "This is supported on feature=\"futures-io\" only.\n"
 "```"
 msgstr ""
 
-#: src/unstable-features.md:788
+#: src/unstable-features.md:804
 msgid ""
 "You can use it to display information in generated documentation, whether or "
 "not there is a `#[cfg()]` attribute:"
 msgstr ""
 
-#: src/unstable-features.md:795
+#: src/unstable-features.md:811
 msgid "It will be displayed exactly the same as the previous code."
 msgstr ""
 
-#: src/unstable-features.md:797
+#: src/unstable-features.md:813
 msgid ""
 "This attribute has the same syntax as conditional compilation, but it only "
 "causes documentation to be added. This means `#[doc(cfg(not(windows)))]` "
@@ -1345,136 +1378,136 @@ msgid ""
 "`#[cfg(not(windows))]` does do that."
 msgstr ""
 
-#: src/unstable-features.md:799
+#: src/unstable-features.md:815
 msgid ""
 "If `doc(auto_cfg)` is enabled on the item, `doc(cfg)` will override it "
 "anyway so in the two previous examples, even if the `doc(auto_cfg)` feature "
 "was enabled, it would still display the same thing."
 msgstr ""
 
-#: src/unstable-features.md:801
+#: src/unstable-features.md:817
 msgid "This attribute works on modules and on items."
 msgstr ""
 
-#: src/unstable-features.md:803
+#: src/unstable-features.md:819
 msgid "`#[doc(auto_cfg(hide(...)))]`"
 msgstr ""
 
-#: src/unstable-features.md:805
+#: src/unstable-features.md:821
 msgid ""
 "This attribute is used to prevent some `cfg` to be generated in the visual "
 "markers. It only applies to `#[doc(auto_cfg = true)]`, not to "
 "`#[doc(cfg(...))]`. So in the previous example:"
 msgstr ""
 
-#: src/unstable-features.md:812
+#: src/unstable-features.md:828
 msgid ""
 "It currently displays both `unix` and `feature = \"futures-io\"` into the "
 "documentation, which is not great. To prevent the `unix` cfg to ever be "
 "displayed, you can use this attribute at the crate root level:"
 msgstr ""
 
-#: src/unstable-features.md:818
+#: src/unstable-features.md:834
 msgid ""
 "Or directly on a given item/module as it covers any of the item's "
 "descendants:"
 msgstr ""
 
-#: src/unstable-features.md:824 src/unstable-features.md:905
+#: src/unstable-features.md:840 src/unstable-features.md:921
 msgid ""
 "// `futures` and all its descendants won't display \"unix\" in their cfgs.\n"
 msgstr ""
 
-#: src/unstable-features.md:828
+#: src/unstable-features.md:844
 msgid "Then, the `unix` cfg will never be displayed into the documentation."
 msgstr ""
 
-#: src/unstable-features.md:830
+#: src/unstable-features.md:846
 msgid ""
 "Rustdoc currently hides `doc` and `doctest` attributes by default and "
 "reserves the right to change the list of \"hidden by default\" attributes."
 msgstr ""
 
-#: src/unstable-features.md:832 src/unstable-features.md:913
+#: src/unstable-features.md:848 src/unstable-features.md:929
 msgid ""
 "The attribute accepts only a list of identifiers or key/value items. So you "
 "can write:"
 msgstr ""
 
-#: src/unstable-features.md:835 src/unstable-features.md:916
+#: src/unstable-features.md:851 src/unstable-features.md:932
 msgid "\"something\""
 msgstr ""
 
-#: src/unstable-features.md:839 src/unstable-features.md:920
+#: src/unstable-features.md:855 src/unstable-features.md:936
 msgid "But you cannot write:"
 msgstr ""
 
-#: src/unstable-features.md:845
+#: src/unstable-features.md:861
 msgid ""
 "So if we use `doc(auto_cfg(hide(unix)))`, it means it will hide all mentions "
 "of `unix`:"
 msgstr ""
 
-#: src/unstable-features.md:848 src/unstable-features.md:849
+#: src/unstable-features.md:864 src/unstable-features.md:865
 msgid "// nothing displayed\n"
 msgstr ""
 
-#: src/unstable-features.md:850
+#: src/unstable-features.md:866
 msgid "// only `windows` displayed\n"
 msgstr ""
 
-#: src/unstable-features.md:853
+#: src/unstable-features.md:869
 msgid "However, it only impacts the `unix` cfg, not the feature:"
 msgstr ""
 
-#: src/unstable-features.md:856
+#: src/unstable-features.md:872
 msgid "\"unix\""
 msgstr ""
 
-#: src/unstable-features.md:856
+#: src/unstable-features.md:872
 msgid "// `feature = \"unix\"` is displayed\n"
 msgstr ""
 
-#: src/unstable-features.md:859
+#: src/unstable-features.md:875
 msgid ""
 "If `cfg_auto(show(...))` and `cfg_auto(hide(...))` are used to show/hide a "
 "same `cfg` on a same item, it'll emit an error. Example:"
 msgstr ""
 
-#: src/unstable-features.md:863 src/unstable-features.md:930
+#: src/unstable-features.md:879 src/unstable-features.md:946
 msgid "// Error!\n"
 msgstr ""
 
-#: src/unstable-features.md:867 src/unstable-features.md:934
+#: src/unstable-features.md:883 src/unstable-features.md:950
 msgid ""
 "Using this attribute will re-enable `auto_cfg` if it was disabled at this "
 "location:"
 msgstr ""
 
-#: src/unstable-features.md:870 src/unstable-features.md:877
-#: src/unstable-features.md:937
+#: src/unstable-features.md:886 src/unstable-features.md:893
+#: src/unstable-features.md:953
 msgid "// Disabling `auto_cfg`\n"
 msgstr ""
 
-#: src/unstable-features.md:874
+#: src/unstable-features.md:890
 msgid "And using `doc(auto_cfg)` will re-enable it:"
 msgstr ""
 
-#: src/unstable-features.md:879 src/unstable-features.md:938
+#: src/unstable-features.md:895 src/unstable-features.md:954
 msgid "// `auto_cfg` is re-enabled.\n"
 msgstr ""
 
-#: src/unstable-features.md:884
+#: src/unstable-features.md:900
 msgid ""
 "However, using `doc(auto_cfg = ...)` and `doc(auto_cfg(...))` on the same "
 "item will emit an error:"
 msgstr ""
 
-#: src/unstable-features.md:888
+#: src/unstable-features.md:904
 msgid "// error\n"
 msgstr ""
 
-#: src/unstable-features.md:892
+#: src/unstable-features.md:908
 msgid ""
 "The reason behind this is that `doc(auto_cfg = ...)` enables or disables the "
 "feature, whereas `doc(auto_cfg(...))` enables it unconditionally, making the "
@@ -1482,11 +1515,11 @@ msgid ""
 "`doc(auto_cfg)` attribute."
 msgstr ""
 
-#: src/unstable-features.md:894
+#: src/unstable-features.md:910
 msgid "`#[doc(auto_cfg(show(...)))]`"
 msgstr ""
 
-#: src/unstable-features.md:896
+#: src/unstable-features.md:912
 msgid ""
 "This attribute does the opposite of `#[doc(auto_cfg(hide(...)))]`: if you "
 "used `#[doc(auto_cfg(hide(...)))]` and want to revert its effect on an item "
@@ -1494,48 +1527,48 @@ msgid ""
 "applies to `#[doc(auto_cfg = true)]`, not to `#[doc(cfg(...))]`."
 msgstr ""
 
-#: src/unstable-features.md:899
+#: src/unstable-features.md:915
 msgid "For example:"
 msgstr ""
 
-#: src/unstable-features.md:908
+#: src/unstable-features.md:924
 msgid ""
 "// `child` and all its descendants will display \"unix\" in their cfgs.\n"
 msgstr ""
 
-#: src/unstable-features.md:926
+#: src/unstable-features.md:942
 msgid ""
 "If `auto_cfg(show(...))` and `auto_cfg(hide(...))` are used to show/hide a "
 "same `cfg` on a same item, it'll emit an error. Example:"
 msgstr ""
 
-#: src/unstable-features.md:942
+#: src/unstable-features.md:958
 msgid "`#[doc(auto_cfg)`/`#[doc(auto_cfg = true)]`/`#[doc(auto_cfg = false)]`"
 msgstr ""
 
-#: src/unstable-features.md:944
+#: src/unstable-features.md:960
 msgid ""
 "By default, `#[doc(auto_cfg)]` is enabled at the crate-level. When it's "
 "enabled, Rustdoc will automatically display `cfg(...)` compatibility "
 "information as-if the same `#[doc(cfg(...))]` had been specified."
 msgstr ""
 
-#: src/unstable-features.md:946
+#: src/unstable-features.md:962
 msgid ""
 "This attribute impacts the item on which it is used and its descendants."
 msgstr ""
 
-#: src/unstable-features.md:948
+#: src/unstable-features.md:964
 msgid "So if we take back the previous example:"
 msgstr ""
 
-#: src/unstable-features.md:955
+#: src/unstable-features.md:971
 msgid ""
 "There's no need to \"duplicate\" the `cfg` into a `doc(cfg())` to make "
 "Rustdoc display it."
 msgstr ""
 
-#: src/unstable-features.md:957
+#: src/unstable-features.md:973
 msgid ""
 "In some situations, the detailed conditional compilation rules used to "
 "implement the feature might not serve as good documentation (for example, "
@@ -1544,17 +1577,17 @@ msgid ""
 "false)]` attribute on the item."
 msgstr ""
 
-#: src/unstable-features.md:959
+#: src/unstable-features.md:975
 msgid ""
 "If no argument is specified (ie `#[doc(auto_cfg)]`), it's the same as "
 "writing `#[doc(auto_cfg = true)]`."
 msgstr ""
 
-#: src/unstable-features.md:961
+#: src/unstable-features.md:977
 msgid "Inheritance"
 msgstr ""
 
-#: src/unstable-features.md:963
+#: src/unstable-features.md:979
 msgid ""
 "Rustdoc merges `cfg` attributes from parent modules to its children. For "
 "example, in this case, the module `non_unix` will describe the entire "
@@ -1562,19 +1595,19 @@ msgid ""
 "information:"
 msgstr ""
 
-#: src/unstable-features.md:970
+#: src/unstable-features.md:986
 msgid "// ...\n"
 msgstr ""
 
-#: src/unstable-features.md:975
+#: src/unstable-features.md:991
 msgid "This code will display:"
 msgstr ""
 
-#: src/unstable-features.md:981
+#: src/unstable-features.md:997
 msgid "Re-exports and inlining"
 msgstr ""
 
-#: src/unstable-features.md:983
+#: src/unstable-features.md:999
 msgid ""
 "`cfg` attributes of a re-export are never merged with the re-exported "
 "item(s) attributes except if the re-export has the `#[doc(inline)]` "
@@ -1582,7 +1615,7 @@ msgid ""
 "with the re-export's."
 msgstr ""
 
-#: src/unstable-features.md:985
+#: src/unstable-features.md:1001
 msgid ""
 "When talking about \"attributes merge\", we mean that if the re-export has "
 "`#[cfg(unix)]` and the re-exported item has `#[cfg(feature = \"foo\")]`, you "
@@ -1592,53 +1625,53 @@ msgid ""
 "\"foo\")`."
 msgstr ""
 
-#: src/unstable-features.md:987
+#: src/unstable-features.md:1003
 msgid "Example:"
 msgstr ""
 
-#: src/unstable-features.md:994
+#: src/unstable-features.md:1010
 msgid "// code\n"
 msgstr ""
 
-#: src/unstable-features.md:998
+#: src/unstable-features.md:1014
 msgid "\"freebsd\""
 msgstr ""
 
-#: src/unstable-features.md:1000
+#: src/unstable-features.md:1016
 msgid "\"macos\""
 msgstr ""
 
-#: src/unstable-features.md:1005
+#: src/unstable-features.md:1021
 msgid ""
 "In this example, `non_unix_desktop` will only display `cfg(target_os = "
 "\"freeebsd\")` and not display any `cfg` from `desktop::non_unix`."
 msgstr ""
 
-#: src/unstable-features.md:1007
+#: src/unstable-features.md:1023
 msgid ""
 "On the contrary, `inlined_non_unix_desktop` will have cfgs from both the re-"
 "export and the re-exported item."
 msgstr ""
 
-#: src/unstable-features.md:1009
+#: src/unstable-features.md:1025
 msgid ""
 "So that also means that if a crate re-exports a foreign item, unless it has "
 "`#[doc(inline)]`, the `cfg` and `doc(cfg)` attributes will not be visible:"
 msgstr ""
 
-#: src/unstable-features.md:1012
+#: src/unstable-features.md:1028
 msgid "// dep:\n"
 msgstr ""
 
-#: src/unstable-features.md:1013
+#: src/unstable-features.md:1029
 msgid "\"a\""
 msgstr ""
 
-#: src/unstable-features.md:1015
+#: src/unstable-features.md:1031
 msgid "// crate using dep:\n"
 msgstr ""
 
-#: src/unstable-features.md:1017
+#: src/unstable-features.md:1033
 msgid ""
 "// There will be no mention of `feature = \"a\"` in the documentation.\n"
 msgstr ""
