@@ -16,9 +16,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-03-27 01:25:29 +0000",
-        "hash" : "ac40f5e105ddc8144904679cb63c8879708a9a26",
-        "title" : "Auto merge of #154004 - GrigorenkoPV:alignment/as_nonzero_usize, r=scottmcm"
+        "date" : "2026-04-28 07:33:06 +0000",
+        "hash" : "4ddb0b7f8ecda9dbdbcbc0519c9988badbd65d1c",
+        "title" : "Auto merge of #155329 - nnethercote:rm-WithCachedTypeInfo-stable_hash, r=oli-obk"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-03-27 01:25:29 +0000",
-        "hash" : "ac40f5e105ddc8144904679cb63c8879708a9a26",
-        "title" : "Auto merge of #154004 - GrigorenkoPV:alignment/as_nonzero_usize, r=scottmcm"
+        "date" : "2026-04-28 07:33:06 +0000",
+        "hash" : "4ddb0b7f8ecda9dbdbcbc0519c9988badbd65d1c",
+        "title" : "Auto merge of #155329 - nnethercote:rm-WithCachedTypeInfo-stable_hash, r=oli-obk"
       }
     }
   },
