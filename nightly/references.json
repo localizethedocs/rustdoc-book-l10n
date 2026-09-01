@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-04-28 07:33:06 +0000",
-      "hash" : "4ddb0b7f8ecda9dbdbcbc0519c9988badbd65d1c",
-      "title" : "Auto merge of #155329 - nnethercote:rm-WithCachedTypeInfo-stable_hash, r=oli-obk"
+      "date" : "2026-08-31 21:55:23 +0000",
+      "hash" : "70222712809cd5cc1718ed8995914a1cbacb6b92",
+      "title" : "Auto merge of #162045 - lnicola:sync-from-ra, r=lnicola"
     }
   },
   "type" : "branch",

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-04-28T10:56:12Z\n"
+"POT-Creation-Date: 2026-09-01T13:47:35Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -318,7 +318,7 @@ msgid ""
 msgstr ""
 
 #: src/lints.md:222 src/lints.md:252 src/lints.md:285 src/lints.md:330
-#: src/lints.md:368 src/lints.md:400 src/lints.md:442
+#: src/lints.md:368 src/lints.md:400 src/lints.md:442 src/lints.md:471
 msgid "Which will give:"
 msgstr ""
 
@@ -587,5 +587,42 @@ msgid ""
 "1  | #![deny(rustdoc::redundant_explicit_links)]\n"
 "   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
 "   = help: Remove explicit link instead\n"
+"```"
+msgstr ""
+
+#: src/lints.md:460
+msgid "`invalid_markdown_table`"
+msgstr ""
+
+#: src/lints.md:462
+msgid ""
+"This lint is **warn-by-default**. It detects unescaped pipes (`|`) in table "
+"rows which lead to some row cells being ignored. For example:"
+msgstr ""
+
+#: src/lints.md:466
+msgid ""
+"//! | col1 |\n"
+"//! | ---- |\n"
+"//! | `code_with(|arg| arg)` |\n"
+msgstr ""
+
+#: src/lints.md:473
+msgid ""
+"```text\n"
+"error: table row has too many columns\n"
+"  --> $DIR/foo.rs:5:18\n"
+"   |\n"
+"5  | //! | `code_with(|arg| arg)` |\n"
+"   |                  ^ help: any content after this column divider is "
+"discarded\n"
+"   |\n"
+"   = help: to escape `|` characters in tables, add a `\\` before them like "
+"`\\|`\n"
+"note: the lint level is defined here\n"
+"  --> $DIR/foo.rs:1:9\n"
+"   |\n"
+"1  | #![deny(rustdoc::invalid_markdown_table)]\n"
+"   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
 "```"
 msgstr ""
