@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-04-28T10:29:25Z\n"
+"POT-Creation-Date: 2026-09-01T13:41:56Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,30 +37,30 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:17
 msgid ""
-"The triple backticks start and end code blocks. If this were in a file named "
-"`foo.rs`, running `rustdoc --test foo.rs` will extract this example, and "
-"then run it as a test."
+"Here, the triple backticks start and end the code block. If this were in a "
+"file named `foo.rs`, running `rustdoc --test foo.rs` will extract this "
+"example, and then run it as a test."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:20
+#: src/write-documentation/documentation-tests.md:21
 msgid ""
 "Please note that by default, if no language is set for the block code, "
 "rustdoc assumes it is Rust code. So the following:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:29
+#: src/write-documentation/documentation-tests.md:31
 msgid "is strictly equivalent to:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:37
+#: src/write-documentation/documentation-tests.md:39
 msgid "There's some subtlety though! Read on for more details."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:39
+#: src/write-documentation/documentation-tests.md:41
 msgid "Passing or failing a doctest"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:41
+#: src/write-documentation/documentation-tests.md:43
 msgid ""
 "Like regular unit tests, regular doctests are considered to \"pass\" if they "
 "compile and run without panicking. So if you want to demonstrate that some "
@@ -68,22 +68,22 @@ msgid ""
 "same as other Rust code:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:47
-#: src/write-documentation/documentation-tests.md:48
+#: src/write-documentation/documentation-tests.md:49
+#: src/write-documentation/documentation-tests.md:50
 msgid "\"foo\""
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:51
+#: src/write-documentation/documentation-tests.md:53
 msgid ""
 "This way, if the computation ever returns something different, the code "
 "panics and the doctest fails."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:54
+#: src/write-documentation/documentation-tests.md:56
 msgid "Pre-processing examples"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:56
+#: src/write-documentation/documentation-tests.md:58
 msgid ""
 "In the example above, you'll note something strange: there's no `main` "
 "function! Forcing you to write `main` for every example, no matter how "
@@ -92,50 +92,50 @@ msgid ""
 "uses to preprocess examples:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:62
+#: src/write-documentation/documentation-tests.md:64
 msgid ""
 "Some common `allow` attributes are inserted, including `unused_variables`, "
 "`unused_assignments`, `unused_mut`, `unused_attributes`, and `dead_code`. "
 "Small examples often trigger these lints."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:66
+#: src/write-documentation/documentation-tests.md:68
 msgid "Any attributes specified with `#![doc(test(attr(...)))]` are added."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:67
+#: src/write-documentation/documentation-tests.md:69
 msgid "Any leading `#![foo]` attributes are left intact as crate attributes."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:68
+#: src/write-documentation/documentation-tests.md:70
 msgid ""
 "If the example does not contain `extern crate`, and `#!"
 "[doc(test(no_crate_inject))]` was not specified, then `extern crate "
 "<mycrate>;` is inserted (note the lack of `#[macro_use]`)."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:71
+#: src/write-documentation/documentation-tests.md:73
 msgid ""
 "Finally, if the example does not contain `fn main`, the remainder of the "
 "text is wrapped in `fn main() { your_code }`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:74
+#: src/write-documentation/documentation-tests.md:76
 msgid "For more about that caveat in rule 4, see \"Documenting Macros\" below."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:76
+#: src/write-documentation/documentation-tests.md:78
 msgid "Hiding portions of the example"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:78
+#: src/write-documentation/documentation-tests.md:80
 msgid ""
 "Sometimes, you need some setup code, or other things that would distract "
 "from your example, but are important to make the tests work. Consider an "
 "example block that looks like this:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:83
+#: src/write-documentation/documentation-tests.md:85
 msgid ""
 "/// ```\n"
 "/// /// Some documentation.\n"
@@ -144,19 +144,19 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:91
+#: src/write-documentation/documentation-tests.md:93
 msgid "It will render like this:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:94
+#: src/write-documentation/documentation-tests.md:96
 msgid "/// Some documentation.\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:96
+#: src/write-documentation/documentation-tests.md:98
 msgid "\"Hello, World!\""
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:99
+#: src/write-documentation/documentation-tests.md:101
 msgid ""
 "Yes, that's right: you can add lines that start with `# `, and they will be "
 "hidden from the output, but will be used when compiling your code. You can "
@@ -169,48 +169,48 @@ msgid ""
 "documentation."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:109
+#: src/write-documentation/documentation-tests.md:111
 msgid "For example, imagine that we wanted to document this code:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:114
-#: src/write-documentation/documentation-tests.md:124
-#: src/write-documentation/documentation-tests.md:132
-#: src/write-documentation/documentation-tests.md:140
+#: src/write-documentation/documentation-tests.md:116
+#: src/write-documentation/documentation-tests.md:126
+#: src/write-documentation/documentation-tests.md:134
+#: src/write-documentation/documentation-tests.md:142
 msgid "\"{}\""
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:117
+#: src/write-documentation/documentation-tests.md:119
 msgid "We might want the documentation to end up looking like this:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:119
+#: src/write-documentation/documentation-tests.md:121
 msgid "First, we set `x` to five:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:127
+#: src/write-documentation/documentation-tests.md:129
 msgid "Next, we set `y` to six:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:135
+#: src/write-documentation/documentation-tests.md:137
 msgid "Finally, we print the sum of `x` and `y`:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:143
+#: src/write-documentation/documentation-tests.md:145
 msgid ""
 "To keep each code block testable, we want the whole program in each block, "
 "but we don't want the reader to see every line every time.  Here's what we "
 "put in our source code:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:173
+#: src/write-documentation/documentation-tests.md:175
 msgid ""
 "By repeating all parts of the example, you can ensure that your example "
 "still compiles, while only showing the parts that are relevant to that part "
 "of your explanation."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:177
+#: src/write-documentation/documentation-tests.md:179
 msgid ""
 "The `#`\\-hiding of lines can be prevented by using two consecutive hashes "
 "`##`. This only needs to be done with the first `#` which would've otherwise "
@@ -218,17 +218,17 @@ msgid ""
 "line that starts with a `#`:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:183
+#: src/write-documentation/documentation-tests.md:185
 msgid ""
 "\"foo\n"
 "## bar # baz\""
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:187
+#: src/write-documentation/documentation-tests.md:189
 msgid "We can document it by escaping the initial `#`:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:189
+#: src/write-documentation/documentation-tests.md:191
 msgid ""
 "```text\n"
 "/// let s = \"foo\n"
@@ -236,13 +236,13 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:194
+#: src/write-documentation/documentation-tests.md:196
 msgid ""
 "Here is an example with a macro rule which matches on tokens starting with "
 "`#`:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:197
+#: src/write-documentation/documentation-tests.md:199
 msgid ""
 "/// ```\n"
 "/// macro_rules! ignore { (##tag) => {}; }\n"
@@ -252,24 +252,24 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:206
+#: src/write-documentation/documentation-tests.md:208
 msgid ""
 "As you can see, the rule is expecting two `#`, so when calling it, we need "
 "to add an extra `#` because the first one is used as escape."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:209
+#: src/write-documentation/documentation-tests.md:211
 msgid "Using `?` in doc tests"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:211
+#: src/write-documentation/documentation-tests.md:213
 msgid ""
 "When writing an example, it is rarely useful to include a complete error "
 "handling, as it would add significant amounts of boilerplate code. Instead, "
 "you may want the following:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:216
+#: src/write-documentation/documentation-tests.md:218
 msgid ""
 "/// ```\n"
 "/// use std::io;\n"
@@ -278,19 +278,19 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:224
+#: src/write-documentation/documentation-tests.md:226
 msgid ""
 "The problem is that `?` returns a `Result<T, E>` and test functions don't "
 "return anything, so this will give a mismatched types error."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:227
+#: src/write-documentation/documentation-tests.md:229
 msgid ""
 "You can get around this limitation by manually adding a `main` that returns "
 "`Result<T, E>`, because `Result<T, E>` implements the `Termination` trait:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:231
+#: src/write-documentation/documentation-tests.md:233
 msgid ""
 "/// A doc test using ?\n"
 "///\n"
@@ -305,13 +305,13 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:245
+#: src/write-documentation/documentation-tests.md:247
 msgid ""
 "Together with the `# ` from the section above, you arrive at a solution that "
 "appears to the reader as the initial idea but works with doc tests:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:249
+#: src/write-documentation/documentation-tests.md:251
 msgid ""
 "/// ```\n"
 "/// use std::io;\n"
@@ -323,13 +323,13 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:260
+#: src/write-documentation/documentation-tests.md:262
 msgid ""
 "As of version 1.34.0, one can also omit the `fn main()`, but you will have "
 "to disambiguate the error type:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:264
+#: src/write-documentation/documentation-tests.md:266
 msgid ""
 "/// ```\n"
 "/// use std::io;\n"
@@ -339,7 +339,7 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:273
+#: src/write-documentation/documentation-tests.md:275
 msgid ""
 "This is an unfortunate consequence of the `?` operator adding an implicit "
 "conversion, so type inference fails because the type is not unique. Please "
@@ -348,11 +348,11 @@ msgid ""
 "returning function."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:278
+#: src/write-documentation/documentation-tests.md:280
 msgid "Showing warnings in doctests"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:280
+#: src/write-documentation/documentation-tests.md:282
 msgid ""
 "You can show warnings in doctests by running `rustdoc --test --test-args=--"
 "show-output` (or, if you're using cargo, `cargo test --doc -- --show-"
@@ -363,15 +363,15 @@ msgid ""
 "md#testattr) in the crate root to enable warnings globally."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:288
+#: src/write-documentation/documentation-tests.md:290
 msgid "Documenting macros"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:290
+#: src/write-documentation/documentation-tests.md:292
 msgid "Here’s an example of documenting a macro:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:293
+#: src/write-documentation/documentation-tests.md:295
 msgid ""
 "/// Panic with a given message unless an expression evaluates to true.\n"
 "///\n"
@@ -392,7 +392,7 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:317
+#: src/write-documentation/documentation-tests.md:319
 msgid ""
 "You’ll note three things: we need to add our own `extern crate` line, so "
 "that we can add the `#[macro_use]` attribute. Second, we’ll need to add our "
@@ -400,45 +400,87 @@ msgid ""
 "of `#` to comment out those two things, so they don’t show up in the output."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:322
+#: src/write-documentation/documentation-tests.md:324
 msgid "Attributes"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:324
+#: src/write-documentation/documentation-tests.md:326
 msgid ""
-"Code blocks can be annotated with attributes that help `rustdoc` do the "
-"right thing when testing your code:"
+"Code blocks can be annotated with attributes that tell `rustdoc` how to "
+"build and interpret the test. They follow the [code fence](https://spec."
+"commonmark.org/0.29/#code-fence) in the opening line. As such, they share "
+"the place with language strings like `rust` or `text`. Multiple attributes "
+"can be provided by separating them with commas, spaces or tabs. You can also "
+"write comments which are enclosed in parentheses `(…)`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:327
+#: src/write-documentation/documentation-tests.md:332
 msgid ""
-"The `ignore` attribute tells Rust to ignore your code. This is almost never "
-"what you want as it's the most generic. Instead, consider annotating it with "
-"`text` if it's not code or using `#`s to get a working example that only "
-"shows the part you care about."
+"As alluded to in the introduction at the very top, unless you specify `rust` "
+"or something that isn't an attribute (except for `custom`), the code block "
+"is assumed to be Rust source code (and is syntax highlighted as such)."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:333
+#: src/write-documentation/documentation-tests.md:336
+msgid ""
+"You can of course add `rust` explicitly (like `rust,ignore`) if the Markdown "
+"is also consumed by other tools (e.g., if it's contained inside of a `README."
+"md` that's included via `include_str`)."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:339
+msgid "`ignore`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:341
+msgid ""
+"The `ignore` attribute tells `rustdoc` to ignore your code. This is useful "
+"if you would like to have Rust syntax highlighting but the snippet is "
+"incomplete or pseudocode. It is customary to add the reason why it should be "
+"ignored in a `(…)` comment."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:346
 msgid ""
 "/// ```ignore\n"
 "/// fn foo() {\n"
 "/// ```\n"
+"///\n"
+"/// ```ignore (needs extra dependency)\n"
+"/// use dependency::functionality;\n"
+"/// functionality();\n"
+"/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:339
+#: src/write-documentation/documentation-tests.md:357
+msgid ""
+"Do note that this is almost never what you want as it's the most generic. "
+"Instead, consider annotating it with `text` if it's not code or using `#`s "
+"to get a working example that only shows the part you care about."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:361
+msgid "`should_panic`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:363
 msgid ""
 "`should_panic` tells `rustdoc` that the code should compile correctly but "
 "panic during execution. If the code doesn't panic, the test will fail."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:343
+#: src/write-documentation/documentation-tests.md:367
 msgid ""
 "/// ```should_panic\n"
 "/// assert!(false);\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:349
+#: src/write-documentation/documentation-tests.md:373
+msgid "`no_run`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:375
 msgid ""
 "The `no_run` attribute will compile your code but not run it. This is "
 "important for examples such as \"Here's how to retrieve a web page,\" which "
@@ -447,7 +489,7 @@ msgid ""
 "code snippets that can cause Undefined Behavior."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:356
+#: src/write-documentation/documentation-tests.md:382
 msgid ""
 "/// ```no_run\n"
 "/// loop {\n"
@@ -456,15 +498,17 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:364
-msgid ""
-"`compile_fail` tells `rustdoc` that the compilation should fail. If it "
-"compiles, then the test will fail. However, please note that code failing "
-"with the current Rust release may work in a future release, as new features "
-"are added."
+#: src/write-documentation/documentation-tests.md:390
+msgid "`compile_fail`"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:370
+#: src/write-documentation/documentation-tests.md:392
+msgid ""
+"`compile_fail` tells `rustdoc` that the compilation should fail. If it "
+"compiles, then the test will fail."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:396
 msgid ""
 "/// ```compile_fail\n"
 "/// let x = 5;\n"
@@ -472,14 +516,18 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:377
+#: src/write-documentation/documentation-tests.md:408
+msgid "`edition…`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:410
 msgid ""
 "`edition2015`, `edition2018`, `edition2021`, and `edition2024` tell "
 "`rustdoc` that the code sample should be compiled using the respective "
 "edition of Rust."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:381
+#: src/write-documentation/documentation-tests.md:414
 msgid ""
 "/// Only runs on the 2018 edition.\n"
 "///\n"
@@ -492,7 +540,11 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:393
+#: src/write-documentation/documentation-tests.md:426
+msgid "`standalone_crate`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:428
 msgid ""
 "Starting in the 2024 edition[^edition-note], compatible doctests are merged "
 "as one before being run. We combine doctests for performance reasons: the "
@@ -501,29 +553,29 @@ msgid ""
 "Whether doctests are merged or not, they are run in their own process."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:398
+#: src/write-documentation/documentation-tests.md:433
 msgid "An example of time spent when running doctests:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:400
+#: src/write-documentation/documentation-tests.md:435
 msgid "[sysinfo crate](https://crates.io/crates/sysinfo):"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:408
+#: src/write-documentation/documentation-tests.md:443
 msgid "Rust core library:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:416
+#: src/write-documentation/documentation-tests.md:451
 msgid ""
 "This is based on the edition of the whole crate, not the edition of the "
 "individual test case that may be specified in its code attribute."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:419
+#: src/write-documentation/documentation-tests.md:454
 msgid "In some cases, doctests cannot be merged. For example, if you have:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:422
+#: src/write-documentation/documentation-tests.md:457
 msgid ""
 "//! ```\n"
 "//! let location = std::panic::Location::caller();\n"
@@ -531,20 +583,20 @@ msgid ""
 "//! ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:428
+#: src/write-documentation/documentation-tests.md:463
 msgid ""
 "The problem with this code is that, if you change any other doctests, it'll "
 "likely break when running `rustdoc --test`, making it tricky to maintain."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:431
+#: src/write-documentation/documentation-tests.md:466
 msgid ""
 "This is where the `standalone_crate` attribute comes in: it tells `rustdoc` "
 "that a doctest should not be merged with the others. So the previous code "
 "should use it:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:435
+#: src/write-documentation/documentation-tests.md:470
 msgid ""
 "//! ```standalone_crate\n"
 "//! let location = std::panic::Location::caller();\n"
@@ -552,85 +604,85 @@ msgid ""
 "//! ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:441
+#: src/write-documentation/documentation-tests.md:476
 msgid ""
 "In this case, it means that the line information will not change if you add/"
 "remove other doctests."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:444
-msgid "Ignoring targets"
+#: src/write-documentation/documentation-tests.md:479
+msgid "`ignore-…`: Ignoring targets"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:446
+#: src/write-documentation/documentation-tests.md:481
 msgid ""
 "Attributes starting with `ignore-` can be used to ignore doctests for "
 "specific targets. For example, `ignore-x86_64` will avoid building doctests "
 "when the target name contains `x86_64`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:451
+#: src/write-documentation/documentation-tests.md:486
 msgid ""
 "/// ```ignore-x86_64\n"
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:457
+#: src/write-documentation/documentation-tests.md:492
 msgid ""
 "This doctest will not be built for targets such as `x86_64-unknown-linux-"
 "gnu`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:459
+#: src/write-documentation/documentation-tests.md:494
 msgid "Multiple ignore attributes can be specified to ignore multiple targets:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:462
+#: src/write-documentation/documentation-tests.md:497
 msgid ""
 "/// ```ignore-x86_64,ignore-windows\n"
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:468
+#: src/write-documentation/documentation-tests.md:503
 msgid ""
 "If you want to preserve backwards compatibility for older versions of "
 "rustdoc, you can specify both `ignore` and `ignore-`, such as:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:472
+#: src/write-documentation/documentation-tests.md:507
 msgid ""
 "/// ```ignore,ignore-x86_64\n"
 "/// assert!(2 == 2);\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:478
+#: src/write-documentation/documentation-tests.md:513
 msgid ""
 "In older versions, this will be ignored on all targets, but starting with "
 "version 1.88.0, `ignore-x86_64` will override `ignore`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:481
-msgid "Custom CSS classes for code blocks"
+#: src/write-documentation/documentation-tests.md:516
+msgid "`{…}` & `custom`: Custom CSS classes for code blocks"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:484
+#: src/write-documentation/documentation-tests.md:519
 msgid ""
 "/// ```custom,{class=language-c}\n"
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:490
+#: src/write-documentation/documentation-tests.md:525
 msgid ""
 "The text `int main(void) { return 0; }` is rendered without highlighting in "
 "a code block with the class `language-c`. This can be used to highlight "
 "other languages through JavaScript libraries for example."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:494
+#: src/write-documentation/documentation-tests.md:529
 msgid ""
 "Without the `custom` attribute, it would be generated as a Rust code example "
 "with an additional `language-C` CSS class. Therefore, if you specifically "
@@ -638,62 +690,92 @@ msgid ""
 "attribute."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:498
+#: src/write-documentation/documentation-tests.md:533
 msgid ""
 "To be noted that you can replace `class=` with `.` to achieve the same "
 "result:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:501
+#: src/write-documentation/documentation-tests.md:536
 msgid ""
 "/// ```custom,{.language-c}\n"
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:507
+#: src/write-documentation/documentation-tests.md:542
 msgid ""
-"To be noted, `rust` and `.rust`/`class=rust` have different effects: `rust` "
-"indicates that this is a Rust code block whereas the two others add a "
-"\"rust\" CSS class on the code block."
+"To be noted, `rust` and `{.rust}` / `{class=rust}` have different effects: "
+"`rust` indicates that this is a Rust code block whereas the two others add a "
+"\"rust\" CSS class on the code block in the generated HTML."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:510
+#: src/write-documentation/documentation-tests.md:546
 msgid "You can also use double quotes:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:513
+#: src/write-documentation/documentation-tests.md:549
 msgid ""
 "/// ```\"not rust\" {.\"hello everyone\"}\n"
 "/// int main(void) { return 0; }\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:519
+#: src/write-documentation/documentation-tests.md:555
+msgid "`test_harness`"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:557
+msgid ""
+"With `test_harness` applied, `rustdoc` will run any contained _test "
+"functions_ instead of the (potentially implicit) `main` function."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:561
+msgid ""
+"//! ```test_harness\n"
+"//! #[test]\n"
+"//! #[should_panic]\n"
+"//! fn abc() { assert!(false); }\n"
+"//!\n"
+"//! #[test]\n"
+"//! fn xyz() { assert!(true); }\n"
+"//! ```\n"
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:571
+msgid ""
+"You can read more about _test functions_ in [the Book](../../book/ch11-01-"
+"writing-tests.html) or in [the Rust Reference](../../reference/attributes/"
+"testing.html)."
+msgstr ""
+
+#: src/write-documentation/documentation-tests.md:576
 msgid "Syntax reference"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:521
+#: src/write-documentation/documentation-tests.md:578
 msgid ""
 "The _exact_ syntax for code blocks, including the edge cases, can be found "
 "in the [Fenced Code Blocks](https://spec.commonmark.org/0.29/#fenced-code-"
 "blocks) section of the CommonMark specification."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:525
+#: src/write-documentation/documentation-tests.md:581
 msgid ""
 "Rustdoc also accepts _indented_ code blocks as an alternative to fenced code "
-"blocks: instead of surrounding your code with three backticks, you can "
-"indent each line by four or more spaces."
+"blocks: Instead of surrounding your code with a [code fence](https://spec."
+"commonmark.org/0.29/#code-fence) (e.g., three backticks), you can indent "
+"each line by four or more spaces."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:534
+#: src/write-documentation/documentation-tests.md:590
 msgid ""
 "These, too, are documented in the CommonMark specification, in the [Indented "
 "Code Blocks](https://spec.commonmark.org/0.29/#indented-code-blocks) section."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:538
+#: src/write-documentation/documentation-tests.md:592
 msgid ""
 "However, it's preferable to use fenced code blocks over indented code "
 "blocks. Not only are fenced code blocks considered more idiomatic for Rust "
@@ -701,11 +783,11 @@ msgid ""
 "`should_panic` with indented code blocks."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:543
+#: src/write-documentation/documentation-tests.md:597
 msgid "Include items only when collecting doctests"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:545
+#: src/write-documentation/documentation-tests.md:599
 msgid ""
 "Rustdoc's documentation tests can do some things that regular unit tests "
 "can't, so it can sometimes be useful to extend your doctests with samples "
@@ -715,7 +797,7 @@ msgid ""
 "in docs, or to find an arbitrary private item to include it on."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:551
+#: src/write-documentation/documentation-tests.md:605
 msgid ""
 "When compiling a crate for use in doctests (with `--test` option), `rustdoc` "
 "will set `#[cfg(doctest)]`. Note that they will still link against only the "
@@ -723,25 +805,25 @@ msgid ""
 "write a unit test."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:555
+#: src/write-documentation/documentation-tests.md:609
 msgid ""
 "In this example, we're adding doctests that we know won't compile, to verify "
 "that our struct can only take in valid data:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:559
+#: src/write-documentation/documentation-tests.md:613
 msgid ""
 "/// We have a struct here. Remember it doesn't accept negative numbers!\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:561
+#: src/write-documentation/documentation-tests.md:615
 msgid ""
 "/// ```compile_fail\n"
 "/// let x = my_crate::MyStruct(-5);\n"
 "/// ```\n"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:569
+#: src/write-documentation/documentation-tests.md:623
 msgid ""
 "Note that the struct `MyStructOnlyTakesUsize` here isn't actually part of "
 "your public crate API. The use of `#[cfg(doctest)]` makes sure that this "
@@ -750,7 +832,7 @@ msgid ""
 "from the public documentation."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:574
+#: src/write-documentation/documentation-tests.md:628
 msgid ""
 "Another possible use of `#[cfg(doctest)]` is to test doctests that are "
 "included in your README file without including it in your main "
@@ -758,22 +840,22 @@ msgid ""
 "your README as part of your doctests:"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:579
+#: src/write-documentation/documentation-tests.md:633
 msgid "\"../README.md\""
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:584
+#: src/write-documentation/documentation-tests.md:638
 msgid ""
 "This will include your README as documentation on the hidden struct "
 "`ReadmeDoctests`, which will then be tested alongside the rest of your "
 "doctests."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:587
+#: src/write-documentation/documentation-tests.md:641
 msgid "Controlling the compilation and run directories"
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:589
+#: src/write-documentation/documentation-tests.md:643
 msgid ""
 "By default, `rustdoc --test` will compile and run documentation test "
 "examples from the same working directory. The compilation directory is being "
@@ -783,7 +865,7 @@ msgid ""
 "read_to_string`."
 msgstr ""
 
-#: src/write-documentation/documentation-tests.md:595
+#: src/write-documentation/documentation-tests.md:649
 msgid ""
 "The `--test-run-directory` flag allows controlling the run directory "
 "separately from the compilation directory. This is particularly useful in "
