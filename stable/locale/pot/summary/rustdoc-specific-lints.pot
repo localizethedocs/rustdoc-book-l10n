@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-04-28T10:50:19Z\n"
+"POT-Creation-Date: 2026-09-01T13:54:45Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -116,7 +116,7 @@ msgid ""
 "items. For example:"
 msgstr ""
 
-#: src/lints.md:73 src/lints.md:232 src/lints.md:351 src/lints.md:423
+#: src/lints.md:73 src/lints.md:242 src/lints.md:361 src/lints.md:433
 msgid "// note: unnecessary - warns by default.\n"
 msgstr ""
 
@@ -267,16 +267,48 @@ msgid ""
 msgstr ""
 
 #: src/lints.md:193
-msgid "`private_doc_tests`"
+msgid "This lint is not emitted on the following items:"
 msgstr ""
 
 #: src/lints.md:195
+msgid "Impl blocks (both trait and inherent)"
+msgstr ""
+
+#: src/lints.md:196
+msgid "Enum variants"
+msgstr ""
+
+#: src/lints.md:197
+msgid "Struct/union fields"
+msgstr ""
+
+#: src/lints.md:198
+msgid "Type aliases, including associated types"
+msgstr ""
+
+#: src/lints.md:199
+msgid "Statics/constants"
+msgstr ""
+
+#: src/lints.md:200
+msgid "Modules (including the top-level module of a crate)"
+msgstr ""
+
+#: src/lints.md:201
+msgid "Foreign items from reexports (functions, statics, types, etc)"
+msgstr ""
+
+#: src/lints.md:203
+msgid "`private_doc_tests`"
+msgstr ""
+
+#: src/lints.md:205
 msgid ""
 "This lint is **allowed by default**. It detects documentation tests when "
 "they are on a private item. For example:"
 msgstr ""
 
-#: src/lints.md:202
+#: src/lints.md:212
 msgid ""
 "/// private doc test\n"
 "    ///\n"
@@ -285,12 +317,12 @@ msgid ""
 "    /// ```\n"
 msgstr ""
 
-#: src/lints.md:212 src/lints.md:242 src/lints.md:275 src/lints.md:320
-#: src/lints.md:358 src/lints.md:390 src/lints.md:432
+#: src/lints.md:222 src/lints.md:252 src/lints.md:285 src/lints.md:330
+#: src/lints.md:368 src/lints.md:400 src/lints.md:442
 msgid "Which will give:"
 msgstr ""
 
-#: src/lints.md:214
+#: src/lints.md:224
 msgid ""
 "````text\n"
 "warning: Documentation test in private item\n"
@@ -305,17 +337,17 @@ msgid ""
 "````"
 msgstr ""
 
-#: src/lints.md:226
+#: src/lints.md:236
 msgid "`invalid_codeblock_attributes`"
 msgstr ""
 
-#: src/lints.md:228
+#: src/lints.md:238
 msgid ""
 "This lint **warns by default**. It detects code block attributes in "
 "documentation examples that have potentially mis-typed values. For example:"
 msgstr ""
 
-#: src/lints.md:233
+#: src/lints.md:243
 msgid ""
 "/// Example.\n"
 "///\n"
@@ -324,7 +356,7 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/lints.md:244
+#: src/lints.md:254
 msgid ""
 "````text\n"
 "warning: unknown attribute `should-panic`. Did you mean `should_panic`?\n"
@@ -343,29 +375,29 @@ msgid ""
 "````"
 msgstr ""
 
-#: src/lints.md:259
+#: src/lints.md:269
 msgid ""
 "In the example above, the correct form is `should_panic`. This helps detect "
 "typo mistakes for some common attributes."
 msgstr ""
 
-#: src/lints.md:262
+#: src/lints.md:272
 msgid "`invalid_html_tags`"
 msgstr ""
 
-#: src/lints.md:264
+#: src/lints.md:274
 msgid ""
 "This lint **warns by default**. It detects unclosed or invalid HTML tags. "
 "For example:"
 msgstr ""
 
-#: src/lints.md:269
+#: src/lints.md:279
 msgid ""
 "/// <h1>\n"
 "/// </script>\n"
 msgstr ""
 
-#: src/lints.md:277
+#: src/lints.md:287
 msgid ""
 "```text\n"
 "warning: unopened HTML tag `script`\n"
@@ -392,17 +424,17 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/lints.md:301
+#: src/lints.md:311
 msgid "`invalid_rust_codeblocks`"
 msgstr ""
 
-#: src/lints.md:303
+#: src/lints.md:313
 msgid ""
 "This lint **warns by default**. It detects Rust code blocks in documentation "
 "examples that are invalid (e.g. empty, not parsable as Rust). For example:"
 msgstr ""
 
-#: src/lints.md:307
+#: src/lints.md:317
 msgid ""
 "/// Empty code blocks (with and without the `rust` marker):\n"
 "///\n"
@@ -416,7 +448,7 @@ msgid ""
 "/// ```\n"
 msgstr ""
 
-#: src/lints.md:322
+#: src/lints.md:332
 msgid ""
 "````text\n"
 "warning: Rust code block is empty\n"
@@ -442,23 +474,23 @@ msgid ""
 "````"
 msgstr ""
 
-#: src/lints.md:345
+#: src/lints.md:355
 msgid "`bare_urls`"
 msgstr ""
 
-#: src/lints.md:347
+#: src/lints.md:357
 msgid ""
 "This lint is **warn-by-default**. It detects URLs which are not links. For "
 "example:"
 msgstr ""
 
-#: src/lints.md:352
+#: src/lints.md:362
 msgid ""
 "/// http://example.org\n"
 "/// [http://example.net]\n"
 msgstr ""
 
-#: src/lints.md:360
+#: src/lints.md:370
 msgid ""
 "```text\n"
 "warning: this URL is not a hyperlink\n"
@@ -481,21 +513,21 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/lints.md:378
+#: src/lints.md:388
 msgid "`unescaped_backticks`"
 msgstr ""
 
-#: src/lints.md:380
+#: src/lints.md:390
 msgid ""
 "This lint is **allowed by default**. It detects backticks (\\`) that are not "
 "escaped. This usually means broken inline code. For example:"
 msgstr ""
 
-#: src/lints.md:385
+#: src/lints.md:395
 msgid "/// `add(a, b) is the same as `add(b, a)`.\n"
 msgstr ""
 
-#: src/lints.md:392
+#: src/lints.md:402
 msgid ""
 "```text\n"
 "warning: unescaped backtick\n"
@@ -522,24 +554,24 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/lints.md:416
+#: src/lints.md:426
 msgid "`redundant_explicit_links`"
 msgstr ""
 
-#: src/lints.md:418
+#: src/lints.md:428
 msgid ""
 "This lint is **warn-by-default**. It detects explicit links that are the "
 "same as computed automatic links. This usually means the explicit links are "
 "removable. For example:"
 msgstr ""
 
-#: src/lints.md:424
+#: src/lints.md:434
 msgid ""
 "/// add takes 2 [`usize`](usize) and performs addition\n"
 "/// on them, then returns result.\n"
 msgstr ""
 
-#: src/lints.md:434
+#: src/lints.md:444
 msgid ""
 "```text\n"
 "error: redundant explicit rustdoc link\n"
