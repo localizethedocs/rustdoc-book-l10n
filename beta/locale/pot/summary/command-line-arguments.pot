@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-04-28T10:47:45Z\n"
+"POT-Creation-Date: 2026-09-01T13:45:13Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,15 +28,16 @@ msgstr ""
 #: src/command-line-arguments.md:76 src/command-line-arguments.md:88
 #: src/command-line-arguments.md:108 src/command-line-arguments.md:125
 #: src/command-line-arguments.md:140 src/command-line-arguments.md:151
-#: src/command-line-arguments.md:163 src/command-line-arguments.md:188
-#: src/command-line-arguments.md:201 src/command-line-arguments.md:214
-#: src/command-line-arguments.md:249 src/command-line-arguments.md:262
-#: src/command-line-arguments.md:282 src/command-line-arguments.md:301
-#: src/command-line-arguments.md:313 src/command-line-arguments.md:326
-#: src/command-line-arguments.md:340 src/command-line-arguments.md:352
-#: src/command-line-arguments.md:365 src/command-line-arguments.md:377
-#: src/command-line-arguments.md:388 src/command-line-arguments.md:401
-#: src/command-line-arguments.md:415 src/command-line-arguments.md:433
+#: src/command-line-arguments.md:163 src/command-line-arguments.md:200
+#: src/command-line-arguments.md:213 src/command-line-arguments.md:226
+#: src/command-line-arguments.md:261 src/command-line-arguments.md:274
+#: src/command-line-arguments.md:294 src/command-line-arguments.md:313
+#: src/command-line-arguments.md:325 src/command-line-arguments.md:338
+#: src/command-line-arguments.md:352 src/command-line-arguments.md:364
+#: src/command-line-arguments.md:377 src/command-line-arguments.md:389
+#: src/command-line-arguments.md:400 src/command-line-arguments.md:413
+#: src/command-line-arguments.md:427 src/command-line-arguments.md:445
+#: src/command-line-arguments.md:475
 msgid "Using this flag looks like this:"
 msgstr ""
 
@@ -206,52 +207,72 @@ msgid ""
 msgstr ""
 
 #: src/command-line-arguments.md:186
-msgid "`--test`: run code examples as tests"
+msgid "`--remap-path-prefix`: remap source paths in output"
+msgstr ""
+
+#: src/command-line-arguments.md:188
+msgid "This flag is the equivalent flag from `rustc`: `--remap-path-prefix`."
+msgstr ""
+
+#: src/command-line-arguments.md:191
+msgid "\"$PWD=/foo\""
 msgstr ""
 
 #: src/command-line-arguments.md:194
+msgid ""
+"It permits remapping (as a best effort) source path prefixes in all output, "
+"including diagnostics, debug information, macro expansions, generated "
+"documentation, etc. It takes a value of the form `FROM=TO` where a path "
+"prefix equal to `FROM` is rewritten to the value `TO`."
+msgstr ""
+
+#: src/command-line-arguments.md:198
+msgid "`--test`: run code examples as tests"
+msgstr ""
+
+#: src/command-line-arguments.md:206
 msgid ""
 "This flag will run your code examples as tests. For more, see [the chapter "
 "on documentation tests](write-documentation/documentation-tests.md)."
 msgstr ""
 
-#: src/command-line-arguments.md:197
+#: src/command-line-arguments.md:209
 msgid "See also `--test-args` and `--test-run-directory`."
 msgstr ""
 
-#: src/command-line-arguments.md:199
+#: src/command-line-arguments.md:211
 msgid "`--test-args`: pass options to test runner"
 msgstr ""
 
-#: src/command-line-arguments.md:207
+#: src/command-line-arguments.md:219
 msgid ""
 "This flag will pass options to the test runner when running documentation "
 "tests. For more, see [the chapter on documentation tests](write-"
 "documentation/documentation-tests.md)."
 msgstr ""
 
-#: src/command-line-arguments.md:210 src/command-line-arguments.md:223
+#: src/command-line-arguments.md:222 src/command-line-arguments.md:235
 msgid "See also `--test`."
 msgstr ""
 
-#: src/command-line-arguments.md:212
+#: src/command-line-arguments.md:224
 msgid "`--test-run-directory`: run code examples in a specific directory"
 msgstr ""
 
-#: src/command-line-arguments.md:220
+#: src/command-line-arguments.md:232
 msgid ""
 "This flag will run your code examples in the specified working directory. "
 "For more, see [the chapter on documentation tests](write-documentation/"
 "documentation-tests.md)."
 msgstr ""
 
-#: src/command-line-arguments.md:225
+#: src/command-line-arguments.md:237
 msgid ""
 "`--test-runtool`, `--test-runtool-arg`: program to run tests with; args to "
 "pass to it"
 msgstr ""
 
-#: src/command-line-arguments.md:227
+#: src/command-line-arguments.md:239
 msgid ""
 "A doctest wrapper program can be specified with the `--test-runtool` flag. "
 "Rustdoc will execute that wrapper instead of the doctest executable when "
@@ -260,53 +281,53 @@ msgid ""
 "doctest executable to run."
 msgstr ""
 
-#: src/command-line-arguments.md:233
+#: src/command-line-arguments.md:245
 msgid "Using these options looks like this:"
 msgstr ""
 
-#: src/command-line-arguments.md:239
+#: src/command-line-arguments.md:251
 msgid ""
 "For example, if you want to run your doctests under valgrind you might run:"
 msgstr ""
 
-#: src/command-line-arguments.md:245
+#: src/command-line-arguments.md:257
 msgid ""
 "Another use case would be to run a test inside an emulator, or through a "
 "Virtual Machine."
 msgstr ""
 
-#: src/command-line-arguments.md:247
+#: src/command-line-arguments.md:259
 msgid "`--target`: generate documentation for the specified target triple"
 msgstr ""
 
-#: src/command-line-arguments.md:255
+#: src/command-line-arguments.md:267
 msgid ""
 "Similar to the `--target` flag for `rustc`, this generates documentation for "
 "a target triple that's different than your host triple."
 msgstr ""
 
-#: src/command-line-arguments.md:258
+#: src/command-line-arguments.md:270
 msgid "All of the usual caveats of cross-compiling code apply."
 msgstr ""
 
-#: src/command-line-arguments.md:260
+#: src/command-line-arguments.md:272
 msgid "`--default-theme`: set the default theme"
 msgstr ""
 
-#: src/command-line-arguments.md:268
+#: src/command-line-arguments.md:280
 msgid ""
 "Sets the default theme (for users whose browser has not remembered a "
 "previous theme selection from the on-page theme picker)."
 msgstr ""
 
-#: src/command-line-arguments.md:271
+#: src/command-line-arguments.md:283
 msgid ""
 "The supplied value should be the lowercase version of the theme name. The "
 "set of available themes can be seen in the theme picker in the generated "
 "output."
 msgstr ""
 
-#: src/command-line-arguments.md:275
+#: src/command-line-arguments.md:287
 msgid ""
 "Note that the set of available themes - and their appearance - is not "
 "necessarily stable from one rustdoc version to the next.  If the requested "
@@ -314,126 +335,126 @@ msgid ""
 "instead."
 msgstr ""
 
-#: src/command-line-arguments.md:280
+#: src/command-line-arguments.md:292
 msgid "`--markdown-css`: include more CSS files when rendering markdown"
 msgstr ""
 
-#: src/command-line-arguments.md:288
+#: src/command-line-arguments.md:300
 msgid ""
 "When rendering Markdown files, this will create a `<link>` element in the "
 "`<head>` section of the generated HTML. For example, with the invocation "
 "above,"
 msgstr ""
 
-#: src/command-line-arguments.md:292
+#: src/command-line-arguments.md:304
 msgid "\"stylesheet\""
 msgstr ""
 
-#: src/command-line-arguments.md:292
+#: src/command-line-arguments.md:304
 msgid "\"text/css\""
 msgstr ""
 
-#: src/command-line-arguments.md:292
+#: src/command-line-arguments.md:304
 msgid "\"foo.css\""
 msgstr ""
 
-#: src/command-line-arguments.md:295
+#: src/command-line-arguments.md:307
 msgid "will be added."
 msgstr ""
 
-#: src/command-line-arguments.md:297
+#: src/command-line-arguments.md:309
 msgid "When rendering Rust files, this flag is ignored."
 msgstr ""
 
-#: src/command-line-arguments.md:299
+#: src/command-line-arguments.md:311
 msgid "`--html-in-header`: include more HTML in `<head>`"
 msgstr ""
 
-#: src/command-line-arguments.md:308
+#: src/command-line-arguments.md:320
 msgid ""
 "This flag takes a list of files, and inserts them into the `<head>` section "
 "of the rendered documentation."
 msgstr ""
 
-#: src/command-line-arguments.md:311
+#: src/command-line-arguments.md:323
 msgid "`--html-before-content`: include more HTML before the content"
 msgstr ""
 
-#: src/command-line-arguments.md:320
+#: src/command-line-arguments.md:332
 msgid ""
 "This flag takes a list of files, and inserts them inside the `<body>` tag "
 "but before the other content `rustdoc` would normally produce in the "
 "rendered documentation."
 msgstr ""
 
-#: src/command-line-arguments.md:324
+#: src/command-line-arguments.md:336
 msgid "`--html-after-content`: include more HTML after the content"
 msgstr ""
 
-#: src/command-line-arguments.md:333
+#: src/command-line-arguments.md:345
 msgid ""
 "This flag takes a list of files, and inserts them before the `</body>` tag "
 "but after the other content `rustdoc` would normally produce in the rendered "
 "documentation."
 msgstr ""
 
-#: src/command-line-arguments.md:338
+#: src/command-line-arguments.md:350
 msgid "`--markdown-playground-url`: control the location of the playground"
 msgstr ""
 
-#: src/command-line-arguments.md:346
+#: src/command-line-arguments.md:358
 msgid ""
 "When rendering a Markdown file, this flag gives the base URL of the Rust "
 "Playground, to use for generating `Run` buttons."
 msgstr ""
 
-#: src/command-line-arguments.md:350
+#: src/command-line-arguments.md:362
 msgid "`--markdown-no-toc`: don't generate a table of contents"
 msgstr ""
 
-#: src/command-line-arguments.md:358
+#: src/command-line-arguments.md:370
 msgid ""
 "When generating documentation from a Markdown file, by default, `rustdoc` "
 "will generate a table of contents. This flag suppresses that, and no TOC "
 "will be generated."
 msgstr ""
 
-#: src/command-line-arguments.md:363
+#: src/command-line-arguments.md:375
 msgid "`-e`/`--extend-css`: extend rustdoc's CSS"
 msgstr ""
 
-#: src/command-line-arguments.md:372
+#: src/command-line-arguments.md:384
 msgid ""
 "With this flag, the contents of the files you pass are included at the "
 "bottom of the `theme.css` file."
 msgstr ""
 
-#: src/command-line-arguments.md:375
+#: src/command-line-arguments.md:387
 msgid "`--sysroot`: override the system root"
 msgstr ""
 
-#: src/command-line-arguments.md:383
+#: src/command-line-arguments.md:395
 msgid ""
 "Similar to `rustc --sysroot`, this lets you change the sysroot `rustdoc` "
 "uses when compiling your code."
 msgstr ""
 
-#: src/command-line-arguments.md:386
+#: src/command-line-arguments.md:398
 msgid "`--edition`: control the edition of docs and doctests"
 msgstr ""
 
-#: src/command-line-arguments.md:395
+#: src/command-line-arguments.md:407
 msgid ""
 "This flag allows `rustdoc` to treat your rust code as the given edition. It "
 "will compile doctests with the given edition as well. As with `rustc`, the "
 "default edition that `rustdoc` will use is `2015` (the first edition)."
 msgstr ""
 
-#: src/command-line-arguments.md:399
+#: src/command-line-arguments.md:411
 msgid "`--theme`: add a theme to the documentation output"
 msgstr ""
 
-#: src/command-line-arguments.md:407
+#: src/command-line-arguments.md:419
 msgid ""
 "`rustdoc`'s default output includes two themes: `light` (the default) and "
 "`dark`. This flag allows you to add custom themes to the output. Giving a "
@@ -443,11 +464,11 @@ msgid ""
 "documentation."
 msgstr ""
 
-#: src/command-line-arguments.md:413
+#: src/command-line-arguments.md:425
 msgid "`--check-theme`: verify custom themes against the default theme"
 msgstr ""
 
-#: src/command-line-arguments.md:421
+#: src/command-line-arguments.md:433
 msgid ""
 "While `rustdoc`'s HTML output is more-or-less consistent between versions, "
 "there is no guarantee that a theme file will have the same effect. The `--"
@@ -456,40 +477,89 @@ msgid ""
 "that it implements the same CSS rules as the official `light` theme."
 msgstr ""
 
-#: src/command-line-arguments.md:427
+#: src/command-line-arguments.md:439
 msgid ""
 "`--check-theme` is a separate mode in `rustdoc`. When `rustdoc` sees the `--"
 "check-theme` flag, it discards all other flags and only performs the CSS "
 "rule comparison operation."
 msgstr ""
 
-#: src/command-line-arguments.md:431
+#: src/command-line-arguments.md:443
 msgid "`--crate-version`: control the crate version"
 msgstr ""
 
-#: src/command-line-arguments.md:439
+#: src/command-line-arguments.md:451
 msgid ""
 "When `rustdoc` receives this flag, it will print an extra \"Version "
 "(version)\" into the sidebar of the crate root's docs. You can use this flag "
 "to differentiate between different versions of your library's documentation."
 msgstr ""
 
-#: src/command-line-arguments.md:443
+#: src/command-line-arguments.md:455
+msgid "`--emit`: control the types of output for rustdoc to emit"
+msgstr ""
+
+#: src/command-line-arguments.md:457
+msgid ""
+"This flag controls the types of output by rustdoc. It accepts a comma-"
+"separated list of values, and may be specified multiple times. The valid "
+"emit kinds are:"
+msgstr ""
+
+#: src/command-line-arguments.md:460
+msgid ""
+"`html-static-files` --- Generates shared static files whose contents are "
+"tied to a specific toolchain version. These are written with a filename that "
+"includes a hash of their contents, so they are safe to cache with the change "
+"if the toolchain version or their contents change, or with the `Cache-"
+"Control: immutable` directive."
+msgstr ""
+
+#: src/command-line-arguments.md:465
+msgid ""
+"`html-non-static-files` --- Generates files based on the crate(s) being "
+"documented. These file names need to be deterministic so there is no content-"
+"hash in their file names."
+msgstr ""
+
+#: src/command-line-arguments.md:468
+msgid ""
+"`dep-info` --- Generates a file with Makefile syntax that indicates all the "
+"source files that were loaded to document the crate. The default output "
+"filename is `CRATE_NAME.d`. This emit type can can optionally be followed by "
+"`=` to specify an explicit output path, for example, `--emit=dep-info=/path/"
+"to/foo.d`. The output can be sent to stdout by specifying `-` as the path (e."
+"g., `--emit=dep-info=-`)."
+msgstr ""
+
+#: src/command-line-arguments.md:481
+msgid ""
+"If not specified, the default emit types would be `--emit=html-static-files,"
+"html-non-static-files`."
+msgstr ""
+
+#: src/command-line-arguments.md:484
+msgid ""
+"Output files are written to the current directory unless the `--out-dir` "
+"flag is used."
+msgstr ""
+
+#: src/command-line-arguments.md:486
 msgid "`-`: load source code from the standard input"
 msgstr ""
 
-#: src/command-line-arguments.md:445
+#: src/command-line-arguments.md:488
 msgid ""
 "If you specify `-` as the INPUT on the command line, then `rustdoc` will "
 "read the source code from stdin (standard input stream) until the EOF, "
 "instead of the file system with an otherwise specified path."
 msgstr ""
 
-#: src/command-line-arguments.md:449
+#: src/command-line-arguments.md:492
 msgid "`@path`: load command-line flags from a path"
 msgstr ""
 
-#: src/command-line-arguments.md:451
+#: src/command-line-arguments.md:494
 msgid ""
 "If you specify `@path` on the command-line, then it will open `path` and "
 "read command line options from it. These options are one per line; a blank "
@@ -497,29 +567,29 @@ msgid ""
 "endings, and must be encoded as UTF-8."
 msgstr ""
 
-#: src/command-line-arguments.md:456
+#: src/command-line-arguments.md:499
 msgid "`--passes`: add more rustdoc passes"
 msgstr ""
 
-#: src/command-line-arguments.md:458 src/command-line-arguments.md:463
+#: src/command-line-arguments.md:501 src/command-line-arguments.md:506
 msgid ""
 "This flag is **deprecated**. For more details on passes, see [the chapter on "
 "them](deprecated-features.md#passes)."
 msgstr ""
 
-#: src/command-line-arguments.md:461
+#: src/command-line-arguments.md:504
 msgid "`--no-defaults`: don't run default passes"
 msgstr ""
 
-#: src/command-line-arguments.md:466
+#: src/command-line-arguments.md:509
 msgid "`-r`/`--input-format`: input format"
 msgstr ""
 
-#: src/command-line-arguments.md:468
+#: src/command-line-arguments.md:511
 msgid "This flag is **deprecated** and **has no effect**."
 msgstr ""
 
-#: src/command-line-arguments.md:470
+#: src/command-line-arguments.md:513
 msgid ""
 "Rustdoc only supports Rust source code and Markdown input formats. If the "
 "file ends in `.md` or `.markdown`, `rustdoc` treats it as a Markdown file. "
