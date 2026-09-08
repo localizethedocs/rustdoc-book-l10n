@@ -37,9 +37,9 @@
     "branch" : "stable",
     "commit" : 
     {
-      "date" : "2026-04-14 19:55:32 +0000",
-      "hash" : "59807616e1fa2540724bfbac14d7976d7e4a3860",
-      "title" : "Auto merge of #155283 - jieyouxu:revert-gnullvm-link-shared-stable, r=Mark-Simulacrum"
+      "date" : "2026-09-01 06:56:03 +0000",
+      "hash" : "48a229ceaefd4985c50990b14116b6d856af0985",
+      "title" : "Auto merge of #161555 - lcnr:backport-erased-handling, r=Mark-Simulacrum"
     }
   },
   "type" : "branch",
