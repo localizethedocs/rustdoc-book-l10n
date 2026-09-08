@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-04-28 07:33:06 +0000",
-      "hash" : "4ddb0b7f8ecda9dbdbcbc0519c9988badbd65d1c",
-      "title" : "Auto merge of #155329 - nnethercote:rm-WithCachedTypeInfo-stable_hash, r=oli-obk"
+      "date" : "2026-09-08 07:17:59 +0000",
+      "hash" : "745de6eca673de5329ec68f2689629a5ca45ab35",
+      "title" : "Auto merge of #162456 - JonathanBrouwer:rollup-bpMVYlc, r=JonathanBrouwer"
     }
   },
   "type" : "branch",
