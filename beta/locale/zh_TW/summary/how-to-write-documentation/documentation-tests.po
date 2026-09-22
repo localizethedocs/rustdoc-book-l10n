@@ -442,9 +442,6 @@ msgid ""
 "/// fn foo() {\n"
 "/// ```\n"
 msgstr ""
-"/// ```ignore\n"
-"/// fn foo() {\n"
-"/// ```\n"
 
 #: src/write-documentation/documentation-tests.md:339
 msgid ""
@@ -610,7 +607,7 @@ msgstr ""
 
 #: src/write-documentation/documentation-tests.md:444
 msgid "Ignoring targets"
-msgstr "忽略目標"
+msgstr ""
 
 #: src/write-documentation/documentation-tests.md:446
 msgid ""
