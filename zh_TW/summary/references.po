@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The rustdoc book\n"
+"POT-Creation-Date: 2026-04-28T10:29:25Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/references.md:1
+msgid "References"
+msgstr ""
+
+#: src/references.md:3
+msgid ""
+"There are many great `rustdoc` references out there. If you know of other "
+"great resources, please submit a pull request!"
+msgstr ""
+
+#: src/references.md:6
+msgid "Official"
+msgstr ""
+
+#: src/references.md:8
+msgid ""
+"[Learn Rust](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io."
+"html#making-useful-documentation-comments)"
+msgstr ""
+
+#: src/references.md:9
+msgid ""
+"[Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/meta/doc."
+"html)"
+msgstr ""
+
+#: src/references.md:10
+msgid ""
+"[Rust Reference](https://doc.rust-lang.org/stable/reference/comments."
+"html#doc-comments)"
+msgstr ""
+
+#: src/references.md:11
+msgid ""
+"[RFC 1574: More API Documentation Conventions](https://rust-lang.github.io/"
+"rfcs/1574-more-api-documentation-conventions.html)"
+msgstr ""
+
+#: src/references.md:12
+msgid ""
+"[RFC 1946: Intra Rustdoc Links](https://rust-lang.github.io/rfcs/1946-intra-"
+"rustdoc-links.html)"
+msgstr ""
+
+#: src/references.md:14
+msgid "Community"
+msgstr ""
+
+#: src/references.md:15
+msgid ""
+"[API Guidelines](https://rust-lang.github.io/api-guidelines/documentation."
+"html)"
+msgstr ""
+
+#: src/references.md:16
+msgid ""
+"[GitHub tagged RFCs](https://github.com/rust-lang/rfcs/issues?q=label%3AT-"
+"rustdoc)"
+msgstr ""
+
+#: src/references.md:17
+msgid ""
+"[GitHub tagged issues](https://github.com/rust-lang/rust/issues?"
+"q=is%3Aissue+is%3Aopen+label%3AT-rustdoc)"
+msgstr ""
+
+#: src/references.md:18
+msgid ""
+"[RFC (stalled) front page styleguide](https://github.com/rust-lang/rfcs/"
+"pull/1687)"
+msgstr ""
+
+#: src/references.md:19
+msgid ""
+"[Guide on how to write documentation for a Rust crate](https://blog."
+"guillaume-gomez.fr/"
+"articles/2020-03-12+Guide+on+how+to+write+documentation+for+a+Rust+crate)"
+msgstr ""
