@@ -37,9 +37,9 @@
     "branch" : "stable",
     "commit" : 
     {
-      "date" : "2026-04-14 19:55:32 +0000",
-      "hash" : "59807616e1fa2540724bfbac14d7976d7e4a3860",
-      "title" : "Auto merge of #155283 - jieyouxu:revert-gnullvm-link-shared-stable, r=Mark-Simulacrum"
+      "date" : "2026-10-13 01:48:49 +0000",
+      "hash" : "58cf8f9c35b355199727627d07ae34a4e2846d67",
+      "title" : "Auto merge of #164232 - cuviper:stable-next, r=cuviper"
     }
   },
   "type" : "branch",
