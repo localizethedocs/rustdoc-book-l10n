@@ -27,20 +27,20 @@ msgstr ""
 
 #: src/references.md:8
 msgid ""
-"[Learn Rust](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io."
-"html#making-useful-documentation-comments)"
+"[Learn Rust](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-"
+"io.html#making-useful-documentation-comments)"
 msgstr ""
 
 #: src/references.md:9
 msgid ""
-"[Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/meta/doc."
-"html)"
+"[Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/meta/"
+"doc.html)"
 msgstr ""
 
 #: src/references.md:10
 msgid ""
-"[Rust Reference](https://doc.rust-lang.org/stable/reference/comments."
-"html#doc-comments)"
+"[Rust Reference](https://doc.rust-lang.org/stable/reference/"
+"comments.html#doc-comments)"
 msgstr ""
 
 #: src/references.md:11
@@ -61,8 +61,8 @@ msgstr ""
 
 #: src/references.md:15
 msgid ""
-"[API Guidelines](https://rust-lang.github.io/api-guidelines/documentation."
-"html)"
+"[API Guidelines](https://rust-lang.github.io/api-guidelines/"
+"documentation.html)"
 msgstr ""
 
 #: src/references.md:16
@@ -79,13 +79,13 @@ msgstr ""
 
 #: src/references.md:18
 msgid ""
-"[RFC (stalled) front page styleguide](https://github.com/rust-lang/rfcs/"
-"pull/1687)"
+"[RFC (stalled) front page styleguide](https://github.com/rust-lang/rfcs/pull/"
+"1687)"
 msgstr ""
 
 #: src/references.md:19
 msgid ""
-"[Guide on how to write documentation for a Rust crate](https://blog."
-"guillaume-gomez.fr/"
-"articles/2020-03-12+Guide+on+how+to+write+documentation+for+a+Rust+crate)"
+"[Guide on how to write documentation for a Rust crate](https://"
+"blog.guillaume-gomez.fr/articles/"
+"2020-03-12+Guide+on+how+to+write+documentation+for+a+Rust+crate)"
 msgstr ""

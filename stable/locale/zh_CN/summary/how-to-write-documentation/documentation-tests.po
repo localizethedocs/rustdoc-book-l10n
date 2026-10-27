@@ -359,8 +359,8 @@ msgid ""
 "output`). By default, this will still hide `unused` warnings, since so many "
 "examples use private functions; you can add `#![warn(unused)]` to the top of "
 "your example if you want to see unused variables or dead code warnings. You "
-"can also use [`#![doc(test(attr(warn(unused))))]`](the-doc-attribute."
-"md#testattr) in the crate root to enable warnings globally."
+"can also use [`#![doc(test(attr(warn(unused))))]`](the-doc-"
+"attribute.md#testattr) in the crate root to enable warnings globally."
 msgstr ""
 
 #: src/write-documentation/documentation-tests.md:288
@@ -779,8 +779,8 @@ msgid ""
 "examples from the same working directory. The compilation directory is being "
 "used for compiler diagnostics, the `file!()` macro and the output of "
 "`rustdoc` test runner itself, whereas the run directory has an influence on "
-"file-system operations within documentation test examples, such as `std::fs::"
-"read_to_string`."
+"file-system operations within documentation test examples, such as "
+"`std::fs::read_to_string`."
 msgstr ""
 
 #: src/write-documentation/documentation-tests.md:595

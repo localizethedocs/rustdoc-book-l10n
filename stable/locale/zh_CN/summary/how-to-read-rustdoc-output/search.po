@@ -46,10 +46,10 @@ msgid ""
 "[`vec`](../../std/vec/struct.Vec.html?search=vec&filter-crate=std), [`vec "
 "vec`](../../std/vec/struct.Vec.html?search=vec%20vec&filter-crate=std), "
 "[`std::vec`](../../std/vec/struct.Vec.html?search=std::vec&filter-"
-"crate=std), and [`std::vec::Vec`](../../std/vec/struct.Vec.html?search=std::"
-"vec::Vec&filter-crate=std) all include the struct `std::vec::Vec` itself in "
-"the results (and all but the last one also include the module in the "
-"results)."
+"crate=std), and [`std::vec::Vec`](../../std/vec/struct.Vec.html?"
+"search=std::vec::Vec&filter-crate=std) all include the struct "
+"`std::vec::Vec` itself in the results (and all but the last one also include "
+"the module in the results)."
 msgstr ""
 
 #: src/read-documentation/search.md:28
@@ -63,10 +63,10 @@ msgstr ""
 msgid ""
 "Rustdoc uses a fuzzy matching function that can tolerate typos for this, "
 "though it's based on the length of the name that's typed in, so a good "
-"example of how this works would be [`HahsMap`](../../std/collections/struct."
-"HashMap.html?search=HahsMap&filter-crate=std). To avoid this, wrap the item "
-"in quotes, searching for `\"HahsMap\"` (in this example, no results will be "
-"returned)."
+"example of how this works would be [`HahsMap`](../../std/collections/"
+"struct.HashMap.html?search=HahsMap&filter-crate=std). To avoid this, wrap "
+"the item in quotes, searching for `\"HahsMap\"` (in this example, no results "
+"will be returned)."
 msgstr ""
 
 #: src/read-documentation/search.md:39
@@ -155,8 +155,9 @@ msgstr ""
 
 #: src/read-documentation/search.md:71
 msgid ""
-"[`option<T>, (fnonce (T) -> bool) -> option<T>`](../../std/vec/struct.Vec."
-"html?search=option<T>%2C+(fnonce+(T)+->+bool)+->+option<T>&filter-crate=std)"
+"[`option<T>, (fnonce (T) -> bool) -> option<T>`](../../std/vec/"
+"struct.Vec.html?search=option<T>%2C+(fnonce+(T)+->+bool)+->+option<T>&filter-"
+"crate=std)"
 msgstr ""
 
 #: src/read-documentation/search.md:71 src/read-documentation/search.md:72
@@ -518,8 +519,8 @@ msgid ""
 "A single type expression wrapped in parens is the same as that type "
 "expression, since parens act as the grouping operator. If they're empty, "
 "though, they will match both `unit` and `tuple`, and if there's more than "
-"one type (or a trailing or leading comma) it is the same as `primitive:"
-"tuple<...>`."
+"one type (or a trailing or leading comma) it is the same as "
+"`primitive:tuple<...>`."
 msgstr ""
 
 #: src/read-documentation/search.md:225

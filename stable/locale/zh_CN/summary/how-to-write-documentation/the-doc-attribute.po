@@ -339,8 +339,8 @@ msgstr ""
 #: src/write-documentation/the-doc-attribute.md:226
 msgid ""
 "Any item annotated with `#[doc(hidden)]` will not appear in the "
-"documentation, unless the [`--document-hidden-items`](../unstable-features."
-"md#document-hidden-items) flag is used."
+"documentation, unless the [`--document-hidden-items`](../unstable-"
+"features.md#document-hidden-items) flag is used."
 msgstr ""
 
 #: src/write-documentation/the-doc-attribute.md:229
