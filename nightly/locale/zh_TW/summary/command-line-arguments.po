@@ -492,9 +492,9 @@ msgstr ""
 
 #: src/command-line-arguments.md:451
 msgid ""
-"When `rustdoc` receives this flag, it will print an extra \"Version "
-"(version)\" into the sidebar of the crate root's docs. You can use this flag "
-"to differentiate between different versions of your library's documentation."
+"When `rustdoc` receives this flag, it will print an extra \"Version (version)"
+"\" into the sidebar of the crate root's docs. You can use this flag to "
+"differentiate between different versions of your library's documentation."
 msgstr ""
 
 #: src/command-line-arguments.md:455
@@ -530,14 +530,14 @@ msgid ""
 "source files that were loaded to document the crate. The default output "
 "filename is `CRATE_NAME.d`. This emit type can can optionally be followed by "
 "`=` to specify an explicit output path, for example, `--emit=dep-info=/path/"
-"to/foo.d`. The output can be sent to stdout by specifying `-` as the path (e."
-"g., `--emit=dep-info=-`)."
+"to/foo.d`. The output can be sent to stdout by specifying `-` as the path "
+"(e.g., `--emit=dep-info=-`)."
 msgstr ""
 
 #: src/command-line-arguments.md:481
 msgid ""
-"If not specified, the default emit types would be `--emit=html-static-files,"
-"html-non-static-files`."
+"If not specified, the default emit types would be `--emit=html-static-"
+"files,html-non-static-files`."
 msgstr ""
 
 #: src/command-line-arguments.md:484
