@@ -469,9 +469,9 @@ msgstr ""
 
 #: src/command-line-arguments.md:439
 msgid ""
-"When `rustdoc` receives this flag, it will print an extra \"Version "
-"(version)\" into the sidebar of the crate root's docs. You can use this flag "
-"to differentiate between different versions of your library's documentation."
+"When `rustdoc` receives this flag, it will print an extra \"Version (version)"
+"\" into the sidebar of the crate root's docs. You can use this flag to "
+"differentiate between different versions of your library's documentation."
 msgstr ""
 
 #: src/command-line-arguments.md:443

@@ -165,11 +165,11 @@ msgstr ""
 #: src/how-to-write-documentation.md:136
 msgid ""
 "Everything before the first empty line will be reused to describe the "
-"component in searches and module overviews.  For example, the function `std::"
-"env::args()` above will be shown on the [`std::env`](https://doc.rust-lang."
-"org/stable/std/env/index.html#functions) module documentation. It is good "
-"practice to keep the summary to one line: concise writing is a goal of good "
-"documentation."
+"component in searches and module overviews.  For example, the function "
+"`std::env::args()` above will be shown on the [`std::env`](https://doc.rust-"
+"lang.org/stable/std/env/index.html#functions) module documentation. It is "
+"good practice to keep the summary to one line: concise writing is a goal of "
+"good documentation."
 msgstr ""
 
 #: src/how-to-write-documentation.md:142
@@ -201,9 +201,9 @@ msgstr ""
 
 #: src/how-to-write-documentation.md:156
 msgid ""
-"`rustdoc` uses the [CommonMark Markdown specification](https://commonmark."
-"org/). You might be interested in taking a look at their website to see "
-"what's possible:"
+"`rustdoc` uses the [CommonMark Markdown specification](https://"
+"commonmark.org/). You might be interested in taking a look at their website "
+"to see what's possible:"
 msgstr ""
 
 #: src/how-to-write-documentation.md:159
@@ -307,9 +307,9 @@ msgstr ""
 
 #: src/how-to-write-documentation.md:222
 msgid ""
-"See the specification for the [GitHub Tables extension](https://github."
-"github.com/gfm/#tables-extension-) for more details on the exact syntax "
-"supported."
+"See the specification for the [GitHub Tables extension](https://"
+"github.github.com/gfm/#tables-extension-) for more details on the exact "
+"syntax supported."
 msgstr ""
 
 #: src/how-to-write-documentation.md:225
@@ -336,8 +336,8 @@ msgstr ""
 
 #: src/how-to-write-documentation.md:240
 msgid ""
-"See the specification for the [task list extension](https://github.github."
-"com/gfm/#task-list-items-extension-) for more details."
+"See the specification for the [task list extension](https://"
+"github.github.com/gfm/#task-list-items-extension-) for more details."
 msgstr ""
 
 #: src/how-to-write-documentation.md:242
