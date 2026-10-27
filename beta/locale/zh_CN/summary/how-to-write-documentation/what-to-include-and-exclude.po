@@ -170,12 +170,11 @@ msgstr ""
 #: src/write-documentation/what-to-include.md:108
 msgid ""
 "A good example of using this feature to create a dark theme is documented "
-"[on this blog](https://blog.guillaume-gomez.fr/"
-"articles/2016-09-16+Generating+doc+with+rustdoc+and+a+custom+theme).  Just "
-"remember, dark theme is already included in the rustdoc output by clicking "
-"on the gear icon in the upper right. Adding additional options to the themes "
-"are as easy as creating a custom theme `.css` file and using the following "
-"syntax:"
+"[on this blog](https://blog.guillaume-gomez.fr/articles/"
+"2016-09-16+Generating+doc+with+rustdoc+and+a+custom+theme).  Just remember, "
+"dark theme is already included in the rustdoc output by clicking on the gear "
+"icon in the upper right. Adding additional options to the themes are as easy "
+"as creating a custom theme `.css` file and using the following syntax:"
 msgstr ""
 
 #: src/write-documentation/what-to-include.md:118

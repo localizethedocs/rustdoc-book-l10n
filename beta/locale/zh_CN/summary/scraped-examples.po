@@ -55,8 +55,8 @@ msgstr ""
 
 #: src/scraped-examples.md:30
 msgid ""
-"To enable this feature on [docs.rs](https://docs.rs), add this to your Cargo."
-"toml:"
+"To enable this feature on [docs.rs](https://docs.rs), add this to your "
+"Cargo.toml:"
 msgstr ""
 
 #: src/scraped-examples.md:32
