@@ -37,9 +37,9 @@
     "branch" : "beta",
     "commit" : 
     {
-      "date" : "2026-04-20 06:11:26 +0000",
-      "hash" : "8489f1adbe1c8f8921cf18b9962cf565237a5489",
-      "title" : "Auto merge of #155402 - cuviper:beta-next, r=cuviper"
+      "date" : "2026-10-17 19:45:41 +0000",
+      "hash" : "fd8e211ae301c84a86d13cf52a6d3ce08c589e2e",
+      "title" : "Auto merge of #164324 - weihanglo:cargo-1.100-beta-backport, r=weihanglo"
     }
   },
   "type" : "branch",
