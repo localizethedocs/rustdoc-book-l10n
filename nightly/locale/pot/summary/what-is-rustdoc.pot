@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The rustdoc book\n"
-"POT-Creation-Date: 2026-04-28T10:56:12Z\n"
+"POT-Creation-Date: 2026-11-17T17:37:48Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -222,14 +222,30 @@ msgstr ""
 
 #: src/what-is-rustdoc.md:161
 msgid ""
-"Cargo currently does not understand standalone Markdown files, unfortunately."
-msgstr ""
-
-#: src/what-is-rustdoc.md:163
-msgid "Summary"
+"Cargo currently does not understand standalone Markdown files, "
+"unfortunately, but doc comments can copy the contents of external files by "
+"using the `include_str!` macro and `#[doc]` attribute."
 msgstr ""
 
 #: src/what-is-rustdoc.md:165
+msgid "for example:"
+msgstr ""
+
+#: src/what-is-rustdoc.md:168
+msgid "\"../README.md\""
+msgstr ""
+
+#: src/what-is-rustdoc.md:171
+msgid ""
+"This will copy the contents of `README.md` in the doc comment. Check out the "
+"[`#[doc]` attribute chapter](write-documentation/the-doc-attribute.md)"
+msgstr ""
+
+#: src/what-is-rustdoc.md:174
+msgid "Summary"
+msgstr ""
+
+#: src/what-is-rustdoc.md:176
 msgid ""
 "This covers the simplest use-cases of `rustdoc`. The rest of this book will "
 "explain all of the options that `rustdoc` has, and how to use them."
